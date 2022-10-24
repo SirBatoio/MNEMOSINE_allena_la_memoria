@@ -107,16 +107,18 @@ public class Intruso extends AppCompatActivity {
         galleryredo(s);
     }
 
-    public void indietro(View v)
+   public void indietro(View v)
     {
         Intent intent = new Intent(Intruso.this,SelectEsercizi.class);
         startActivity(intent);
+        finish();
     }
 
     public void home(View v)
     {
         Intent intent = new Intent(Intruso.this,MainActivity.class);
         startActivity(intent);
+        finish();
     }
 
     private void galleryredo(scelte s){
@@ -385,7 +387,7 @@ public class Intruso extends AppCompatActivity {
                 if (i==6){
                     Intent intent = new Intent(Intruso.this, MainActivity.class);
                     startActivity(intent);
-
+                    finish();
                 }
                 switch (s) {
                     case animali:
@@ -406,7 +408,7 @@ public class Intruso extends AppCompatActivity {
                 if (i==8){
                     Intent intent = new Intent(Intruso.this, MainActivity.class);
                     startActivity(intent);
-
+                    finish();
                 }
                 switch (sm) {
                     case mammiferi:
@@ -430,7 +432,7 @@ public class Intruso extends AppCompatActivity {
                 if (i==6){
                     Intent intent = new Intent(Intruso.this, MainActivity.class);
                     startActivity(intent);
-
+                    finish();
                 }
                 switch (sd) {
                     case biruote:
