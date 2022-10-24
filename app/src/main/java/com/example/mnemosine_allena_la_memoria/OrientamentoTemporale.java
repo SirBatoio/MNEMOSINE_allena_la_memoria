@@ -375,7 +375,7 @@ public class OrientamentoTemporale extends AppCompatActivity {
 
     public void indietro(View v)
     {
-        Intent intent = new Intent(OrientamentoTemporale.this,Orientamento.class);
+        Intent intent = new Intent(OrientamentoTemporale.this,SelectEsercizi.class);
         startActivity(intent);
     }
 
