@@ -1,4 +1,4 @@
-# MNEMOSINE_allena_la_memoria
+# MNEMOSINE allena la memoria
 
 contatti Discord
 - Uomo Basmati#8455
