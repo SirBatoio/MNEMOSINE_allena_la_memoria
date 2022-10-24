@@ -109,7 +109,7 @@ public class Intruso extends AppCompatActivity {
 
     public void indietro(View v)
     {
-        Intent intent = new Intent(Intruso.this,Attenzione.class);
+        Intent intent = new Intent(Intruso.this,SelectEsercizi.class);
         startActivity(intent);
     }
 
