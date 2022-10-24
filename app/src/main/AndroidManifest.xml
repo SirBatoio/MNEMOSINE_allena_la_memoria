@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.mnemosine_allena_la_memoria">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MNEMOSINE_allena_la_memoria">
+        <activity
+            android:name=".SelectEsercizi"
+            android:exported="false" />
+        <activity
+            android:name=".Logica"
+            android:exported="false" />
+        <activity
+            android:name=".Linguaggio"
+            android:exported="false" />
+        <activity
+            android:name=".Memoria"
+            android:exported="false" />
+        <activity
+            android:name=".Intruso"
+            android:exported="false" />
+        <activity
+            android:name=".Attenzione"
+            android:exported="false" />
+        <activity
+            android:name=".OrientamentoTemporale"
+            android:exported="false" />
+        <activity
+            android:name=".Orientamento"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

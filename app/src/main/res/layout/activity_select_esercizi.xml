@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SelectEsercizi">
+
+    <Button
+        android:id="@+id/es1"
+        android:layout_width="400dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="100dp"
+        android:onClick="Esercizi"
+        android:text="Esempio 1"
+        app:cornerRadius="200dp"
+        app:layout_constraintBottom_toTopOf="@+id/es2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/campo" />
+
+    <Button
+        android:id="@+id/es2"
+        android:layout_width="400dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="100dp"
+        android:onClick="Esercizi"
+        android:text="Esempio 2"
+        app:cornerRadius="200dp"
+        app:layout_constraintBottom_toTopOf="@+id/es3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/es1" />
+
+    <Button
+        android:id="@+id/es3"
+        android:layout_width="400dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="100dp"
+        android:onClick="Esercizi"
+        android:text="Esempio 3"
+        app:cornerRadius="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/es2" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:onClick="indietro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/campo"
+        app:srcCompat="@drawable/indietro"
+        tools:srcCompat="@drawable/indietro" />
+
+    <TextView
+        android:id="@+id/campo"
+        style="@style/Testo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="52dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/diff"
+        style="@style/Testo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/campo"
+        app:layout_constraintTop_toTopOf="@+id/campo" />
+
+    <ImageView
+        android:id="@+id/img_campo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:alpha="0.3"
+        android:rotation="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/bussola" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
