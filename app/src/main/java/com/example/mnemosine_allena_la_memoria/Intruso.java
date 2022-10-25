@@ -40,10 +40,10 @@ public class Intruso extends AppCompatActivity {
     private static final long TEMPO = 2000;
     private MediaPlayer mp;
     private int l,i=0;
-
     private scelte s=scelte.animali;
     private sceltemed sm=sceltemed.mammiferi;
     private sceltadff sd=sceltadff.canidi;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +56,7 @@ public class Intruso extends AppCompatActivity {
         immagine2=findViewById(R.id.img2);
         immagine2.animate().rotationY(90);
         galleria= new ArrayList<>();
+
         Immagini mela = new Immagini(BitmapFactory.decodeResource(getResources(), R.drawable.mela),scelte.frutta,sceltemed.altro, sceltadff.altro);
         Immagini pera = new Immagini(BitmapFactory.decodeResource(getResources(), R.drawable.pera),scelte.frutta,sceltemed.altro, sceltadff.altro);
         Immagini banana = new Immagini(BitmapFactory.decodeResource(getResources(), R.drawable.banana),scelte.frutta,sceltemed.altro, sceltadff.altro);
@@ -88,8 +89,6 @@ public class Intruso extends AppCompatActivity {
         Immagini monopattino = new Immagini(BitmapFactory.decodeResource(getResources(), R.drawable.monopattino),scelte.mezzitras,sceltemed.ruote,sceltadff.biruote);
         Immagini quad = new Immagini(BitmapFactory.decodeResource(getResources(), R.drawable.quad),scelte.mezzitras,sceltemed.ruote,sceltadff.quaruote);
         Immagini camper = new Immagini(BitmapFactory.decodeResource(getResources(), R.drawable.camper),scelte.mezzitras,sceltemed.ruote,sceltadff.quaruote);
-
-
 
         fruit.add(mela); fruit.add(pera); fruit.add(banana);
         vestiti.add(vestest); vestiti.add(vestaut); vestiti.add(vestinv);vestiti.add(vestprim);
@@ -479,10 +478,5 @@ public class Intruso extends AppCompatActivity {
         {
             immagine2.animate().rotationY(270).setDuration(TEMPO);
         }
-    }
-
-    public void Ragnarok()
-    {
-
     }
 }
