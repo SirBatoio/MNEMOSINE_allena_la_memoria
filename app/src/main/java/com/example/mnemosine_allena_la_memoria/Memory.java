@@ -14,7 +14,7 @@ import android.widget.ImageView;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Memory extends AppCompatActivity {
+public class Memory extends AppCompatActivity{
 
     private boolean volume=true;
     private Difficoltà d;
@@ -114,6 +114,9 @@ public class Memory extends AppCompatActivity {
 
     public void avanti(View v)
     {
+        Button b = findViewById(R.id.button);
+        b.setVisibility(View.INVISIBLE);
+        b.setClickable(false);
         img_1.setClickable(true);
         img_2.setClickable(true);
         img_3.setClickable(true);
