@@ -96,6 +96,8 @@ public class SelectEsercizi extends AppCompatActivity {
                         startActivity(intent);
                         break;
                     case MEMORIA:
+                        intent = new Intent(SelectEsercizi.this, Memory.class);
+                        startActivity(intent);
                         break;
                     case LOGICA:
                         break;

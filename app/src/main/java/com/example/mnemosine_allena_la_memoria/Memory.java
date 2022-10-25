@@ -20,6 +20,7 @@ public class Memory extends AppCompatActivity {
     private Difficoltà d;
     private ImageView img_1, img_2, img_3, img_4, img_5, img_6;
     private ArrayList<Bitmap> galleria = new ArrayList<>();
+    private ArrayList<Bitmap> gioco = new ArrayList<>();
     private Bitmap banana,carro,elicottero,tigre,estate,inverno,volpe,melograno,leone,carota;
     private Bitmap moto,pantera,lupo,gallina,mela,pera,primavera,quad,barca,camper,camion;
 
@@ -66,6 +67,14 @@ public class Memory extends AppCompatActivity {
         img_5.setClickable(false);
         img_6.setClickable(false);
 
+        img_1.setImageBitmap(galleria.get(0));
+        img_2.setImageBitmap(galleria.get(1));
+        img_3.setImageBitmap(galleria.get(2));
+        img_4.setImageBitmap(galleria.get(3));
+
+        gioco.add(galleria.get(0)); gioco.add(galleria.get(1));
+        gioco.add(galleria.get(2)); gioco.add(galleria.get(3));
+
         d = Home.getDiff();
         switch (d)
         {
@@ -78,15 +87,29 @@ public class Memory extends AppCompatActivity {
                 img_6.setVisibility(View.INVISIBLE);
                 break;
             case INTERMEDIO:
+                img_1.setVisibility(View.VISIBLE);
+                img_2.setVisibility(View.VISIBLE);
+                img_3.setVisibility(View.VISIBLE);
+                img_4.setVisibility(View.VISIBLE);
+                img_5.setImageBitmap(galleria.get(4));
+                gioco.add(galleria.get(4));
+                img_5.setVisibility(View.INVISIBLE);
+                img_6.setVisibility(View.INVISIBLE);
+                break;
             case AVANZATO:
                 img_1.setVisibility(View.VISIBLE);
                 img_2.setVisibility(View.VISIBLE);
                 img_3.setVisibility(View.VISIBLE);
                 img_4.setVisibility(View.VISIBLE);
+                img_5.setImageBitmap(galleria.get(4));
+                img_6.setImageBitmap(galleria.get(5));
+                gioco.add(galleria.get(4));
+                gioco.add(galleria.get(5));
                 img_5.setVisibility(View.INVISIBLE);
                 img_6.setVisibility(View.INVISIBLE);
                 break;
         }
+        Collections.shuffle(gioco);
     }
 
     public void avanti(View v)
@@ -96,6 +119,11 @@ public class Memory extends AppCompatActivity {
         img_3.setClickable(true);
         img_4.setClickable(true);
 
+        img_1.setImageBitmap(gioco.get(0));
+        img_2.setImageBitmap(gioco.get(1));
+        img_3.setImageBitmap(gioco.get(2));
+        img_4.setImageBitmap(gioco.get(3));
+
         switch (d)
         {
             case FACILE:
@@ -104,12 +132,15 @@ public class Memory extends AppCompatActivity {
             case INTERMEDIO:
                 img_5.setVisibility(View.VISIBLE);
                 img_5.setClickable(true);
+                img_5.setImageBitmap(gioco.get(4));
                 break;
             case AVANZATO:
                 img_5.setVisibility(View.VISIBLE);
                 img_6.setVisibility(View.VISIBLE);
                 img_5.setClickable(true);
                 img_6.setClickable(true);
+                img_5.setImageBitmap(gioco.get(4));
+                img_6.setImageBitmap(gioco.get(5));
                 break;
         }
     }
