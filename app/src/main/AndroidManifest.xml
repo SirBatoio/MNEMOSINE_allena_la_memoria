@@ -10,28 +10,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MNEMOSINE_allena_la_memoria">
         <activity
+            android:name=".Home"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".SelectEsercizi"
-            android:exported="false" />
-        <activity
-            android:name=".Logica"
-            android:exported="false" />
-        <activity
-            android:name=".Linguaggio"
-            android:exported="false" />
-        <activity
-            android:name=".Memoria"
             android:exported="false" />
         <activity
             android:name=".Intruso"
             android:exported="false" />
         <activity
-            android:name=".Attenzione"
-            android:exported="false" />
-        <activity
             android:name=".OrientamentoTemporale"
-            android:exported="false" />
-        <activity
-            android:name=".Orientamento"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

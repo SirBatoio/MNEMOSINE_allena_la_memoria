@@ -48,7 +48,7 @@ public class Intruso extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intruso);
-        diff=MainActivity.getDiff();
+        diff=Home.getDiff();
         Scelta_1 = findViewById(R.id.Scelta_1);
         Scelta_2 = findViewById(R.id.scelta_2);
         Scelta_3 = findViewById(R.id.Scelta_3);
@@ -116,7 +116,7 @@ public class Intruso extends AppCompatActivity {
 
     public void home(View v)
     {
-        Intent intent = new Intent(Intruso.this,MainActivity.class);
+        Intent intent = new Intent(Intruso.this,Home.class);
         startActivity(intent);
         finish();
     }
@@ -385,7 +385,7 @@ public class Intruso extends AppCompatActivity {
 
             case FACILE:
                 if (i==6){
-                    Intent intent = new Intent(Intruso.this, MainActivity.class);
+                    Intent intent = new Intent(Intruso.this, Home.class);
                     startActivity(intent);
                     finish();
                 }
@@ -406,7 +406,7 @@ public class Intruso extends AppCompatActivity {
                 break;
             case INTERMEDIO:
                 if (i==8){
-                    Intent intent = new Intent(Intruso.this, MainActivity.class);
+                    Intent intent = new Intent(Intruso.this, Home.class);
                     startActivity(intent);
                     finish();
                 }
@@ -430,7 +430,7 @@ public class Intruso extends AppCompatActivity {
                 break;
             case AVANZATO:
                 if (i==6){
-                    Intent intent = new Intent(Intruso.this, MainActivity.class);
+                    Intent intent = new Intent(Intruso.this, Home.class);
                     startActivity(intent);
                     finish();
                 }
