@@ -25,9 +25,6 @@ public class Immagini {
         this.possibilita = possibilita;
     }
 
-
-
-
     public Immagini(Bitmap img, scelte possibilita, sceltemed probabilita, sceltadff fato) {
         this.img = img;
         this.possibilita = possibilita;

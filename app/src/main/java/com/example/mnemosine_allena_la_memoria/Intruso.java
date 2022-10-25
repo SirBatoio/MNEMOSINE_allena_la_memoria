@@ -53,7 +53,7 @@ public class Intruso extends AppCompatActivity {
         Scelta_2 = findViewById(R.id.scelta_2);
         Scelta_3 = findViewById(R.id.Scelta_3);
         Scelta_4 = findViewById(R.id.scelta_4);
-        immagine2=findViewById(R.id.img2);
+        immagine2=findViewById(R.id.immagine2);
         immagine2.animate().rotationY(90);
         galleria= new ArrayList<>();
 
