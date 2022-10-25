@@ -18,7 +18,7 @@ public class Memory extends AppCompatActivity {
     private boolean volume=true;
     private Difficoltà d;
     private ImageView img_1, img_2, img_3, img_4, img_5, img_6;
-    private ArrayList<Immagini> galleria = new ArrayList<>();
+    private ArrayList<Bitmap> galleria = new ArrayList<>();
     private Bitmap banana,carro,elicottero,tigre,estate,inverno,volpe,melograno,leone,carota;
     private Bitmap moto,pantera,lupo,gallina,mela,pera,primavera,quad,barca,camper,camion;
 
