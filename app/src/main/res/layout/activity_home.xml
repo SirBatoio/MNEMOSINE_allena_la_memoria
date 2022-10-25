@@ -82,7 +82,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:height="100dp"
-            android:backgroundTint="#8BC34A"
+            android:backgroundTint="@color/green"
             android:onClick="impostaDifficolta"
             android:text="Facile"
             app:cornerRadius="100dp" />
@@ -96,7 +96,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:height="100dp"
-            android:backgroundTint="#FFC107"
+            android:backgroundTint="@color/orange_200"
             android:onClick="impostaDifficolta"
             android:text="Intermedio"
             app:cornerRadius="100dp" />
@@ -110,7 +110,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:height="100dp"
-            android:backgroundTint="#E91E63"
+            android:backgroundTint="@color/red"
             android:onClick="impostaDifficolta"
             android:text="Avanzato"
             app:cornerRadius="100dp" />
