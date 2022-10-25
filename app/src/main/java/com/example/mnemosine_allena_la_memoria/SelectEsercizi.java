@@ -100,6 +100,7 @@ public class SelectEsercizi extends AppCompatActivity {
                     case LOGICA:
                         break;
                 }
+                break;
             case R.id.es2:
                 switch(c)
                 {
@@ -114,6 +115,7 @@ public class SelectEsercizi extends AppCompatActivity {
                     case LOGICA:
                         break;
                 }
+                break;
             case R.id.es3:
                 switch(c)
                 {
@@ -130,6 +132,7 @@ public class SelectEsercizi extends AppCompatActivity {
                     case LOGICA:
                         break;
                 }
+                break;
         }
 
     }
