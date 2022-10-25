@@ -1,5 +1,5 @@
 package com.example.mnemosine_allena_la_memoria;
-
+//aaa
 public class Domanda {
     private String testo, rispostaGiusta, rispostaSbagliata1, rispostaSbagliata2;
 
