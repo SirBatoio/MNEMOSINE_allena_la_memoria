@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Memory extends AppCompatActivity {
 
@@ -48,6 +49,9 @@ public class Memory extends AppCompatActivity {
         barca=  (BitmapFactory.decodeResource(getResources(), R.drawable.barca));
         camper=  (BitmapFactory.decodeResource(getResources(), R.drawable.camper));
         camion=  (BitmapFactory.decodeResource(getResources(), R.drawable.camion));
+
+        galleria.add(banana); galleria.add(carro); galleria.add(elicottero);galleria.add(tigre);galleria.add(estate);galleria.add(inverno);galleria.add(volpe);galleria.add(melograno);galleria.add(leone);galleria.add(carota);galleria.add(moto);galleria.add(pantera);galleria.add(lupo);galleria.add(gallina);galleria.add(mela);galleria.add(pera);galleria.add(primavera);galleria.add(quad);galleria.add(barca);galleria.add(camion);galleria.add(camper);
+        Collections.shuffle(galleria);
 
         img_1=findViewById(R.id.img1);
         img_2=findViewById(R.id.img2);
