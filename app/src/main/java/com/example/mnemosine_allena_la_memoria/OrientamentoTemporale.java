@@ -37,7 +37,7 @@ public class OrientamentoTemporale extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_orientamento_temporale);
 
-        diff=MainActivity.getDiff();
+        diff=Home.getDiff();
 
         immagine = findViewById(R.id.immagine);
         esito = findViewById(R.id.esito0);
@@ -227,8 +227,9 @@ public class OrientamentoTemporale extends AppCompatActivity {
         }
         else
         {
-            Intent intent = new Intent(OrientamentoTemporale.this, MainActivity.class);
+            Intent intent = new Intent(OrientamentoTemporale.this, Home.class);
             startActivity(intent);
+            finish();
         }
     }
 
@@ -377,12 +378,14 @@ public class OrientamentoTemporale extends AppCompatActivity {
     {
         Intent intent = new Intent(OrientamentoTemporale.this,SelectEsercizi.class);
         startActivity(intent);
+        finish();
     }
 
     public void home(View v)
     {
-        Intent intent = new Intent(OrientamentoTemporale.this,MainActivity.class);
+        Intent intent = new Intent(OrientamentoTemporale.this,Home.class);
         startActivity(intent);
+        finish();
     }
 
 }

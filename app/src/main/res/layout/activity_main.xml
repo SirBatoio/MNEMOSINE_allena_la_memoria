@@ -7,136 +7,6 @@
     android:background="@drawable/gradient_drawable"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/orientamento"
-        android:layout_width="350dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="100dp"
-        android:onClick="redirect"
-        android:text="orientamento"
-        app:cornerRadius="100dp"
-        app:layout_constraintBottom_toTopOf="@+id/attenzione"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/attenzione"
-        android:layout_width="350dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="100dp"
-        android:onClick="redirect"
-        android:text="attenzione"
-        app:cornerRadius="100dp"
-        app:layout_constraintBottom_toTopOf="@+id/memoria"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/orientamento" />
-
-    <Button
-        android:id="@+id/memoria"
-        android:layout_width="350dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="100dp"
-        android:onClick="redirect"
-        android:text="memoria"
-        app:cornerRadius="100dp"
-        app:layout_constraintBottom_toTopOf="@+id/linguaggio"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/attenzione" />
-
-    <Button
-        android:id="@+id/linguaggio"
-        android:layout_width="350dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="100dp"
-        android:onClick="redirect"
-        android:text="linguaggio"
-        app:cornerRadius="100dp"
-        app:layout_constraintBottom_toTopOf="@+id/logica"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/memoria" />
-
-    <Button
-        android:id="@+id/logica"
-        android:layout_width="350dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="100dp"
-        android:onClick="redirect"
-        android:text="logica"
-        app:cornerRadius="100dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linguaggio" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="350dp"
-        android:layout_height="475dp"
-        android:layout_marginEnd="68dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.472">
-
-        <Button
-            android:id="@+id/facile"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:height="100dp"
-            android:backgroundTint="#8BC34A"
-            android:onClick="impostaDifficolta"
-            android:text="Facile"
-            app:cornerRadius="100dp" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="25dp" />
-
-        <Button
-            android:id="@+id/intermedio"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:height="100dp"
-            android:backgroundTint="#FFC107"
-            android:onClick="impostaDifficolta"
-            android:text="Intermedio"
-            app:cornerRadius="100dp" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="25dp" />
-
-        <Button
-            android:id="@+id/avanzato"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:height="100dp"
-            android:backgroundTint="#E91E63"
-            android:onClick="impostaDifficolta"
-            android:text="Avanzato"
-            app:cornerRadius="100dp" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="25dp" />
-
-        <TextView
-            android:id="@+id/textView6"
-            style="@style/Testo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Difficoltà:"
-            android:textSize="34sp" />
-
-        <TextView
-            android:id="@+id/difficolta"
-            style="@style/Testo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="34sp" />
-
-    </LinearLayout>
-
     <ImageView
         android:id="@+id/sfondo_pagina_principale"
         android:layout_width="871dp"
@@ -172,13 +42,9 @@
         android:textColor="#0E020A"
         android:textSize="46dp"
         android:translationZ="3dp"
-        app:layout_constraintBottom_toTopOf="@+id/orientamento"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/orientamento"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView2"

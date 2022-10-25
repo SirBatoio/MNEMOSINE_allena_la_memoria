@@ -25,10 +25,10 @@ public class SelectEsercizi extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_esercizi);
-        c = MainActivity.getCampo();
+        c = Home.getCampo();
         campo_selezionato=findViewById(R.id.campo);
         campo_selezionato.setText(String.valueOf(c).toLowerCase()+" : ");
-        d = MainActivity.getDiff();
+        d = Home.getDiff();
         difficolta=findViewById(R.id.diff);
         difficolta.setText(String.valueOf(d).toLowerCase());
         immagine=findViewById(R.id.img_campo);
@@ -130,9 +130,15 @@ public class SelectEsercizi extends AppCompatActivity {
                     case LOGICA:
                         break;
                 }
-
         }
 
+    }
+
+    public void indietro(View v)
+    {
+        Intent intent = new Intent(SelectEsercizi.this,Home.class);
+        startActivity(intent);
+        finish();
     }
 
 }
