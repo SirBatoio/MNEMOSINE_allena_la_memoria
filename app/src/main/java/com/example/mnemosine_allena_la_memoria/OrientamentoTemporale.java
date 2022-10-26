@@ -34,7 +34,7 @@ public class OrientamentoTemporale extends AppCompatActivity {
     private boolean volume=true;
     private static final long TEMPO = 2000;
     private int i=-1, l=10, tentativi=2;
-    private int pt_totalizzati=0, pt_max;
+    private int pt_totalizzati=1, pt_max;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
