@@ -22,8 +22,8 @@ import java.util.Collections;
 public class OrientamentoTemporale extends AppCompatActivity {
 
     private TextView domanda, testo;
-    private ImageView /*esito,*/ immagine;
-    //private MediaPlayer mp;
+    private ImageView esito, immagine;
+    private MediaPlayer mp;
     private Difficoltà diff;
     private ArrayList<Button> opzioni = new ArrayList<>();
     private ArrayList<String> listaRisposte = new ArrayList<>();
@@ -31,7 +31,7 @@ public class OrientamentoTemporale extends AppCompatActivity {
     private ArrayList<Bitmap> galleria = new ArrayList<>(), orologi = new ArrayList<>();
     private String domandaStagione;
     private boolean volume=true;
-    //private static final long TEMPO = 2000;
+    private static final long TEMPO = 2000;
     private int i=-1, l=10, tentativi=2;
 
     @Override
@@ -42,8 +42,8 @@ public class OrientamentoTemporale extends AppCompatActivity {
         diff=Home.getDiff();
 
         immagine = findViewById(R.id.immagine);
-        /*esito = findViewById(R.id.esito0);
-        esito.animate().rotationY(90);*/
+        esito = findViewById(R.id.esito0);
+        esito.animate().rotationY(90);
 
         domanda = findViewById(R.id.domanda);
         testo = findViewById(R.id.testo);
@@ -65,39 +65,29 @@ public class OrientamentoTemporale extends AppCompatActivity {
 
     public void Controllo(@NonNull View v) {
         Button premuto = findViewById(v.getId());
-
         if (premuto.getText().toString().equals(domande.get(i).getRispostaGiusta()))
         {
-            /*mp = MediaPlayer.create(this,R.raw.giusto);
-            esito.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.giusto));*/
+            mp = MediaPlayer.create(this,R.raw.giusto);
+            esito.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.giusto));
             aumentaLivello();
         }
         else
         {
-            /*mp = MediaPlayer.create(this,R.raw.errore);
-            esito.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.sbaglio));*/
+            mp = MediaPlayer.create(this,R.raw.errore);
+            esito.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.sbaglio));
             premuto.setBackgroundColor(0xFFE91E63);
             tentativi--;
             if(tentativi==1)
             {
-                //animaImmagineEsito();
-                Intent intent= new Intent(OrientamentoTemporale.this, Animazioni.class);
-                startActivity(intent);
-                Animazioni.spin(false, volume);
-                try {
-                    sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                Animazioni.stop();
-                    //
+                animaImmagineEsito();
+
                 listaRisposte.clear();
             }
         }
-        /*if(volume)
+        if(volume)
         {
             mp.start();
-        }*/
+        }
         if(tentativi==0)
         {aumentaLivello();}
     }
@@ -110,22 +100,8 @@ public class OrientamentoTemporale extends AppCompatActivity {
             b.setBackgroundColor(0xFF6495ED);
         }
 
-        //animaImmagineEsito();
-        Intent intent= new Intent(OrientamentoTemporale.this, Animazioni.class);
-        startActivity(intent);
-        try {
-            sleep(20);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        Animazioni.spin(true, volume);
-        try {
-            sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        Animazioni.stop();
-        //
+        animaImmagineEsito();
+
         listaRisposte.clear();
 
         if(i!=l) {
@@ -260,7 +236,7 @@ public class OrientamentoTemporale extends AppCompatActivity {
         }
     }
 
-/*    public void animaImmagineEsito() {
+    public void animaImmagineEsito() {
         if(esito.getRotationY()>=180&&esito.getRotationY()<360)
         {
             esito.animate().rotationY(90).setDuration(TEMPO);
@@ -269,7 +245,7 @@ public class OrientamentoTemporale extends AppCompatActivity {
         {
             esito.animate().rotationY(270).setDuration(TEMPO);
         }
-    }*/
+    }
 
     public void riempiDomande() {
         switch (diff)

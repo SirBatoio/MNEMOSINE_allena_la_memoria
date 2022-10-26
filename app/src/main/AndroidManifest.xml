@@ -9,13 +9,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MNEMOSINE_allena_la_memoria">
         <activity
-            android:name=".Animazioni"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".Memory"
             android:exported="false">
             <meta-data
