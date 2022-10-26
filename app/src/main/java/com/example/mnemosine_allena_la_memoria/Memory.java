@@ -6,6 +6,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -18,11 +21,14 @@ public class Memory extends AppCompatActivity{
 
     private boolean volume=true;
     private Difficoltà d;
-    private ImageView img_1, img_2, img_3, img_4, img_5, img_6;
+    private ImageView img_1, img_2, img_3, img_4, img_5, img_6,immagine2;
     private ArrayList<Bitmap> galleria = new ArrayList<>();
     private ArrayList<Bitmap> gioco = new ArrayList<>();
     private Bitmap banana,carro,elicottero,tigre,estate,inverno,volpe,melograno,leone,carota;
     private Bitmap moto,pantera,lupo,gallina,mela,pera,primavera,quad,barca,camper,camion,giusto;
+    private boolean   as;
+    private MediaPlayer mp;
+    private static final long TEMPO = 2000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -150,30 +156,34 @@ public class Memory extends AppCompatActivity{
     }
 
     public void  click(View v){
-        Bitmap cliccato=v.getDrawingCache();
+
         switch (d) {
             case FACILE:
             switch (v.getId()) {
 
                 case R.id.img1:
-                    if (cliccato != galleria.get(3))
+                    if (gioco.get(0)!= galleria.get(3)){
                         img_1.setClickable(false);
                     img_1.setImageBitmap(giusto);
+                        as = true;}
                     break;
                 case R.id.img2:
-                    if (cliccato != galleria.get(3))
+                    if (gioco.get(1)!= galleria.get(3)){
                         img_2.setClickable(false);
                     img_2.setImageBitmap(giusto);
+                        as = true;}
                     break;
                 case R.id.img3:
-                    if (cliccato != galleria.get(3))
+                    if (gioco.get(2)!= galleria.get(3)){
                         img_3.setClickable(false);
                     img_3.setImageBitmap(giusto);
+                        as = true;}
                     break;
                 case R.id.img4:
-                    if (cliccato != galleria.get(3))
+                    if (gioco.get(3)!= galleria.get(3)){
                         img_4.setClickable(false);
                     img_4.setImageBitmap(giusto);
+                        as = true;}
                     break;
 
             }
@@ -183,29 +193,34 @@ public class Memory extends AppCompatActivity{
                 switch (v.getId()) {
 
                     case R.id.img1:
-                        if (cliccato != galleria.get(4)){
+                        if (gioco.get(0)!= galleria.get(4)){
                             img_1.setClickable(false);
-                        img_1.setImageBitmap(giusto);}
+                        img_1.setImageBitmap(giusto);
+                            as = true;}
                         break;
                     case R.id.img2:
-                        if (cliccato != galleria.get(4)){
+                        if (gioco.get(1)!= galleria.get(4)){
                             img_2.setClickable(false);
-                        img_2.setImageBitmap(giusto);}
+                        img_2.setImageBitmap(giusto);
+                            as = true;}
                         break;
                     case R.id.img3:
-                        if (cliccato != galleria.get(4)){
+                        if (gioco.get(2)!= galleria.get(4)){
                             img_3.setClickable(false);
-                        img_3.setImageBitmap(giusto);}
+                        img_3.setImageBitmap(giusto);
+                            as = true;}
                         break;
                     case R.id.img4:
-                        if (cliccato != galleria.get(4)){
+                        if (gioco.get(3)!= galleria.get(4)){
                             img_4.setClickable(false);
-                        img_4.setImageBitmap(giusto);}
+                        img_4.setImageBitmap(giusto);
+                            as = true;}
                         break;
                     case R.id.img5:
-                        if (cliccato != galleria.get(4)){
+                        if (gioco.get(4)!= galleria.get(4)){
                             img_5.setClickable(false);
-                        img_5.setImageBitmap(giusto);}
+                        img_5.setImageBitmap(giusto);
+                            as = true;}
                         break;
                 }
 
@@ -217,34 +232,40 @@ public class Memory extends AppCompatActivity{
                 switch (v.getId()) {
 
                     case R.id.img1:
-                        if (cliccato != galleria.get(5)||cliccato != galleria.get(4)){
+                        if (gioco.get(0)!= galleria.get(5)||gioco.get(0)!= galleria.get(4)){
                             img_1.setClickable(false);
-                            img_1.setImageBitmap(giusto);}
+                            img_1.setImageBitmap(giusto);
+                            as = true;}
                         break;
                     case R.id.img2:
-                        if (cliccato != galleria.get(5)||cliccato != galleria.get(4)){
+                        if (gioco.get(1)!= galleria.get(5)||gioco.get(1)!= galleria.get(4)){
                             img_2.setClickable(false);
-                            img_2.setImageBitmap(giusto);}
+                            img_2.setImageBitmap(giusto);
+                            as = true;}
                         break;
                     case R.id.img3:
-                        if (cliccato != galleria.get(5)||cliccato != galleria.get(4)){
+                        if (gioco.get(2)!= galleria.get(5)||gioco.get(2)!= galleria.get(4)){
                             img_3.setClickable(false);
-                            img_3.setImageBitmap(giusto);}
+                            img_3.setImageBitmap(giusto);
+                            as = true;}
                         break;
                     case R.id.img4:
-                        if (cliccato != galleria.get(5)||cliccato != galleria.get(4)){
+                        if (gioco.get(3)!= galleria.get(5)||gioco.get(3)!= galleria.get(4)){
                             img_4.setClickable(false);
-                            img_4.setImageBitmap(giusto);}
+                            img_4.setImageBitmap(giusto);
+                            as = true;}
                         break;
                     case R.id.img5:
-                        if (cliccato != galleria.get(5)||cliccato != galleria.get(4)){
+                        if (gioco.get(4)!= galleria.get(5)||gioco.get(4) != galleria.get(4)){
                             img_5.setClickable(false);
-                            img_5.setImageBitmap(giusto);}
+                            img_5.setImageBitmap(giusto);
+                            as = true;}
                         break;
                     case R.id.img6:
-                        if (cliccato != galleria.get(5)||cliccato != galleria.get(4)){
+                        if (gioco.get(5) != galleria.get(5)||gioco.get(5) != galleria.get(4)){
                             img_6.setClickable(false);
-                            img_6.setImageBitmap(giusto);}
+                            img_6.setImageBitmap(giusto);
+                            as = true;}
                         break;
                 }
 
@@ -252,6 +273,13 @@ public class Memory extends AppCompatActivity{
 
 
         }
+        if (as){
+            mp = MediaPlayer.create(this,R.raw.giusto);
+            immagine2.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.giusto));
+        }else {mp = MediaPlayer.create(this,R.raw.errore);
+            immagine2.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.sbaglio));}
+        if(volume){ mp.start();}
+        animaImmagineEsito();
     }
 
     public void cambiaVolume(@NonNull View v)
@@ -268,6 +296,17 @@ public class Memory extends AppCompatActivity{
             volume=true;
             b.setText("VOLUME ON");
             b.setBackgroundColor(0xFFFF9800);
+        }
+    }
+
+    public void animaImmagineEsito() {
+        if(immagine2.getRotationY()>=180&&immagine2.getRotationY()<360)
+        {
+            immagine2.animate().rotationY(90).setDuration(TEMPO);
+        }
+        else
+        {
+            immagine2.animate().rotationY(270).setDuration(TEMPO);
         }
     }
 
