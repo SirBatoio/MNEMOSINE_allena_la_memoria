@@ -1,5 +1,7 @@
 package com.example.mnemosine_allena_la_memoria;
 
+import static java.lang.Thread.sleep;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +12,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -24,11 +27,13 @@ public class Memory extends AppCompatActivity{
     private ImageView img_1, img_2, img_3, img_4, img_5, img_6,immagine2;
     private ArrayList<Bitmap> galleria = new ArrayList<>();
     private ArrayList<Bitmap> gioco = new ArrayList<>();
-    private Bitmap banana,carro,elicottero,tigre,estate,inverno,volpe,melograno,leone,carota;
+    private Bitmap banana,carro,elicottero,tigre,estate,inverno,volpe,melograno,leone,carota,sbagliato;
     private Bitmap moto,pantera,lupo,gallina,mela,pera,primavera,quad,barca,camper,camion,giusto;
     private boolean   as;
     private MediaPlayer mp;
     private static final long TEMPO = 2000;
+    private int i,l=1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +62,7 @@ public class Memory extends AppCompatActivity{
         camper=  (BitmapFactory.decodeResource(getResources(), R.drawable.camper));
         camion=  (BitmapFactory.decodeResource(getResources(), R.drawable.camion));
         giusto= (BitmapFactory.decodeResource(getResources(),R.drawable.giusto));
+        sbagliato= (BitmapFactory.decodeResource(getResources(),R.drawable.sbaglio));
 
         galleria.add(banana); galleria.add(carro); galleria.add(elicottero);galleria.add(tigre);galleria.add(estate);galleria.add(inverno);galleria.add(volpe);galleria.add(melograno);galleria.add(leone);galleria.add(carota);galleria.add(moto);galleria.add(pantera);galleria.add(lupo);galleria.add(gallina);galleria.add(mela);galleria.add(pera);galleria.add(primavera);galleria.add(quad);galleria.add(barca);galleria.add(camion);galleria.add(camper);
         Collections.shuffle(galleria);
@@ -73,6 +79,7 @@ public class Memory extends AppCompatActivity{
         img_4.setClickable(false);
         img_5.setClickable(false);
         img_6.setClickable(false);
+        immagine2=findViewById(R.id.immagine2);
 
         img_1.setImageBitmap(galleria.get(0));
         img_2.setImageBitmap(galleria.get(1));
@@ -165,28 +172,45 @@ public class Memory extends AppCompatActivity{
                     if (gioco.get(0)!= galleria.get(3)){
                         img_1.setClickable(false);
                     img_1.setImageBitmap(giusto);
-                        as = true;}
+                        as = true;
+                        i++;}
+                    else{
+                        img_1.setImageBitmap(sbagliato);
+                    }
                     break;
                 case R.id.img2:
                     if (gioco.get(1)!= galleria.get(3)){
                         img_2.setClickable(false);
                     img_2.setImageBitmap(giusto);
-                        as = true;}
+                        as = true;
+                        i++;
+                        img_2.setImageBitmap(sbagliato);}
                     break;
                 case R.id.img3:
                     if (gioco.get(2)!= galleria.get(3)){
                         img_3.setClickable(false);
                     img_3.setImageBitmap(giusto);
-                        as = true;}
+                        as = true;
+                        i++;
+                        img_3.setImageBitmap(sbagliato);}
                     break;
                 case R.id.img4:
                     if (gioco.get(3)!= galleria.get(3)){
                         img_4.setClickable(false);
                     img_4.setImageBitmap(giusto);
-                        as = true;}
+                        as = true;
+                        i++;
+                        img_4.setImageBitmap(sbagliato);}
                     break;
 
             }
+                if (i==3){
+                    mp = MediaPlayer.create(this,R.raw.giusto);
+                    immagine2.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.giusto));
+                    if(volume){ mp.start();}
+                    animaImmagineEsito();
+                    restart();
+                }
         break;
 
             case INTERMEDIO:
@@ -196,34 +220,50 @@ public class Memory extends AppCompatActivity{
                         if (gioco.get(0)!= galleria.get(4)){
                             img_1.setClickable(false);
                         img_1.setImageBitmap(giusto);
-                            as = true;}
+                            as = true;
+                            i++;
+                            img_1.setImageBitmap(sbagliato);}
                         break;
                     case R.id.img2:
                         if (gioco.get(1)!= galleria.get(4)){
                             img_2.setClickable(false);
                         img_2.setImageBitmap(giusto);
-                            as = true;}
+                            as = true;
+                            i++;
+                            img_2.setImageBitmap(sbagliato);}
                         break;
                     case R.id.img3:
                         if (gioco.get(2)!= galleria.get(4)){
                             img_3.setClickable(false);
                         img_3.setImageBitmap(giusto);
-                            as = true;}
+                            as = true;
+                            i++;
+                            img_3.setImageBitmap(sbagliato);}
                         break;
                     case R.id.img4:
                         if (gioco.get(3)!= galleria.get(4)){
                             img_4.setClickable(false);
                         img_4.setImageBitmap(giusto);
-                            as = true;}
+                            as = true;
+                            i++;
+                            img_4.setImageBitmap(sbagliato);}
                         break;
                     case R.id.img5:
                         if (gioco.get(4)!= galleria.get(4)){
                             img_5.setClickable(false);
                         img_5.setImageBitmap(giusto);
-                            as = true;}
+                            as = true;
+                            i++;
+                            img_5.setImageBitmap(sbagliato);}
                         break;
                 }
-
+                if (i==4){
+                    mp = MediaPlayer.create(this,R.raw.giusto);
+                    immagine2.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.giusto));
+                    if(volume){ mp.start();}
+                    animaImmagineEsito();
+                    restart();
+                }
 
                 break;
 
@@ -235,51 +275,118 @@ public class Memory extends AppCompatActivity{
                         if (gioco.get(0)!= galleria.get(5)||gioco.get(0)!= galleria.get(4)){
                             img_1.setClickable(false);
                             img_1.setImageBitmap(giusto);
-                            as = true;}
+                            as = true;
+                            i++;
+                            img_1.setImageBitmap(sbagliato);}
                         break;
                     case R.id.img2:
                         if (gioco.get(1)!= galleria.get(5)||gioco.get(1)!= galleria.get(4)){
                             img_2.setClickable(false);
                             img_2.setImageBitmap(giusto);
-                            as = true;}
+                            as = true;
+                            i++;
+                            img_2.setImageBitmap(sbagliato);}
                         break;
                     case R.id.img3:
                         if (gioco.get(2)!= galleria.get(5)||gioco.get(2)!= galleria.get(4)){
                             img_3.setClickable(false);
                             img_3.setImageBitmap(giusto);
-                            as = true;}
+                            as = true;
+                            i++;
+                            img_3.setImageBitmap(sbagliato);}
                         break;
                     case R.id.img4:
                         if (gioco.get(3)!= galleria.get(5)||gioco.get(3)!= galleria.get(4)){
                             img_4.setClickable(false);
                             img_4.setImageBitmap(giusto);
-                            as = true;}
+                            as = true;
+                            i++;
+                            img_4.setImageBitmap(sbagliato);}
                         break;
                     case R.id.img5:
                         if (gioco.get(4)!= galleria.get(5)||gioco.get(4) != galleria.get(4)){
                             img_5.setClickable(false);
                             img_5.setImageBitmap(giusto);
-                            as = true;}
+                            as = true;
+                            i++;
+                            img_5.setImageBitmap(sbagliato);}
                         break;
                     case R.id.img6:
                         if (gioco.get(5) != galleria.get(5)||gioco.get(5) != galleria.get(4)){
                             img_6.setClickable(false);
                             img_6.setImageBitmap(giusto);
-                            as = true;}
+                            as = true;
+                            i++;
+                            img_6.setImageBitmap(sbagliato);}
                         break;
                 }
-
+                if (i==4){
+                    mp = MediaPlayer.create(this,R.raw.giusto);
+                    immagine2.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.giusto));
+                    if(volume){ mp.start();}
+                    animaImmagineEsito();
+                    restart();
+                }
                 break;
 
 
         }
-        if (as){
-            mp = MediaPlayer.create(this,R.raw.giusto);
-            immagine2.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.giusto));
-        }else {mp = MediaPlayer.create(this,R.raw.errore);
+
+      /*  else {mp = MediaPlayer.create(this,R.raw.errore);
             immagine2.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.sbaglio));}
-        if(volume){ mp.start();}
-        animaImmagineEsito();
+ */
+    }
+
+    public void restart(){
+        gioco.clear();
+        l++;
+        Collections.shuffle(galleria);
+        img_1.setImageBitmap(galleria.get(0));
+        img_2.setImageBitmap(galleria.get(1));
+        img_3.setImageBitmap(galleria.get(2));
+        img_4.setImageBitmap(galleria.get(3));
+        switch (d)
+        {
+            case FACILE:
+                img_1.setVisibility(View.VISIBLE);
+                img_2.setVisibility(View.VISIBLE);
+                img_3.setVisibility(View.VISIBLE);
+                img_4.setVisibility(View.INVISIBLE);
+                img_5.setVisibility(View.INVISIBLE);
+                img_6.setVisibility(View.INVISIBLE);
+                break;
+            case INTERMEDIO:
+                img_1.setVisibility(View.VISIBLE);
+                img_2.setVisibility(View.VISIBLE);
+                img_3.setVisibility(View.VISIBLE);
+                img_4.setVisibility(View.VISIBLE);
+                img_5.setImageBitmap(galleria.get(4));
+                gioco.add(galleria.get(4));
+                img_5.setVisibility(View.INVISIBLE);
+                img_6.setVisibility(View.INVISIBLE);
+                break;
+            case AVANZATO:
+                img_1.setVisibility(View.VISIBLE);
+                img_2.setVisibility(View.VISIBLE);
+                img_3.setVisibility(View.VISIBLE);
+                img_4.setVisibility(View.VISIBLE);
+                img_5.setImageBitmap(galleria.get(4));
+                img_6.setImageBitmap(galleria.get(5));
+                gioco.add(galleria.get(4));
+                gioco.add(galleria.get(5));
+                img_5.setVisibility(View.INVISIBLE);
+                img_6.setVisibility(View.INVISIBLE);
+                break;
+        }
+        Button b = findViewById(R.id.button);
+        b.setVisibility(View.VISIBLE);
+        b.setClickable(true);
+        Collections.shuffle(gioco);
+        if(l==5){
+            Intent intent= new Intent(Memory.this,Home.class);
+            startActivity(intent);
+            finish();
+        }
     }
 
     public void cambiaVolume(@NonNull View v)
@@ -308,6 +415,25 @@ public class Memory extends AppCompatActivity{
         {
             immagine2.animate().rotationY(270).setDuration(TEMPO);
         }
+       /* new Thread()
+        {
+            int sus = 0;
+            @Override
+            public void run()
+            {
+                if(sus==0) {
+                    immagine2.animate().rotationY(-270).setDuration(TEMPO);
+                }
+                sus++;
+                Log.d("hihihiha", "grr"+sus);
+            }
+        }.start();
+        try {
+            sleep(TEMPO);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        immagine2.setRotationY(90);*/
     }
 
     public void indietro(View v)
