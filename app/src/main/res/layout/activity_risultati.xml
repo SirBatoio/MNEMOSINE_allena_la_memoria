@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Risultati">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="583dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="88dp"
+        android:text="Punteggio: "
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        tools:layout_editor_absoluteX="349dp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toTopOf="@+id/textView4" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="351dp"
+        android:layout_height="355dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:srcCompat="@drawable/giusto" />
+
+    <Button
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/orange_500"
+        android:text="riprova"
+        app:cornerRadius="100dp"
+        tools:layout_editor_absoluteX="914dp"
+        tools:layout_editor_absoluteY="347dp" />
+
+    <Button
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:text="cambia gioco"
+        app:cornerRadius="100dp"
+        tools:layout_editor_absoluteX="914dp"
+        tools:layout_editor_absoluteY="447dp" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:text="Aumenta la difficoltà"
+        app:cornerRadius="100dp"
+        tools:layout_editor_absoluteX="914dp"
+        tools:layout_editor_absoluteY="536dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
