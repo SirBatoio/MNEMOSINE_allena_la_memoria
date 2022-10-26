@@ -183,7 +183,7 @@ public class Memory extends AppCompatActivity{
                         img_2.setClickable(false);
                     img_2.setImageBitmap(giusto);
                         as = true;
-                        i++;
+                        i++;}  else{
                         img_2.setImageBitmap(sbagliato);}
                     break;
                 case R.id.img3:
@@ -191,7 +191,7 @@ public class Memory extends AppCompatActivity{
                         img_3.setClickable(false);
                     img_3.setImageBitmap(giusto);
                         as = true;
-                        i++;
+                        i++;}  else{
                         img_3.setImageBitmap(sbagliato);}
                     break;
                 case R.id.img4:
@@ -199,7 +199,7 @@ public class Memory extends AppCompatActivity{
                         img_4.setClickable(false);
                     img_4.setImageBitmap(giusto);
                         as = true;
-                        i++;
+                        i++;}  else{
                         img_4.setImageBitmap(sbagliato);}
                     break;
 
@@ -221,7 +221,7 @@ public class Memory extends AppCompatActivity{
                             img_1.setClickable(false);
                         img_1.setImageBitmap(giusto);
                             as = true;
-                            i++;
+                            i++;}  else{
                             img_1.setImageBitmap(sbagliato);}
                         break;
                     case R.id.img2:
@@ -229,7 +229,7 @@ public class Memory extends AppCompatActivity{
                             img_2.setClickable(false);
                         img_2.setImageBitmap(giusto);
                             as = true;
-                            i++;
+                            i++;}  else{
                             img_2.setImageBitmap(sbagliato);}
                         break;
                     case R.id.img3:
@@ -237,7 +237,7 @@ public class Memory extends AppCompatActivity{
                             img_3.setClickable(false);
                         img_3.setImageBitmap(giusto);
                             as = true;
-                            i++;
+                            i++;}  else{
                             img_3.setImageBitmap(sbagliato);}
                         break;
                     case R.id.img4:
@@ -245,7 +245,7 @@ public class Memory extends AppCompatActivity{
                             img_4.setClickable(false);
                         img_4.setImageBitmap(giusto);
                             as = true;
-                            i++;
+                            i++;}  else{
                             img_4.setImageBitmap(sbagliato);}
                         break;
                     case R.id.img5:
@@ -253,7 +253,7 @@ public class Memory extends AppCompatActivity{
                             img_5.setClickable(false);
                         img_5.setImageBitmap(giusto);
                             as = true;
-                            i++;
+                            i++;}  else{
                             img_5.setImageBitmap(sbagliato);}
                         break;
                 }
@@ -276,7 +276,7 @@ public class Memory extends AppCompatActivity{
                             img_1.setClickable(false);
                             img_1.setImageBitmap(giusto);
                             as = true;
-                            i++;
+                            i++;}  else{
                             img_1.setImageBitmap(sbagliato);}
                         break;
                     case R.id.img2:
@@ -284,7 +284,7 @@ public class Memory extends AppCompatActivity{
                             img_2.setClickable(false);
                             img_2.setImageBitmap(giusto);
                             as = true;
-                            i++;
+                            i++;}  else{
                             img_2.setImageBitmap(sbagliato);}
                         break;
                     case R.id.img3:
@@ -292,7 +292,7 @@ public class Memory extends AppCompatActivity{
                             img_3.setClickable(false);
                             img_3.setImageBitmap(giusto);
                             as = true;
-                            i++;
+                            i++;}  else{
                             img_3.setImageBitmap(sbagliato);}
                         break;
                     case R.id.img4:
@@ -300,7 +300,7 @@ public class Memory extends AppCompatActivity{
                             img_4.setClickable(false);
                             img_4.setImageBitmap(giusto);
                             as = true;
-                            i++;
+                            i++;}  else{
                             img_4.setImageBitmap(sbagliato);}
                         break;
                     case R.id.img5:
@@ -308,7 +308,7 @@ public class Memory extends AppCompatActivity{
                             img_5.setClickable(false);
                             img_5.setImageBitmap(giusto);
                             as = true;
-                            i++;
+                            i++;}  else{
                             img_5.setImageBitmap(sbagliato);}
                         break;
                     case R.id.img6:
@@ -316,7 +316,7 @@ public class Memory extends AppCompatActivity{
                             img_6.setClickable(false);
                             img_6.setImageBitmap(giusto);
                             as = true;
-                            i++;
+                            i++;}  else{
                             img_6.setImageBitmap(sbagliato);}
                         break;
                 }
@@ -338,6 +338,7 @@ public class Memory extends AppCompatActivity{
     }
 
     public void restart(){
+       i=0;
         gioco.clear();
         l++;
         Collections.shuffle(galleria);
@@ -378,6 +379,8 @@ public class Memory extends AppCompatActivity{
                 img_6.setVisibility(View.INVISIBLE);
                 break;
         }
+        gioco.add(galleria.get(0)); gioco.add(galleria.get(1));
+        gioco.add(galleria.get(2)); gioco.add(galleria.get(3));
         Button b = findViewById(R.id.button);
         b.setVisibility(View.VISIBLE);
         b.setClickable(true);
