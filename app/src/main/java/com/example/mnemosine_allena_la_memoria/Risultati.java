@@ -18,7 +18,7 @@ public class Risultati extends AppCompatActivity {
         testo=findViewById(R.id.testoRisultati);
         punteggio=findViewById(R.id.punteggio);
 
-        if(punti_totalizzati/punti_massimi>=0.5f)
+        if((float)punti_totalizzati/(float)punti_massimi>=0.5f)
         {
             testo.setText("Bravo");
         }

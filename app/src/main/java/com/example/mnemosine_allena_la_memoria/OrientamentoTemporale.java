@@ -240,7 +240,6 @@ public class OrientamentoTemporale extends AppCompatActivity {
             startActivity(intent2);
             Risultati.setPunti_totalizzati(pt_totalizzati);
             Risultati.setPunti_massimi(pt_max);
-            //wait(500)
             finish();
         }
     }
