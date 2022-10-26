@@ -154,7 +154,6 @@ public class Memory extends AppCompatActivity{
         switch (d) {
             case FACILE:
             switch (v.getId()) {
-
                 case R.id.img1:
                     if (cliccato != galleria.get(3))
                         img_1.setClickable(false);
