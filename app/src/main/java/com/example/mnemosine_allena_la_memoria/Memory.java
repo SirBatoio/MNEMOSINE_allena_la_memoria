@@ -22,7 +22,7 @@ public class Memory extends AppCompatActivity{
     private ArrayList<Bitmap> galleria = new ArrayList<>();
     private ArrayList<Bitmap> gioco = new ArrayList<>();
     private Bitmap banana,carro,elicottero,tigre,estate,inverno,volpe,melograno,leone,carota;
-    private Bitmap moto,pantera,lupo,gallina,mela,pera,primavera,quad,barca,camper,camion;
+    private Bitmap moto,pantera,lupo,gallina,mela,pera,primavera,quad,barca,camper,camion,giusto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +50,7 @@ public class Memory extends AppCompatActivity{
         barca=  (BitmapFactory.decodeResource(getResources(), R.drawable.barca));
         camper=  (BitmapFactory.decodeResource(getResources(), R.drawable.camper));
         camion=  (BitmapFactory.decodeResource(getResources(), R.drawable.camion));
+        giusto= (BitmapFactory.decodeResource(getResources(),R.drawable.giusto));
 
         galleria.add(banana); galleria.add(carro); galleria.add(elicottero);galleria.add(tigre);galleria.add(estate);galleria.add(inverno);galleria.add(volpe);galleria.add(melograno);galleria.add(leone);galleria.add(carota);galleria.add(moto);galleria.add(pantera);galleria.add(lupo);galleria.add(gallina);galleria.add(mela);galleria.add(pera);galleria.add(primavera);galleria.add(quad);galleria.add(barca);galleria.add(camion);galleria.add(camper);
         Collections.shuffle(galleria);
@@ -145,6 +146,112 @@ public class Memory extends AppCompatActivity{
                 img_5.setImageBitmap(gioco.get(4));
                 img_6.setImageBitmap(gioco.get(5));
                 break;
+        }
+    }
+
+
+    public void  click(View v){
+        Bitmap cliccato=v.getDrawingCache();
+        switch (d) {
+            case FACILE:
+            switch (v.getId()) {
+
+                case R.id.img1:
+                    if (cliccato != galleria.get(4))
+                        img_1.setClickable(false);
+                    img_1.setImageBitmap(giusto);
+                    break;
+                case R.id.img2:
+                    if (cliccato != galleria.get(4))
+                        img_2.setClickable(false);
+                    img_2.setImageBitmap(giusto);
+                    break;
+                case R.id.img3:
+                    if (cliccato != galleria.get(4))
+                        img_3.setClickable(false);
+                    img_3.setImageBitmap(giusto);
+                    break;
+                case R.id.img4:
+                    if (cliccato != galleria.get(4))
+                        img_4.setClickable(false);
+                    img_4.setImageBitmap(giusto);
+                    break;
+
+            }
+        break;
+
+            case INTERMEDIO:
+                switch (v.getId()) {
+
+                    case R.id.img1:
+                        if (cliccato != galleria.get(5)){
+                            img_1.setClickable(false);
+                        img_1.setImageBitmap(giusto);}
+                        break;
+                    case R.id.img2:
+                        if (cliccato != galleria.get(5)){
+                            img_2.setClickable(false);
+                        img_2.setImageBitmap(giusto);}
+                        break;
+                    case R.id.img3:
+                        if (cliccato != galleria.get(5)){
+                            img_3.setClickable(false);
+                        img_3.setImageBitmap(giusto);}
+                        break;
+                    case R.id.img4:
+                        if (cliccato != galleria.get(5)){
+                            img_4.setClickable(false);
+                        img_4.setImageBitmap(giusto);}
+                        break;
+                    case R.id.img5:
+                        if (cliccato != galleria.get(5)){
+                            img_5.setClickable(false);
+                        img_5.setImageBitmap(giusto);}
+                        break;
+                }
+
+
+                break;
+
+
+            case AVANZATO:
+                switch (v.getId()) {
+
+                    case R.id.img1:
+                        if (cliccato != galleria.get(5)||cliccato != galleria.get(6)){
+                            img_1.setClickable(false);
+                            img_1.setImageBitmap(giusto);}
+                        break;
+                    case R.id.img2:
+                        if (cliccato != galleria.get(5)||cliccato != galleria.get(6)){
+                            img_2.setClickable(false);
+                            img_2.setImageBitmap(giusto);}
+                        break;
+                    case R.id.img3:
+                        if (cliccato != galleria.get(5)||cliccato != galleria.get(6)){
+                            img_3.setClickable(false);
+                            img_3.setImageBitmap(giusto);}
+                        break;
+                    case R.id.img4:
+                        if (cliccato != galleria.get(5)||cliccato != galleria.get(6)){
+                            img_4.setClickable(false);
+                            img_4.setImageBitmap(giusto);}
+                        break;
+                    case R.id.img5:
+                        if (cliccato != galleria.get(5)||cliccato != galleria.get(6)){
+                            img_5.setClickable(false);
+                            img_5.setImageBitmap(giusto);}
+                        break;
+                    case R.id.img6:
+                        if (cliccato != galleria.get(5)||cliccato != galleria.get(6)){
+                            img_6.setClickable(false);
+                            img_6.setImageBitmap(giusto);}
+                        break;
+                }
+
+                break;
+
+
         }
     }
 
