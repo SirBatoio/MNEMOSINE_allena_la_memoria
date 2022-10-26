@@ -156,22 +156,22 @@ public class Memory extends AppCompatActivity{
             switch (v.getId()) {
 
                 case R.id.img1:
-                    if (cliccato != galleria.get(4))
+                    if (cliccato != galleria.get(3))
                         img_1.setClickable(false);
                     img_1.setImageBitmap(giusto);
                     break;
                 case R.id.img2:
-                    if (cliccato != galleria.get(4))
+                    if (cliccato != galleria.get(3))
                         img_2.setClickable(false);
                     img_2.setImageBitmap(giusto);
                     break;
                 case R.id.img3:
-                    if (cliccato != galleria.get(4))
+                    if (cliccato != galleria.get(3))
                         img_3.setClickable(false);
                     img_3.setImageBitmap(giusto);
                     break;
                 case R.id.img4:
-                    if (cliccato != galleria.get(4))
+                    if (cliccato != galleria.get(3))
                         img_4.setClickable(false);
                     img_4.setImageBitmap(giusto);
                     break;
@@ -183,27 +183,27 @@ public class Memory extends AppCompatActivity{
                 switch (v.getId()) {
 
                     case R.id.img1:
-                        if (cliccato != galleria.get(5)){
+                        if (cliccato != galleria.get(4)){
                             img_1.setClickable(false);
                         img_1.setImageBitmap(giusto);}
                         break;
                     case R.id.img2:
-                        if (cliccato != galleria.get(5)){
+                        if (cliccato != galleria.get(4)){
                             img_2.setClickable(false);
                         img_2.setImageBitmap(giusto);}
                         break;
                     case R.id.img3:
-                        if (cliccato != galleria.get(5)){
+                        if (cliccato != galleria.get(4)){
                             img_3.setClickable(false);
                         img_3.setImageBitmap(giusto);}
                         break;
                     case R.id.img4:
-                        if (cliccato != galleria.get(5)){
+                        if (cliccato != galleria.get(4)){
                             img_4.setClickable(false);
                         img_4.setImageBitmap(giusto);}
                         break;
                     case R.id.img5:
-                        if (cliccato != galleria.get(5)){
+                        if (cliccato != galleria.get(4)){
                             img_5.setClickable(false);
                         img_5.setImageBitmap(giusto);}
                         break;
@@ -217,32 +217,32 @@ public class Memory extends AppCompatActivity{
                 switch (v.getId()) {
 
                     case R.id.img1:
-                        if (cliccato != galleria.get(5)||cliccato != galleria.get(6)){
+                        if (cliccato != galleria.get(5)||cliccato != galleria.get(4)){
                             img_1.setClickable(false);
                             img_1.setImageBitmap(giusto);}
                         break;
                     case R.id.img2:
-                        if (cliccato != galleria.get(5)||cliccato != galleria.get(6)){
+                        if (cliccato != galleria.get(5)||cliccato != galleria.get(4)){
                             img_2.setClickable(false);
                             img_2.setImageBitmap(giusto);}
                         break;
                     case R.id.img3:
-                        if (cliccato != galleria.get(5)||cliccato != galleria.get(6)){
+                        if (cliccato != galleria.get(5)||cliccato != galleria.get(4)){
                             img_3.setClickable(false);
                             img_3.setImageBitmap(giusto);}
                         break;
                     case R.id.img4:
-                        if (cliccato != galleria.get(5)||cliccato != galleria.get(6)){
+                        if (cliccato != galleria.get(5)||cliccato != galleria.get(4)){
                             img_4.setClickable(false);
                             img_4.setImageBitmap(giusto);}
                         break;
                     case R.id.img5:
-                        if (cliccato != galleria.get(5)||cliccato != galleria.get(6)){
+                        if (cliccato != galleria.get(5)||cliccato != galleria.get(4)){
                             img_5.setClickable(false);
                             img_5.setImageBitmap(giusto);}
                         break;
                     case R.id.img6:
-                        if (cliccato != galleria.get(5)||cliccato != galleria.get(6)){
+                        if (cliccato != galleria.get(5)||cliccato != galleria.get(4)){
                             img_6.setClickable(false);
                             img_6.setImageBitmap(giusto);}
                         break;
