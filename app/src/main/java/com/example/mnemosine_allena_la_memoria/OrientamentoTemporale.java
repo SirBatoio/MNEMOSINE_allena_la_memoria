@@ -113,6 +113,11 @@ public class OrientamentoTemporale extends AppCompatActivity {
         //animaImmagineEsito();
         Intent intent= new Intent(OrientamentoTemporale.this, Animazioni.class);
         startActivity(intent);
+        try {
+            sleep(20);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         Animazioni.spin(true, volume);
         try {
             sleep(1000);
