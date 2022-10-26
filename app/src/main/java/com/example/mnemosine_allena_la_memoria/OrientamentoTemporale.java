@@ -34,6 +34,7 @@ public class OrientamentoTemporale extends AppCompatActivity {
     private boolean volume=true;
     private static final long TEMPO = 2000;
     private int i=-1, l=10, tentativi=2;
+    private int pt_totalizzati=0, pt_max;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +63,8 @@ public class OrientamentoTemporale extends AppCompatActivity {
         riempiDomande();
 
         aumentaLivello();
+
+        pt_max=l;
     }
 
     public void Controllo(@NonNull View v) {
@@ -71,6 +74,7 @@ public class OrientamentoTemporale extends AppCompatActivity {
             mp = MediaPlayer.create(this,R.raw.giusto);
             esito.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.giusto));
             aumentaLivello();
+            pt_totalizzati++;
         }
         else
         {
@@ -78,6 +82,7 @@ public class OrientamentoTemporale extends AppCompatActivity {
             esito.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.sbaglio));
             premuto.setBackgroundColor(0xFFE91E63);
             tentativi--;
+            pt_max++;
             if(tentativi==1)
             {
                 animaImmagineEsito();
@@ -105,7 +110,7 @@ public class OrientamentoTemporale extends AppCompatActivity {
 
         listaRisposte.clear();
 
-        if(i!=l) {
+        if(i!=l-1) {
             switch (domande.get(i).getTesto())
             {
                 case "Stagione":
@@ -231,8 +236,11 @@ public class OrientamentoTemporale extends AppCompatActivity {
         }
         else
         {
-            Intent intent2 = new Intent(OrientamentoTemporale.this, Home.class);
+            Intent intent2 = new Intent(OrientamentoTemporale.this, Risultati.class);
             startActivity(intent2);
+            Risultati.setPunti_totalizzati(pt_totalizzati);
+            Risultati.setPunti_massimi(pt_max);
+            //wait(500)
             finish();
         }
     }
