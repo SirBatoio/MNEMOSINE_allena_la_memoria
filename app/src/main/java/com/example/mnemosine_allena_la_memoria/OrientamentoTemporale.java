@@ -31,7 +31,7 @@ public class OrientamentoTemporale extends AppCompatActivity {
     private ArrayList<Bitmap> galleria = new ArrayList<>(), orologi = new ArrayList<>();
     private String domandaStagione;
     private boolean volume=true;
-    private static final long TEMPO = 2000;
+    //private static final long TEMPO = 2000;
     private int i=-1, l=10, tentativi=2;
 
     @Override

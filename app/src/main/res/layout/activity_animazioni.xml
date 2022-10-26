@@ -8,12 +8,22 @@
     tools:context=".Animazioni">
 
     <ImageView
-        android:id="@+id/esito"
+        android:id="@+id/esitoS"
         android:layout_width="350dp"
         android:layout_height="450dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:srcCompat="@drawable/sbaglio" />
+
+    <ImageView
+        android:id="@+id/esitoG"
+        android:layout_width="350dp"
+        android:layout_height="450dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/giusto" />
 </androidx.constraintlayout.widget.ConstraintLayout>

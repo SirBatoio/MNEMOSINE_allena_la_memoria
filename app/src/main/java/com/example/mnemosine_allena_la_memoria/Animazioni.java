@@ -4,15 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.widget.ImageView;
 
 public class Animazioni extends AppCompatActivity {
 
-    private static ImageView esito;
-    private static Bitmap immagineGiusto, immagineSbagliato;
+    private static ImageView esitoGiusto, esitoSbagliato;
     private static MediaPlayer playGiusto, playSbagliato;
     private static Activity activity;
 
@@ -21,11 +19,10 @@ public class Animazioni extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_animazioni);
 
-        esito=findViewById(R.id.esito);
-        esito.setRotationY(90);
-
-        immagineGiusto=BitmapFactory.decodeResource(getResources(), R.drawable.giusto);
-        immagineSbagliato=BitmapFactory.decodeResource(getResources(), R.drawable.sbaglio);
+        esitoGiusto=findViewById(R.id.esitoG);
+        esitoGiusto.setRotationY(90);
+        esitoSbagliato=findViewById(R.id.esitoS);
+        esitoSbagliato.setRotationY(90);
 
         playGiusto=MediaPlayer.create(this, R.raw.giusto);
         playSbagliato=MediaPlayer.create(this, R.raw.errore);
@@ -36,7 +33,7 @@ public class Animazioni extends AppCompatActivity {
     {
         if(giusto)
         {
-            esito.setImageBitmap(immagineGiusto);
+            esitoGiusto.animate().rotationY(-270).setDuration(1000);
             if (volume)
             {
                 playGiusto.start();
@@ -44,14 +41,12 @@ public class Animazioni extends AppCompatActivity {
         }
         else
         {
-            esito.setImageBitmap(immagineSbagliato);
+            esitoSbagliato.animate().rotationY(-270).setDuration(1000);
             if (volume)
             {
                 playSbagliato.start();
             }
         }
-
-        esito.animate().rotationY(-270).setDuration(1000);
     }
 
     public static void stop()

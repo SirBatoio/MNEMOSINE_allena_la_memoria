@@ -149,7 +149,6 @@ public class Memory extends AppCompatActivity{
         }
     }
 
-
     public void  click(View v){
         Bitmap cliccato=v.getDrawingCache();
         switch (d) {
