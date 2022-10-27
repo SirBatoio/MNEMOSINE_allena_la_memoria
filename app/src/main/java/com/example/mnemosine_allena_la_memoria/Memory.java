@@ -176,6 +176,8 @@ public class Memory extends AppCompatActivity{
                         i++;}
                     else{
                         img_1.setImageBitmap(sbagliato);
+                        mp = MediaPlayer.create(this,R.raw.errore);
+                        restart();
                     }
                     break;
                 case R.id.img2:
@@ -184,7 +186,9 @@ public class Memory extends AppCompatActivity{
                     img_2.setImageBitmap(giusto);
                         as = true;
                         i++;}  else{
-                        img_2.setImageBitmap(sbagliato);}
+                        img_2.setImageBitmap(sbagliato);
+                        mp = MediaPlayer.create(this,R.raw.errore);
+                        restart();}
                     break;
                 case R.id.img3:
                     if (gioco.get(2)!= galleria.get(3)){
@@ -192,7 +196,9 @@ public class Memory extends AppCompatActivity{
                     img_3.setImageBitmap(giusto);
                         as = true;
                         i++;}  else{
-                        img_3.setImageBitmap(sbagliato);}
+                        img_3.setImageBitmap(sbagliato);
+                        mp = MediaPlayer.create(this,R.raw.errore);
+                        restart();}
                     break;
                 case R.id.img4:
                     if (gioco.get(3)!= galleria.get(3)){
@@ -200,7 +206,9 @@ public class Memory extends AppCompatActivity{
                     img_4.setImageBitmap(giusto);
                         as = true;
                         i++;}  else{
-                        img_4.setImageBitmap(sbagliato);}
+                        img_4.setImageBitmap(sbagliato);
+                        mp = MediaPlayer.create(this,R.raw.errore);
+                        restart();}
                     break;
 
             }
@@ -222,7 +230,9 @@ public class Memory extends AppCompatActivity{
                         img_1.setImageBitmap(giusto);
                             as = true;
                             i++;}  else{
-                            img_1.setImageBitmap(sbagliato);}
+                            img_1.setImageBitmap(sbagliato);
+                            mp = MediaPlayer.create(this,R.raw.errore);
+                            restart();}
                         break;
                     case R.id.img2:
                         if (gioco.get(1)!= galleria.get(4)){
@@ -230,7 +240,9 @@ public class Memory extends AppCompatActivity{
                         img_2.setImageBitmap(giusto);
                             as = true;
                             i++;}  else{
-                            img_2.setImageBitmap(sbagliato);}
+                            img_2.setImageBitmap(sbagliato);
+                            mp = MediaPlayer.create(this,R.raw.errore);
+                            restart();}
                         break;
                     case R.id.img3:
                         if (gioco.get(2)!= galleria.get(4)){
@@ -238,7 +250,9 @@ public class Memory extends AppCompatActivity{
                         img_3.setImageBitmap(giusto);
                             as = true;
                             i++;}  else{
-                            img_3.setImageBitmap(sbagliato);}
+                            img_3.setImageBitmap(sbagliato);
+                            mp = MediaPlayer.create(this,R.raw.errore);
+                            restart();}
                         break;
                     case R.id.img4:
                         if (gioco.get(3)!= galleria.get(4)){
@@ -246,7 +260,9 @@ public class Memory extends AppCompatActivity{
                         img_4.setImageBitmap(giusto);
                             as = true;
                             i++;}  else{
-                            img_4.setImageBitmap(sbagliato);}
+                            img_4.setImageBitmap(sbagliato);
+                            mp = MediaPlayer.create(this,R.raw.errore);
+                            restart();}
                         break;
                     case R.id.img5:
                         if (gioco.get(4)!= galleria.get(4)){
@@ -254,7 +270,9 @@ public class Memory extends AppCompatActivity{
                         img_5.setImageBitmap(giusto);
                             as = true;
                             i++;}  else{
-                            img_5.setImageBitmap(sbagliato);}
+                            img_5.setImageBitmap(sbagliato);
+                            mp = MediaPlayer.create(this,R.raw.errore);
+                            restart();}
                         break;
                 }
                 if (i==4){
@@ -276,7 +294,8 @@ public class Memory extends AppCompatActivity{
                             img_1.setImageBitmap(giusto);
                             as = true;
                             i++;}  else{
-                            img_1.setImageBitmap(sbagliato);}
+                            img_1.setImageBitmap(sbagliato);
+                            mp = MediaPlayer.create(this,R.raw.errore);}
                         break;
                     case R.id.img2:
                         if (gioco.get(1)!= galleria.get(5)||gioco.get(1)!= galleria.get(4)){
@@ -284,7 +303,8 @@ public class Memory extends AppCompatActivity{
                             img_2.setImageBitmap(giusto);
                             as = true;
                             i++;}  else{
-                            img_2.setImageBitmap(sbagliato);}
+                            img_2.setImageBitmap(sbagliato);
+                            mp = MediaPlayer.create(this,R.raw.errore);}
                         break;
                     case R.id.img3:
                         if (gioco.get(2)!= galleria.get(5)||gioco.get(2)!= galleria.get(4)){
@@ -292,7 +312,8 @@ public class Memory extends AppCompatActivity{
                             img_3.setImageBitmap(giusto);
                             as = true;
                             i++;}  else{
-                            img_3.setImageBitmap(sbagliato);}
+                            img_3.setImageBitmap(sbagliato);
+                            mp = MediaPlayer.create(this,R.raw.errore);}
                         break;
                     case R.id.img4:
                         if (gioco.get(3)!= galleria.get(5)||gioco.get(3)!= galleria.get(4)){
@@ -300,7 +321,8 @@ public class Memory extends AppCompatActivity{
                             img_4.setImageBitmap(giusto);
                             as = true;
                             i++;}  else{
-                            img_4.setImageBitmap(sbagliato);}
+                            img_4.setImageBitmap(sbagliato);
+                            mp = MediaPlayer.create(this,R.raw.errore);}
                         break;
                     case R.id.img5:
                         if (gioco.get(4)!= galleria.get(5)||gioco.get(4) != galleria.get(4)){
@@ -308,7 +330,8 @@ public class Memory extends AppCompatActivity{
                             img_5.setImageBitmap(giusto);
                             as = true;
                             i++;}  else{
-                            img_5.setImageBitmap(sbagliato);}
+                            img_5.setImageBitmap(sbagliato);
+                            mp = MediaPlayer.create(this,R.raw.errore);}
                         break;
                     case R.id.img6:
                         if (gioco.get(5) != galleria.get(5)||gioco.get(5) != galleria.get(4)){
@@ -316,7 +339,8 @@ public class Memory extends AppCompatActivity{
                             img_6.setImageBitmap(giusto);
                             as = true;
                             i++;}  else{
-                            img_6.setImageBitmap(sbagliato);}
+                            img_6.setImageBitmap(sbagliato);
+                            mp = MediaPlayer.create(this,R.raw.errore);}
                         break;
                 }
                 if (i==4){
@@ -329,7 +353,7 @@ public class Memory extends AppCompatActivity{
                 break;
         }
 
-      /*  else {mp = MediaPlayer.create(this,R.raw.errore);
+      /*  else {
             immagine2.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.sbaglio));}
  */
     }

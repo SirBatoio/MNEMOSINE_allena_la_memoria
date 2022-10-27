@@ -43,6 +43,7 @@ public class Intruso extends AppCompatActivity {
     private scelte s=scelte.animali;
     private sceltemed sm=sceltemed.mammiferi;
     private sceltadff sd=sceltadff.canidi;
+    private int pt_totalizzati=0, pt_max;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -372,8 +373,11 @@ public class Intruso extends AppCompatActivity {
             mp = MediaPlayer.create(this,R.raw.giusto);
             immagine2.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.giusto));
             levelup();
+            pt_totalizzati++;
         }else {mp = MediaPlayer.create(this,R.raw.errore);
-            immagine2.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.sbaglio));}
+            immagine2.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.sbaglio));
+        pt_max++;
+        }
         if(volume){ mp.start();}
         animaImmagineEsito();
     }
@@ -384,8 +388,11 @@ public class Intruso extends AppCompatActivity {
 
             case FACILE:
                 if (i==6){
-                    Intent intent = new Intent(Intruso.this, Home.class);
+                    Intent intent = new Intent(Intruso.this, Risultati.class);
                     startActivity(intent);
+                    Risultati.setPunti_totalizzati(pt_totalizzati);
+                    Risultati.setPunti_massimi(pt_max);
+                    Risultati.setCls(Intruso.class);
                     finish();
                 }
                 switch (s) {
@@ -405,8 +412,11 @@ public class Intruso extends AppCompatActivity {
                 break;
             case INTERMEDIO:
                 if (i==8){
-                    Intent intent = new Intent(Intruso.this, Home.class);
+                    Intent intent = new Intent(Intruso.this, Risultati.class);
                     startActivity(intent);
+                    Risultati.setPunti_totalizzati(pt_totalizzati);
+                    Risultati.setPunti_massimi(pt_max);
+                    Risultati.setCls(Intruso.class);
                     finish();
                 }
                 switch (sm) {
@@ -429,8 +439,11 @@ public class Intruso extends AppCompatActivity {
                 break;
             case AVANZATO:
                 if (i==6){
-                    Intent intent = new Intent(Intruso.this, Home.class);
+                    Intent intent = new Intent(Intruso.this, Risultati.class);
                     startActivity(intent);
+                    Risultati.setPunti_totalizzati(pt_totalizzati);
+                    Risultati.setPunti_massimi(pt_max);
+                    Risultati.setCls(Intruso.class);
                     finish();
                 }
                 switch (sd) {
