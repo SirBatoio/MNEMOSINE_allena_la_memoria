@@ -79,6 +79,7 @@
         android:id="@+id/riprova"
         android:layout_width="325dp"
         android:layout_height="100dp"
+        android:onClick="riprova"
         android:text="riprova"
         app:cornerRadius="100dp"
         app:layout_constraintBottom_toTopOf="@+id/cambia"

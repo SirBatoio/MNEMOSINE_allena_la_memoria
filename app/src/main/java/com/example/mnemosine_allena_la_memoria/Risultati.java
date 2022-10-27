@@ -2,13 +2,17 @@ package com.example.mnemosine_allena_la_memoria;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 public class Risultati extends AppCompatActivity {
 
     private TextView testo, punteggio;
     private static int punti_totalizzati, punti_massimi;
+    private static Class cls;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +32,13 @@ public class Risultati extends AppCompatActivity {
         }
 
         punteggio.setText(punti_totalizzati+" / "+punti_massimi);
+    }
 
+    public void riprova(View v)
+    {
+        Intent intent = new Intent(Risultati.this, cls);
+        startActivity(intent);
+        finish();
     }
 
     public static void setPunti_totalizzati(int puntiTotalizzati) {
@@ -38,5 +48,10 @@ public class Risultati extends AppCompatActivity {
     public static void setPunti_massimi(int puntiMassimi)
     {
         punti_massimi = puntiMassimi;
+    }
+
+    public static void setCls(Class classe)
+    {
+        cls = classe;
     }
 }
