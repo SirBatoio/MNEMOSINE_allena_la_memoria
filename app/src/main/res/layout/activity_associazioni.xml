@@ -7,6 +7,39 @@
     tools:context=".Associazioni">
 
     <LinearLayout
+        android:id="@+id/menu_laterale"
+        android:layout_width="125dp"
+        android:layout_height="match_parent"
+        android:background="#3F51B5"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="36dp"
+            android:onClick="home"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/home" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="24dp"
+            android:onClick="indietro"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageView7"
+            app:srcCompat="@drawable/indietro" />
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/testi"
         android:layout_width="1152dp"
         android:layout_height="197dp"
@@ -17,8 +50,10 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/immagini"
-        app:layout_constraintStart_toEndOf="@+id/linearLayout2"
-        app:layout_constraintTop_toBottomOf="@+id/immagini">
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/menu_laterale"
+        app:layout_constraintTop_toBottomOf="@+id/immagini"
+        app:layout_constraintVertical_bias="0.46">
 
         <Space
             android:layout_width="wrap_content"
@@ -67,25 +102,35 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout3"
+        android:id="@+id/menu_sup"
         android:layout_width="1156dp"
         android:layout_height="115dp"
-        android:background="#2196F3"
-        android:orientation="vertical"
+        android:gravity="right"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="@+id/testi"
-        app:layout_constraintStart_toEndOf="@+id/linearLayout2"
-        app:layout_constraintTop_toTopOf="parent"></LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="125dp"
-        android:layout_height="match_parent"
-        android:background="#3F51B5"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/menu_laterale"
         app:layout_constraintTop_toTopOf="parent">
 
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="912dp"
+            android:layout_height="115dp"
+            android:gravity="center_vertical"
+            android:text="TextView" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="225dp"
+            android:layout_height="62dp"
+            android:layout_marginTop="-25dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:onClick="cambiaVolume"
+            android:text="volume ON"
+            android:textSize="25sp"
+            app:cornerRadius="100dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </LinearLayout>
 
     <LinearLayout
@@ -95,8 +140,8 @@
         android:background="#A1FFC107"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/linearLayout2"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+        app:layout_constraintStart_toEndOf="@+id/menu_laterale"
+        app:layout_constraintTop_toBottomOf="@+id/menu_sup">
 
         <LinearLayout
             android:id="@+id/top_left_layout"
