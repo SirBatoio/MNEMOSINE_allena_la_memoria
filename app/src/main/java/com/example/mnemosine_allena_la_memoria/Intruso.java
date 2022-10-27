@@ -105,6 +105,10 @@ public class Intruso extends AppCompatActivity {
         biruote.add(bici);biruote.add(moto);biruote.add(monopattino);
         quarute.add(quad);quarute.add(auto);quarute.add(camper);
         galleryredo(s);
+
+        
+
+
     }
 
    public void indietro(View v)

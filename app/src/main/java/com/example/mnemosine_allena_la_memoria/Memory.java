@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -32,8 +33,8 @@ public class Memory extends AppCompatActivity{
     private boolean   as;
     private MediaPlayer mp;
     private static final long TEMPO = 2000;
-    private int i,l=1;
-
+    private int i,l=1,j;
+    private TextView text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,6 +81,8 @@ public class Memory extends AppCompatActivity{
         img_5.setClickable(false);
         img_6.setClickable(false);
         immagine2=findViewById(R.id.immagine2);
+
+        text=findViewById(R.id.textView);
 
         img_1.setImageBitmap(galleria.get(0));
         img_2.setImageBitmap(galleria.get(1));
@@ -140,6 +143,8 @@ public class Memory extends AppCompatActivity{
         img_2.setImageBitmap(gioco.get(1));
         img_3.setImageBitmap(gioco.get(2));
         img_4.setImageBitmap(gioco.get(3));
+
+        text.setText("SELEZIONA LE IMMAGINI MOSTRATE IN PRECEDENZA");
 
         switch (d)
         {
@@ -213,6 +218,7 @@ public class Memory extends AppCompatActivity{
 
             }
                 if (i==3){
+                    j++;
                     mp = MediaPlayer.create(this,R.raw.giusto);
                     immagine2.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.giusto));
                     if(volume){ mp.start();}
@@ -276,6 +282,7 @@ public class Memory extends AppCompatActivity{
                         break;
                 }
                 if (i==4){
+                    j++;
                     mp = MediaPlayer.create(this,R.raw.giusto);
                     immagine2.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.giusto));
                     if(volume){ mp.start();}
@@ -345,6 +352,7 @@ public class Memory extends AppCompatActivity{
                         break;
                 }
                 if (i==4){
+                    j++;
                     mp = MediaPlayer.create(this,R.raw.giusto);
                     immagine2.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.giusto));
                     if(volume){ mp.start();}
@@ -355,7 +363,9 @@ public class Memory extends AppCompatActivity{
 
 
         }
-
+if (j==5){
+    Intent intent= new Intent()
+}
       /*  else {
             immagine2.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.sbaglio));}
  */
@@ -409,6 +419,7 @@ public class Memory extends AppCompatActivity{
         b.setVisibility(View.VISIBLE);
         b.setClickable(true);
         Collections.shuffle(gioco);
+        text.setText("MEMORIZZA LE SEGUENTI IMMAGINI");
         if(l==5){
             Intent intent= new Intent(Memory.this,Home.class);
             startActivity(intent);
