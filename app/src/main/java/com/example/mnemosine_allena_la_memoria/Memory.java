@@ -292,7 +292,6 @@ public class Memory extends AppCompatActivity{
 
                 break;
 
-
             case AVANZATO:
                 switch (v.getId()) {
 
@@ -360,8 +359,6 @@ public class Memory extends AppCompatActivity{
                     restart();
                 }
                 break;
-
-
         }
 if (j==5){
     Intent intent= new Intent()
