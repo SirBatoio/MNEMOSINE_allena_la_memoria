@@ -2,6 +2,7 @@ package com.example.mnemosine_allena_la_memoria;
 
 import android.content.ClipData;
 import android.content.ClipDescription;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.view.DragEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,9 +20,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Associazioni extends AppCompatActivity implements View.OnLongClickListener, View.OnDragListener {
 
-    private TextView parola_1;
-    private TextView parola_2;
-    private TextView parola_3;
+    private TextView parola_1,parola_2,parola_3;
+    private ImageView immagine_1,immagine_2,immagine_3;
 
     // Create a string for the TextView and Button label
     private static final String TEXTVIEW_TAG = "DRAG TEXT";
@@ -35,12 +36,20 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
         parola_2 = findViewById(R.id.nome_2);
         parola_3 = findViewById(R.id.nome_3);
 
+        immagine_1=findViewById(R.id.fig_1);
+        immagine_2=findViewById(R.id.fig_2);
+        immagine_3=findViewById(R.id.fig_3);
+
         // Sets the tag
         parola_1.setTag(TEXTVIEW_TAG);
         parola_2.setTag(TEXTVIEW_TAG);
         parola_3.setTag(TEXTVIEW_TAG);
 
         implementEvents();
+
+        immagine_1.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.banana));
+        immagine_2.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.carro));
+        immagine_3.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.elicottero));
     }
 
     //Implement long click and drag listener
