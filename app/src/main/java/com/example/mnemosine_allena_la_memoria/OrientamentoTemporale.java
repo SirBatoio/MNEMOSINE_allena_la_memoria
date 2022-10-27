@@ -111,7 +111,7 @@ public class OrientamentoTemporale extends AppCompatActivity {
 
         listaRisposte.clear();
 
-        if(i!=l-1) {
+        if(i!=l) {
             switch (domande.get(i).getTesto())
             {
                 case "Stagione":
