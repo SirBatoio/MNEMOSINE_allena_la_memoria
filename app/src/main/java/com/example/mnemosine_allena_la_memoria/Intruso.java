@@ -106,7 +106,7 @@ public class Intruso extends AppCompatActivity {
         quarute.add(quad);quarute.add(auto);quarute.add(camper);
         galleryredo(s);
 
-        
+
 
 
     }

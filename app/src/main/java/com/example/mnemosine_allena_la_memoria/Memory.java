@@ -361,7 +361,7 @@ public class Memory extends AppCompatActivity{
                 break;
         }
 if (j==5){
-    Intent intent= new Intent()
+    //Intent intent= new Intent();
 }
       /*  else {
             immagine2.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.sbaglio));}
