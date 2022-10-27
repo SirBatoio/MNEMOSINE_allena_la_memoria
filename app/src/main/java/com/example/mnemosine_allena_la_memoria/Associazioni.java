@@ -71,7 +71,6 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
         findViewById(R.id.top_right_layout).setOnDragListener(this);
     }
 
-
     // This is the method that the system calls when it dispatches a drag event to the
     // listener.
     @Override
