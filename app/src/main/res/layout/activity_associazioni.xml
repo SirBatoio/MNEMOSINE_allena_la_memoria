@@ -10,7 +10,6 @@
         android:id="@+id/menu_laterale"
         android:layout_width="125dp"
         android:layout_height="match_parent"
-        android:background="#3F51B5"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,19 +40,19 @@
 
     <LinearLayout
         android:id="@+id/testi"
-        android:layout_width="1152dp"
-        android:layout_height="197dp"
+        android:layout_width="1122dp"
+        android:layout_height="199dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="#9C27B0"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/immagini"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/menu_laterale"
         app:layout_constraintTop_toBottomOf="@+id/immagini"
-        app:layout_constraintVertical_bias="0.46">
+        app:layout_constraintVertical_bias="0.4">
 
         <Space
             android:layout_width="wrap_content"
@@ -103,8 +102,8 @@
 
     <LinearLayout
         android:id="@+id/menu_sup"
-        android:layout_width="1156dp"
-        android:layout_height="115dp"
+        android:layout_width="1138dp"
+        android:layout_height="108dp"
         android:gravity="right"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="@+id/testi"
@@ -122,8 +121,8 @@
             android:id="@+id/button2"
             android:layout_width="225dp"
             android:layout_height="62dp"
-            android:layout_marginTop="-25dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginTop="-27.5dp"
+            android:layout_marginEnd="2dp"
             android:gravity="center_horizontal|center_vertical"
             android:onClick="cambiaVolume"
             android:text="volume ON"
@@ -135,17 +134,18 @@
 
     <LinearLayout
         android:id="@+id/immagini"
-        android:layout_width="1163dp"
-        android:layout_height="432dp"
+        android:layout_width="1122dp"
+        android:layout_height="412dp"
         android:background="#A1FFC107"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/menu_laterale"
         app:layout_constraintTop_toBottomOf="@+id/menu_sup">
 
         <LinearLayout
             android:id="@+id/top_left_layout"
-            android:layout_width="383dp"
+            android:layout_width="374dp"
             android:layout_height="match_parent"
             android:background="#4CAF50"
             android:gravity="center_horizontal|top"
@@ -161,7 +161,7 @@
 
         <LinearLayout
             android:id="@+id/top_center_layout"
-            android:layout_width="388dp"
+            android:layout_width="374dp"
             android:layout_height="match_parent"
             android:background="#FF5722"
             android:gravity="center_horizontal|top"
