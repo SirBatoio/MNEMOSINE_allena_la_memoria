@@ -267,7 +267,6 @@ public class Memory extends AppCompatActivity{
 
                 break;
 
-
             case AVANZATO:
                 switch (v.getId()) {
 
@@ -328,8 +327,6 @@ public class Memory extends AppCompatActivity{
                     restart();
                 }
                 break;
-
-
         }
 
       /*  else {mp = MediaPlayer.create(this,R.raw.errore);
