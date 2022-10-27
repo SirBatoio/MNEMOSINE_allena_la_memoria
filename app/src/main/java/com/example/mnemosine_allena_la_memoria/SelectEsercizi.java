@@ -66,7 +66,7 @@ public class SelectEsercizi extends AppCompatActivity {
                 immagine.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.bussola));
                 esercizio_1.setVisibility(View.VISIBLE);
                 esercizio_1.setClickable(true);
-                esercizio_1.setBackgroundColor(0xFFBDB6B6);
+                esercizio_1.setText("Associazioni");
                 esercizio_2.setBackgroundColor(0xFFBDB6B6);
                 esercizio_3.setBackgroundColor(0xFFBDB6B6);
                 break;
@@ -90,6 +90,8 @@ public class SelectEsercizi extends AppCompatActivity {
                 switch(c)
                 {
                     case LINGUAGGIO:
+                        intent = new Intent(SelectEsercizi.this, Associazioni.class);
+                        startActivity(intent);
                         break;
                     case ATTENZIONE:
                         intent = new Intent(SelectEsercizi.this, Intruso.class);
