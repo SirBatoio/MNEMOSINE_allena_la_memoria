@@ -8,17 +8,17 @@
 
     <LinearLayout
         android:id="@+id/testi"
-        android:layout_width="1158dp"
-        android:layout_height="310dp"
+        android:layout_width="1152dp"
+        android:layout_height="197dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="#9C27B0"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout4"
+        app:layout_constraintEnd_toEndOf="@+id/immagini"
         app:layout_constraintStart_toEndOf="@+id/linearLayout2"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+        app:layout_constraintTop_toBottomOf="@+id/immagini">
 
         <Space
             android:layout_width="wrap_content"
@@ -89,9 +89,9 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout4"
-        android:layout_width="1152dp"
-        android:layout_height="350dp"
+        android:id="@+id/immagini"
+        android:layout_width="1163dp"
+        android:layout_height="432dp"
         android:background="#A1FFC107"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
