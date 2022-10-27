@@ -106,7 +106,7 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
                 // Applies a MAGENTA or any color tint to the View,
                 // Return true; the return value is ignored.
 
-                view.getBackground().setColorFilter(Color.MAGENTA, PorterDuff.Mode.SRC_IN);
+                view.getBackground().setColorFilter(Color.GREEN, PorterDuff.Mode.SRC_IN);
 
                 // Invalidate the view to force a redraw in the new tint
                 view.invalidate();
@@ -216,7 +216,6 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
 
         return true;
     }
-
 
     public void cambiaVolume(@NonNull View v)
     {
