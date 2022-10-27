@@ -84,7 +84,6 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
         findViewById(R.id.top_right_layout).setOnDragListener(this);
     }
 
-
     // This is the method that the system calls when it dispatches a drag event to the
     // listener.
     @Override
@@ -119,7 +118,7 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
                 // Applies a MAGENTA or any color tint to the View,
                 // Return true; the return value is ignored.
 
-                view.getBackground().setColorFilter(Color.MAGENTA, PorterDuff.Mode.SRC_IN);
+                view.getBackground().setColorFilter(Color.GREEN, PorterDuff.Mode.SRC_IN);
 
                 // Invalidate the view to force a redraw in the new tint
                 view.invalidate();
@@ -229,7 +228,6 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
 
         return true;
     }
-
 
     public void cambiaVolume(@NonNull View v)
     {
