@@ -2,6 +2,8 @@ package com.example.mnemosine_allena_la_memoria;
 
 import android.content.ClipData;
 import android.content.ClipDescription;
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
@@ -16,12 +18,17 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Associazioni extends AppCompatActivity implements View.OnLongClickListener, View.OnDragListener {
 
     private TextView parola_1,parola_2,parola_3;
     private ImageView immagine_1,immagine_2,immagine_3;
+    private boolean volume=true;
+    private Bitmap img1,img2,img3;
+
+
 
     // Create a string for the TextView and Button label
     private static final String TEXTVIEW_TAG = "DRAG TEXT";
@@ -209,4 +216,37 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
 
         return true;
     }
+
+
+    public void cambiaVolume(@NonNull View v)
+    {
+        Button b = findViewById(v.getId());
+        if(volume)
+        {
+            volume=false;
+            b.setText("VOLUME OFF");
+            b.setBackgroundColor(0xFF9E9E9E);
+        }
+        else
+        {
+            volume=true;
+            b.setText("VOLUME ON");
+            b.setBackgroundColor(0xFFFF9800);
+        }
+    }
+
+    public void indietro(View v)
+    {
+        Intent intent = new Intent(Associazioni.this,SelectEsercizi.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void home(View v)
+    {
+        Intent intent = new Intent(Associazioni.this,Home.class);
+        startActivity(intent);
+        finish();
+    }
+}
 }
