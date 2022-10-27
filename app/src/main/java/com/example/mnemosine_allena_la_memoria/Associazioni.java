@@ -196,7 +196,7 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
         );
 
         //Set view visibility to INVISIBLE as we are going to drag the view
-        view.setVisibility(View.INVISIBLE);
+        //view.setVisibility(View.INVISIBLE);
 
         return true;
     }
