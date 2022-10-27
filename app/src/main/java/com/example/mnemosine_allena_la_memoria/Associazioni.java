@@ -248,5 +248,5 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
         startActivity(intent);
         finish();
     }
-}
+
 }
