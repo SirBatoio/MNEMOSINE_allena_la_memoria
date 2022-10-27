@@ -103,12 +103,13 @@
             android:layout_width="383dp"
             android:layout_height="match_parent"
             android:background="#4CAF50"
+            android:gravity="center_horizontal|top"
             android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/fig_1"
-                android:layout_width="250dp"
-                android:layout_height="250dp"
+                android:layout_width="300dp"
+                android:layout_height="240dp"
                 android:layout_weight="1"
                 tools:srcCompat="@tools:sample/avatars" />
         </LinearLayout>
@@ -118,12 +119,13 @@
             android:layout_width="388dp"
             android:layout_height="match_parent"
             android:background="#FF5722"
+            android:gravity="center_horizontal|top"
             android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/fig_2"
-                android:layout_width="250dp"
-                android:layout_height="250dp"
+                android:layout_width="300dp"
+                android:layout_height="240dp"
                 android:layout_weight="1"
                 tools:srcCompat="@tools:sample/avatars" />
         </LinearLayout>
@@ -133,12 +135,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#FF9800"
+            android:gravity="center_horizontal|top"
             android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/fig_3"
-                android:layout_width="250dp"
-                android:layout_height="250dp"
+                android:layout_width="300dp"
+                android:layout_height="240dp"
                 android:layout_weight="1"
                 tools:srcCompat="@tools:sample/avatars" />
         </LinearLayout>
