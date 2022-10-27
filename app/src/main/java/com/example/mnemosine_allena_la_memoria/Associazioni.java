@@ -18,11 +18,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Associazioni extends AppCompatActivity implements View.OnLongClickListener, View.OnDragListener {
 
-   private TextView textView;
+    private TextView parola_1;
+    private TextView parola_2;
+    private TextView parola_3;
 
     // Create a string for the TextView and Button label
     private static final String TEXTVIEW_TAG = "DRAG TEXT";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,10 +31,14 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
         setContentView(R.layout.activity_associazioni);
 
         //find views by id
-        textView = findViewById(R.id.nome_1);
+        parola_1 = findViewById(R.id.nome_1);
+        parola_2 = findViewById(R.id.nome_2);
+        parola_3 = findViewById(R.id.nome_3);
 
         // Sets the tag
-        textView.setTag(TEXTVIEW_TAG);
+        parola_1.setTag(TEXTVIEW_TAG);
+        parola_2.setTag(TEXTVIEW_TAG);
+        parola_3.setTag(TEXTVIEW_TAG);
 
         implementEvents();
     }
@@ -41,9 +46,13 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
     //Implement long click and drag listener
     private void implementEvents() {
 
-        textView.setOnLongClickListener(this);
+        parola_1.setOnLongClickListener(this);
+        parola_2.setOnLongClickListener(this);
+        parola_3.setOnLongClickListener(this);
 
         findViewById(R.id.top_left_layout).setOnDragListener(this);
+        findViewById(R.id.top_center_layout).setOnDragListener(this);
+        findViewById(R.id.top_right_layout).setOnDragListener(this);
     }
 
 

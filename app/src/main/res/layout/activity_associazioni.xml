@@ -8,13 +8,15 @@
 
     <LinearLayout
         android:id="@+id/testi"
-        android:layout_width="1153dp"
-        android:layout_height="334dp"
+        android:layout_width="1158dp"
+        android:layout_height="310dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="#9C27B0"
         android:gravity="center"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout4"
         app:layout_constraintStart_toEndOf="@+id/linearLayout2"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
 
@@ -80,6 +82,7 @@
         android:layout_height="match_parent"
         android:background="#3F51B5"
         android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -111,6 +114,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/top_center_layout"
             android:layout_width="388dp"
             android:layout_height="match_parent"
             android:background="#FF5722"
@@ -125,6 +129,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/top_right_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#FF9800"
