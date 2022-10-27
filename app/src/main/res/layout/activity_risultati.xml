@@ -50,25 +50,13 @@
         app:srcCompat="@drawable/giusto" />
 
     <Button
-        android:id="@+id/aum_diff"
-        android:layout_width="325dp"
-        android:layout_height="130dp"
-        android:text="Aumenta la difficoltà"
-        app:cornerRadius="100dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.596"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/cambia"
-        app:layout_constraintVertical_bias="0.5" />
-
-    <Button
         android:id="@+id/cambia"
         android:layout_width="325dp"
         android:layout_height="100dp"
+        android:onClick="home"
         android:text="cambia gioco"
         app:cornerRadius="100dp"
-        app:layout_constraintBottom_toTopOf="@+id/aum_diff"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.596"
         app:layout_constraintStart_toEndOf="@+id/imageView"

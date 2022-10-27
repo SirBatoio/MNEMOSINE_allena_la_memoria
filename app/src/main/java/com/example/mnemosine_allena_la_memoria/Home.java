@@ -84,6 +84,10 @@ public class Home extends AppCompatActivity {
     {
         return diff;
     }
+    public static void setDiff(Difficoltà d)
+    {
+        diff = d;
+    }
 
     public static Campo getCampo()
     {

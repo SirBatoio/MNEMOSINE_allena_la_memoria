@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Switch;
 import android.widget.TextView;
 
 public class Risultati extends AppCompatActivity {
@@ -37,6 +38,13 @@ public class Risultati extends AppCompatActivity {
     public void riprova(View v)
     {
         Intent intent = new Intent(Risultati.this, cls);
+        startActivity(intent);
+        finish();
+    }
+
+    public void home(View v)
+    {
+        Intent intent = new Intent(Risultati.this, Home.class);
         startActivity(intent);
         finish();
     }
