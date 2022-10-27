@@ -64,6 +64,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:gravity="center"
             android:text="ciao" />
 
         <Space
@@ -77,6 +78,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:gravity="center"
             android:text="COME" />
 
         <Space
@@ -90,6 +92,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:gravity="center"
             android:text="va" />
 
         <Space
@@ -133,19 +136,18 @@
 
     <LinearLayout
         android:id="@+id/immagini"
-        android:layout_width="1122dp"
-        android:layout_height="412dp"
-        android:layout_marginStart="125dp"
+        android:layout_width="1119dp"
+        android:layout_height="377dp"
+        android:layout_marginStart="130dp"
         android:background="#A1FFC107"
         android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/menu_laterale"
+        app:layout_constraintEnd_toEndOf="@+id/testi"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/menu_sup">
 
         <LinearLayout
             android:id="@+id/top_left_layout"
-            android:layout_width="374dp"
+            android:layout_width="373dp"
             android:layout_height="match_parent"
             android:background="#A84CAF50"
             android:gravity="center_horizontal|top"
@@ -161,7 +163,7 @@
 
         <LinearLayout
             android:id="@+id/top_center_layout"
-            android:layout_width="374dp"
+            android:layout_width="373dp"
             android:layout_height="match_parent"
             android:background="#A8FF5722"
             android:gravity="center_horizontal|top"
@@ -177,7 +179,7 @@
 
         <LinearLayout
             android:id="@+id/top_right_layout"
-            android:layout_width="match_parent"
+            android:layout_width="373dp"
             android:layout_height="match_parent"
             android:background="#A8FF9800"
             android:gravity="center_horizontal|top"
