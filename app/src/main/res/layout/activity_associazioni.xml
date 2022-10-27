@@ -101,20 +101,20 @@
 
     <LinearLayout
         android:id="@+id/menu_sup"
-        android:layout_width="1138dp"
-        android:layout_height="108dp"
+        android:layout_width="1105dp"
+        android:layout_height="103dp"
         android:gravity="right"
         android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/immagini"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/menu_laterale"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/textView9"
-            android:layout_width="912dp"
+            android:layout_width="800dp"
             android:layout_height="115dp"
             android:gravity="center_vertical"
-            android:text="TextView" />
+            android:text="Trascina la parola sull'immagine corrispondente" />
 
         <Button
             android:id="@+id/button2"
@@ -135,11 +135,12 @@
         android:id="@+id/immagini"
         android:layout_width="1122dp"
         android:layout_height="412dp"
+        android:layout_marginStart="125dp"
         android:background="#A1FFC107"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/menu_laterale"
+        app:layout_constraintStart_toStartOf="@+id/menu_laterale"
         app:layout_constraintTop_toBottomOf="@+id/menu_sup">
 
         <LinearLayout
