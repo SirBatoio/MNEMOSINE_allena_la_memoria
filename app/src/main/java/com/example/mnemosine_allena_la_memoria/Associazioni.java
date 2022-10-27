@@ -26,7 +26,7 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
     private TextView parola_1,parola_2,parola_3;
     private ImageView immagine_1,immagine_2,immagine_3;
     private boolean volume=true;
-    private Bitmap img1,img2,img3;
+    private Bitmap primavera,estate,inverno,autunno,melagrana,patata,pantera,anguria,orologio,carota,bussola,camion,lupo,volpe;
 
 
 
@@ -53,10 +53,23 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
         parola_3.setTag(TEXTVIEW_TAG);
 
         implementEvents();
-
+        primavera=  (BitmapFactory.decodeResource(getResources(), R.drawable.primavera));
+        estate=  (BitmapFactory.decodeResource(getResources(), R.drawable.estate));
+        inverno=  (BitmapFactory.decodeResource(getResources(), R.drawable.inverno));
+        autunno=(BitmapFactory.decodeResource(getResources(), R.drawable.autunno));
+        melagrana=  (BitmapFactory.decodeResource(getResources(), R.drawable.melagrana));
         immagine_1.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.banana));
         immagine_2.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.carro));
         immagine_3.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.elicottero));
+        patata=   (BitmapFactory.decodeResource(getResources(), R.drawable.patata));
+        pantera=(BitmapFactory.decodeResource(getResources(), R.drawable.pantera));
+        anguria=(BitmapFactory.decodeResource(getResources(), R.drawable.anguria));
+        orologio=(BitmapFactory.decodeResource(getResources(), R.drawable.sette15));
+        carota= (BitmapFactory.decodeResource(getResources(), R.drawable.carota));
+        bussola=(BitmapFactory.decodeResource(getResources(), R.drawable.bussola));
+        camion=(BitmapFactory.decodeResource(getResources(), R.drawable.camion));
+        lupo=(BitmapFactory.decodeResource(getResources(), R.drawable.lupo));
+        volpe=(BitmapFactory.decodeResource(getResources(), R.drawable.volpe));
     }
 
     //Implement long click and drag listener
