@@ -42,7 +42,6 @@
         android:id="@+id/testi"
         android:layout_width="1122dp"
         android:layout_height="199dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="#9C27B0"
         android:gravity="center"
@@ -106,7 +105,7 @@
         android:layout_height="108dp"
         android:gravity="right"
         android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/testi"
+        app:layout_constraintEnd_toEndOf="@+id/immagini"
         app:layout_constraintStart_toEndOf="@+id/menu_laterale"
         app:layout_constraintTop_toTopOf="parent">
 
