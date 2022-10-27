@@ -107,8 +107,8 @@
 
             <ImageView
                 android:id="@+id/fig_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_weight="1"
                 tools:srcCompat="@tools:sample/avatars" />
         </LinearLayout>
@@ -122,8 +122,8 @@
 
             <ImageView
                 android:id="@+id/fig_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_weight="1"
                 tools:srcCompat="@tools:sample/avatars" />
         </LinearLayout>
@@ -137,8 +137,8 @@
 
             <ImageView
                 android:id="@+id/fig_3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_weight="1"
                 tools:srcCompat="@tools:sample/avatars" />
         </LinearLayout>
