@@ -59,6 +59,13 @@
             android:layout_weight="1" />
 
         <TextView
+            android:id="@+id/nome_4"
+            style="@style/Testo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
             android:id="@+id/nome_1"
             style="@style/Testo"
             android:layout_width="wrap_content"
@@ -67,7 +74,21 @@
             android:gravity="center"
             android:text="ciao" />
 
+        <TextView
+            android:id="@+id/nome_7"
+            style="@style/Testo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
         <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/nome_5"
+            style="@style/Testo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
@@ -81,7 +102,21 @@
             android:gravity="center"
             android:text="COME" />
 
+        <TextView
+            android:id="@+id/nome_8"
+            style="@style/Testo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
         <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/nome_6"
+            style="@style/Testo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
@@ -94,6 +129,13 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="va" />
+
+        <TextView
+            android:id="@+id/nome_9"
+            style="@style/Testo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
 
         <Space
             android:layout_width="wrap_content"

@@ -239,11 +239,11 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
                 view.invalidate();
 
                 // invoke getResult(), and displays what happened.
-                if (dragEvent.getResult())
+                /*if (dragEvent.getResult())
                     Toast.makeText(this, "The drop was handled.", Toast.LENGTH_SHORT).show();
 
                 else
-                    Toast.makeText(this, "The drop didn't work.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "The drop didn't work.", Toast.LENGTH_SHORT).show();*/
 
                 // returns true; the value is ignored.
                 return true;
