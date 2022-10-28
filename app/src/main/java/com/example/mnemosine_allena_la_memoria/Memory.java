@@ -25,6 +25,7 @@ import java.util.TimerTask;
 
 public class Memory extends AppCompatActivity{
 
+    private static final int LIV_MAX = 5;
     private boolean volume=true;
     private static final long TIME = 15;
     private Button b;
@@ -37,7 +38,7 @@ public class Memory extends AppCompatActivity{
     private boolean   as;
     private MediaPlayer mp;
     private static final long TEMPO = 2000;
-    private int i,l=1,j,x=0;
+    private int i,l=1,j,x=0, pt_totalizzati=0, pt_max;
     private TextView text, tempoRimanente;
     TimerTask timerTask;
     double time=TIME;
@@ -111,6 +112,7 @@ public class Memory extends AppCompatActivity{
                 img_4.setVisibility(View.INVISIBLE);
                 img_5.setVisibility(View.INVISIBLE);
                 img_6.setVisibility(View.INVISIBLE);
+                pt_max=3*LIV_MAX;
                 break;
             case INTERMEDIO:
                 img_1.setVisibility(View.VISIBLE);
@@ -121,6 +123,7 @@ public class Memory extends AppCompatActivity{
                 gioco.add(galleria.get(4));
                 img_5.setVisibility(View.INVISIBLE);
                 img_6.setVisibility(View.INVISIBLE);
+                pt_max=4*LIV_MAX;
                 b.setVisibility(View.INVISIBLE);
                 b.setClickable(false);
                 timer=new Timer();
@@ -139,6 +142,7 @@ public class Memory extends AppCompatActivity{
                 img_6.setVisibility(View.INVISIBLE);
                 b.setVisibility(View.INVISIBLE);
                 b.setClickable(false);
+                pt_max=4*LIV_MAX;
                 time=TIME*2/3;
                 timer=new Timer();
                 startTimer();
@@ -195,7 +199,8 @@ public class Memory extends AppCompatActivity{
                         img_1.setClickable(false);
                     img_1.setImageBitmap(giusto);
                         as = true;
-                        i++;}
+                        i++;
+                    }
                     else{
                         img_1.setImageBitmap(sbagliato);
                         errore();;
@@ -379,6 +384,7 @@ public class Memory extends AppCompatActivity{
         if(volume){ mp.start();}
         animaImmagineEsito();
         x++;
+        pt_max++;
         if(d!=Difficoltà.AVANZATO||x==2){
         restart();
         x=0;
@@ -387,6 +393,7 @@ public class Memory extends AppCompatActivity{
 
 
     public void restart(){
+        pt_totalizzati+=i;
        i=0;
         gioco.clear();
         l++;
@@ -441,9 +448,12 @@ public class Memory extends AppCompatActivity{
 
         Collections.shuffle(gioco);
         text.setText("MEMORIZZA LE SEGUENTI IMMAGINI");
-        if(l==5){
-            Intent intent= new Intent(Memory.this,Home.class);
+        if(l==LIV_MAX){
+            Intent intent= new Intent(Memory.this,Risultati.class);
             startActivity(intent);
+            Risultati.setPunti_massimi(pt_max);
+            Risultati.setPunti_totalizzati(pt_totalizzati);
+            Risultati.setCls(Memory.class);
             finish();
         }
     }
