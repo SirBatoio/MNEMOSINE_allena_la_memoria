@@ -236,6 +236,7 @@ public class Memory extends AppCompatActivity{
 
             }
                 if (i==3){
+
                     mp = MediaPlayer.create(this,R.raw.giusto);
                     immagine2.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.giusto));
                     if(volume){ mp.start();}
@@ -381,7 +382,6 @@ public class Memory extends AppCompatActivity{
         pt_max++;
         if(d!=Difficoltà.AVANZATO||x==2){
         restart();
-        x=0;
         }
     }
 
@@ -389,6 +389,7 @@ public class Memory extends AppCompatActivity{
     public void restart(){
         pt_totalizzati+=i;
        i=0;
+        x=0;
         gioco.clear();
         l++;
         time = TIME;
