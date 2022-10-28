@@ -363,6 +363,7 @@ public class Memory extends AppCompatActivity{
                         break;
                 }
                 if (i==4){
+
                     mp = MediaPlayer.create(this,R.raw.giusto);
                     immagine2.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.giusto));
                     if(volume){ mp.start();}
