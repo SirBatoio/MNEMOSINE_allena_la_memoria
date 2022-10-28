@@ -1,11 +1,14 @@
 package com.example.mnemosine_allena_la_memoria;
 
+import static java.lang.Thread.sleep;
+
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.Image;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -31,6 +34,7 @@ public class OrientamentoTemporale extends AppCompatActivity {
     private boolean volume=true;
     private static final long TEMPO = 2000;
     private int i=-1, l=10, tentativi=2;
+    private int pt_totalizzati=0, pt_max;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,16 +63,19 @@ public class OrientamentoTemporale extends AppCompatActivity {
         riempiDomande();
 
         aumentaLivello();
+
+        pt_max=l;
     }
 
     public void Controllo(@NonNull View v) {
         Button premuto = findViewById(v.getId());
-
         if (premuto.getText().toString().equals(domande.get(i).getRispostaGiusta()))
         {
             mp = MediaPlayer.create(this,R.raw.giusto);
             esito.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.giusto));
+            pt_totalizzati++;
             aumentaLivello();
+
         }
         else
         {
@@ -76,9 +83,11 @@ public class OrientamentoTemporale extends AppCompatActivity {
             esito.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.sbaglio));
             premuto.setBackgroundColor(0xFFE91E63);
             tentativi--;
+            pt_max++;
             if(tentativi==1)
             {
                 animaImmagineEsito();
+
                 listaRisposte.clear();
             }
         }
@@ -99,6 +108,7 @@ public class OrientamentoTemporale extends AppCompatActivity {
         }
 
         animaImmagineEsito();
+
         listaRisposte.clear();
 
         if(i!=l) {
@@ -227,8 +237,11 @@ public class OrientamentoTemporale extends AppCompatActivity {
         }
         else
         {
-            Intent intent = new Intent(OrientamentoTemporale.this, Home.class);
-            startActivity(intent);
+            Intent intent2 = new Intent(OrientamentoTemporale.this, Risultati.class);
+            startActivity(intent2);
+            Risultati.setPunti_totalizzati(pt_totalizzati);
+            Risultati.setPunti_massimi(pt_max);
+            Risultati.setCls(OrientamentoTemporale.class);
             finish();
         }
     }

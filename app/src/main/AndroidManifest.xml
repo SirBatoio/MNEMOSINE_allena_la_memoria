@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.mnemosine_allena_la_memoria">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
         android:allowBackup="true"
@@ -10,11 +9,30 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MNEMOSINE_allena_la_memoria">
         <activity
-            android:name=".Memory"
-            android:exported="false">
+            android:name=".Associazioni"
+            android:exported="false"
+            android:screenOrientation="landscape"  >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
+        </activity>
+        <activity
+            android:name=".Risultati"
+            android:exported="false"
+            android:screenOrientation="landscape">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value=""
+                />
+        </activity>
+        <activity
+            android:name=".Memory"
+            android:exported="false"
+            android:screenOrientation="landscape">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value=""
+               />
         </activity>
         <activity
             android:name=".Home"

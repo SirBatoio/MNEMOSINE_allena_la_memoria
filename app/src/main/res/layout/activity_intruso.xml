@@ -83,7 +83,7 @@
         style="@style/Testo"/>
 
     <ImageView
-        android:id="@+id/img2"
+        android:id="@+id/immagine2"
         android:layout_width="350dp"
         android:layout_height="450dp"
         app:layout_constraintBottom_toTopOf="@+id/Scelta_3"

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Associazioni">
+
+    <LinearLayout
+        android:id="@+id/menu_laterale"
+        android:layout_width="125dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="36dp"
+            android:onClick="home"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/home" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="24dp"
+            android:onClick="indietro"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageView7"
+            app:srcCompat="@drawable/indietro" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/testi"
+        android:layout_width="977dp"
+        android:layout_height="179dp"
+        android:layout_marginTop="8dp"
+        android:background="#1A9C27B0"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/menu_laterale"
+        app:layout_constraintTop_toBottomOf="@+id/immagini"
+        app:layout_constraintVertical_bias="0.4">
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/nome_1"
+            style="@style/Testo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="ciao" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/nome_2"
+            style="@style/Testo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="COME" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/nome_3"
+            style="@style/Testo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="va" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/menu_sup"
+        android:layout_width="1105dp"
+        android:layout_height="103dp"
+        android:gravity="right"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/menu_laterale"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="800dp"
+            android:layout_height="115dp"
+            android:gravity="center_vertical"
+            android:text="Trascina la parola sull'immagine corrispondente" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="225dp"
+            android:layout_height="62dp"
+            android:layout_marginTop="-27.5dp"
+            android:layout_marginEnd="2dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:onClick="cambiaVolume"
+            android:text="volume ON"
+            android:textSize="25sp"
+            app:cornerRadius="100dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/immagini"
+        android:layout_width="981dp"
+        android:layout_height="365dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="13dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/menu_sup"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/menu_sup">
+
+        <LinearLayout
+            android:id="@+id/top_left_layout"
+            android:layout_width="327dp"
+            android:layout_height="match_parent"
+            android:background="#1A00BCD4"
+            android:gravity="center_horizontal|top"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/fig_1"
+                android:layout_width="300dp"
+                android:layout_height="240dp"
+                android:layout_weight="1"
+                tools:srcCompat="@tools:sample/avatars" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/top_center_layout"
+            android:layout_width="327dp"
+            android:layout_height="match_parent"
+            android:background="#1AF44336"
+            android:gravity="center_horizontal|top"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/fig_2"
+                android:layout_width="300dp"
+                android:layout_height="240dp"
+                android:layout_weight="1"
+                tools:srcCompat="@tools:sample/avatars" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/top_right_layout"
+            android:layout_width="327dp"
+            android:layout_height="match_parent"
+            android:background="#1A4CAF50"
+            android:gravity="center_horizontal|top"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/fig_3"
+                android:layout_width="300dp"
+                android:layout_height="240dp"
+                android:layout_weight="1"
+                tools:srcCompat="@tools:sample/avatars" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
