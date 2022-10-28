@@ -21,12 +21,16 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 public class Associazioni extends AppCompatActivity implements View.OnLongClickListener, View.OnDragListener {
 
     private TextView parola_1,parola_2,parola_3;
     private ImageView immagine_1,immagine_2,immagine_3;
     private boolean volume=true;
-    private Bitmap primavera,estate,inverno,autunno,melagrana,patata,pantera,anguria,orologio,carota,bussola,camion,lupo,volpe;
+    private Immagine primavera,estate,inverno,autunno,melagrana,patata,pantera,anguria,orologio,carota,bussola,camion,lupo,volpe;
+    private ArrayList<Immagine> galleria;
 
 
 
@@ -53,23 +57,35 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
         parola_3.setTag(TEXTVIEW_TAG);
 
         implementEvents();
-        primavera=  (BitmapFactory.decodeResource(getResources(), R.drawable.primavera));
-        estate=  (BitmapFactory.decodeResource(getResources(), R.drawable.estate));
-        inverno=  (BitmapFactory.decodeResource(getResources(), R.drawable.inverno));
-        autunno=(BitmapFactory.decodeResource(getResources(), R.drawable.autunno));
-        melagrana=  (BitmapFactory.decodeResource(getResources(), R.drawable.melagrana));
-        immagine_1.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.banana));
-        immagine_2.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.carro));
-        immagine_3.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.elicottero));
-        patata=   (BitmapFactory.decodeResource(getResources(), R.drawable.patata));
-        pantera=(BitmapFactory.decodeResource(getResources(), R.drawable.pantera));
-        anguria=(BitmapFactory.decodeResource(getResources(), R.drawable.anguria));
-        orologio=(BitmapFactory.decodeResource(getResources(), R.drawable.sette15));
-        carota= (BitmapFactory.decodeResource(getResources(), R.drawable.carota));
-        bussola=(BitmapFactory.decodeResource(getResources(), R.drawable.bussola));
-        camion=(BitmapFactory.decodeResource(getResources(), R.drawable.camion));
-        lupo=(BitmapFactory.decodeResource(getResources(), R.drawable.lupo));
-        volpe=(BitmapFactory.decodeResource(getResources(), R.drawable.volpe));
+
+        primavera=  new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.primavera),"Primavera");
+        estate=  new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.estate), "Estate");
+        inverno=  new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.inverno), "Inverno");
+        autunno= new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.autunno), "Autunno");
+        melagrana= new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.melagrana), "Melagrana");
+        patata= new Immagine (BitmapFactory.decodeResource(getResources(), R.drawable.patata), "Patata");
+        pantera= new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.pantera), "Pantera");
+        anguria= new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.anguria), "Anguria");
+        orologio= new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.sette15), "Orologio");
+        carota= new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.carota), "Carota");
+        bussola= new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.bussola), "Bussola");
+        camion=new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.camion), "Camion");
+        lupo= new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.lupo),"Lupo");
+        volpe= new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.volpe),"Volpe");
+
+        galleria.add(primavera); galleria.add(estate); galleria.add(inverno); galleria.add(autunno);
+        galleria.add(melagrana); galleria.add(patata); galleria.add(pantera); galleria.add(anguria);
+        galleria.add(orologio); galleria.add(carota); galleria.add(bussola); galleria.add(camion);
+        galleria.add(lupo); galleria.add(volpe);
+
+        Collections.shuffle(galleria);
+
+        immagine_1.setImageBitmap(galleria.get(0).getImmagine());
+        immagine_2.setImageBitmap(galleria.get(1).getImmagine());
+        immagine_3.setImageBitmap(galleria.get(2).getImmagine());
+        parola_1.setText(galleria.get(0).getDescrizione());
+        parola_2.setText(galleria.get(1).getDescrizione());
+        parola_3.setText(galleria.get(2).getDescrizione());
     }
 
     //Implement long click and drag listener
