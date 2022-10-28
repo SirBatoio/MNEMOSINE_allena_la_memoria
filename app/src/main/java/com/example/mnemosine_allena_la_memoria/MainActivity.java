@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
     timer=new Timer();
-
+startTimer();
     }
 
     public void gioca(View v)
@@ -47,19 +47,28 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         time++;
-                        Log.d(gettimertext());
+                        Log.d("sss",gettimertext());
                     }
                 });
 
             }
         };
-    timer.scheduleAtFixedRate
+    timer.scheduleAtFixedRate(timerTask,0,1000);
+    }
+
+    public void stopTimer(){
+        timer.cancel();
+
     }
 
     public String gettimertext(){
         int raunded=(int) Math.round(time);
         int seconds=((raunded%86400)%3600)%60;
         return formatTime (seconds);
+    }
+
+    public String formatTime(int seconds){
+        return String.format("%02d",seconds);
     }
 
 }
