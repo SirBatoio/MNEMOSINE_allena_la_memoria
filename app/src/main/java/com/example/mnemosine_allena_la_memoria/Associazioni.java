@@ -193,9 +193,38 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
 
                 TextView tv = findViewById(v.getId());
                 Log.d("testo",String.valueOf(tv.getText()));
-                if(container.getId()==R.id.top_left_layout)
+                switch(container.getId())
                 {
-                    Log.d("cazzo","sì");
+                    case R.id.top_left_layout:
+                        if(tv.getText()==galleria.get(0).getDescrizione())
+                        {
+                            Log.d("GIUSTO","pepperepe");
+                        }
+                        else
+                        {
+                            Log.d("GIUSTO","non è vero");
+                        }
+                        break;
+                    case R.id.top_center_layout:
+                        if(tv.getText()==galleria.get(1).getDescrizione())
+                        {
+                            Log.d("GIUSTO","pepperepe");
+                        }
+                        else
+                        {
+                            Log.d("GIUSTO","non è vero");
+                        }
+                        break;
+                    case R.id.top_right_layout:
+                        if(tv.getText()==galleria.get(2).getDescrizione())
+                        {
+                            Log.d("GIUSTO","pepperepe");
+                        }
+                        else
+                        {
+                            Log.d("GIUSTO","non è vero");
+                        }
+                        break;
                 }
 
                 // Returns true. DragEvent.getResult() will return true.
