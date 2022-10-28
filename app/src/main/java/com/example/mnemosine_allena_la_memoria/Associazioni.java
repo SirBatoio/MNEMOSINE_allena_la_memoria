@@ -191,6 +191,8 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
                 container.addView(v); //Add the dragged view
                 v.setVisibility(View.VISIBLE);//finally set Visibility to VISIBLE
 
+                Log.d("AAAA", String.valueOf(view.getId()));
+
                 // Returns true. DragEvent.getResult() will return true.
                 return true;
 
@@ -208,7 +210,6 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
 
                 else
                     Toast.makeText(this, "The drop didn't work.", Toast.LENGTH_SHORT).show();
-
 
                 // returns true; the value is ignored.
                 return true;
