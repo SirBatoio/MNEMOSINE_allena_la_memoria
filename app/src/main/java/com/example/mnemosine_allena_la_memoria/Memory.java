@@ -37,7 +37,7 @@ public class Memory extends AppCompatActivity{
     private boolean   as;
     private MediaPlayer mp;
     private static final long TEMPO = 2000;
-    private int i,l=1,j;
+    private int i,l=1,j,x=0;
     private TextView text, tempoRimanente;
     TimerTask timerTask;
     double time=TIME;
@@ -198,8 +198,7 @@ public class Memory extends AppCompatActivity{
                         i++;}
                     else{
                         img_1.setImageBitmap(sbagliato);
-                        mp = MediaPlayer.create(this,R.raw.errore);
-                        restart();
+                        errore();;
                     }
                     break;
                 case R.id.img2:
@@ -209,8 +208,7 @@ public class Memory extends AppCompatActivity{
                         as = true;
                         i++;}  else{
                         img_2.setImageBitmap(sbagliato);
-                        mp = MediaPlayer.create(this,R.raw.errore);
-                        restart();}
+                        errore();}
                     break;
                 case R.id.img3:
                     if (gioco.get(2)!= galleria.get(3)){
@@ -219,8 +217,7 @@ public class Memory extends AppCompatActivity{
                         as = true;
                         i++;}  else{
                         img_3.setImageBitmap(sbagliato);
-                        mp = MediaPlayer.create(this,R.raw.errore);
-                        restart();}
+                        errore();}
                     break;
                 case R.id.img4:
                     if (gioco.get(3)!= galleria.get(3)){
@@ -229,8 +226,7 @@ public class Memory extends AppCompatActivity{
                         as = true;
                         i++;}  else{
                         img_4.setImageBitmap(sbagliato);
-                        mp = MediaPlayer.create(this,R.raw.errore);
-                        restart();}
+                        errore();}
                     break;
 
             }
@@ -254,8 +250,7 @@ public class Memory extends AppCompatActivity{
                             as = true;
                             i++;}  else{
                             img_1.setImageBitmap(sbagliato);
-                            mp = MediaPlayer.create(this,R.raw.errore);
-                            restart();}
+                            errore();}
                         break;
                     case R.id.img2:
                         if (gioco.get(1)!= galleria.get(4)){
@@ -264,8 +259,7 @@ public class Memory extends AppCompatActivity{
                             as = true;
                             i++;}  else{
                             img_2.setImageBitmap(sbagliato);
-                            mp = MediaPlayer.create(this,R.raw.errore);
-                            restart();}
+                            errore();}
                         break;
                     case R.id.img3:
                         if (gioco.get(2)!= galleria.get(4)){
@@ -274,8 +268,7 @@ public class Memory extends AppCompatActivity{
                             as = true;
                             i++;}  else{
                             img_3.setImageBitmap(sbagliato);
-                            mp = MediaPlayer.create(this,R.raw.errore);
-                            restart();}
+                            errore();}
                         break;
                     case R.id.img4:
                         if (gioco.get(3)!= galleria.get(4)){
@@ -284,8 +277,7 @@ public class Memory extends AppCompatActivity{
                             as = true;
                             i++;}  else{
                             img_4.setImageBitmap(sbagliato);
-                            mp = MediaPlayer.create(this,R.raw.errore);
-                            restart();}
+                            errore();}
                         break;
                     case R.id.img5:
                         if (gioco.get(4)!= galleria.get(4)){
@@ -294,8 +286,7 @@ public class Memory extends AppCompatActivity{
                             as = true;
                             i++;}  else{
                             img_5.setImageBitmap(sbagliato);
-                            mp = MediaPlayer.create(this,R.raw.errore);
-                            restart();}
+                            errore();}
                         break;
                 }
                 if (i==4){
@@ -313,58 +304,58 @@ public class Memory extends AppCompatActivity{
                 switch (v.getId()) {
 
                     case R.id.img1:
-                        if (gioco.get(0)!= galleria.get(5)||gioco.get(0)!= galleria.get(4)){
+                        if (gioco.get(0)!= galleria.get(5)&&gioco.get(0)!= galleria.get(4)){
                             img_1.setClickable(false);
                             img_1.setImageBitmap(giusto);
                             as = true;
                             i++;}  else{
                             img_1.setImageBitmap(sbagliato);
-                            mp = MediaPlayer.create(this,R.raw.errore);}
+                            errore();}
                         break;
                     case R.id.img2:
-                        if (gioco.get(1)!= galleria.get(5)||gioco.get(1)!= galleria.get(4)){
+                        if (gioco.get(1)!= galleria.get(5)&&gioco.get(1)!= galleria.get(4)){
                             img_2.setClickable(false);
                             img_2.setImageBitmap(giusto);
                             as = true;
                             i++;}  else{
                             img_2.setImageBitmap(sbagliato);
-                            mp = MediaPlayer.create(this,R.raw.errore);}
+                            errore();}
                         break;
                     case R.id.img3:
-                        if (gioco.get(2)!= galleria.get(5)||gioco.get(2)!= galleria.get(4)){
+                        if (gioco.get(2)!= galleria.get(5)&&gioco.get(2)!= galleria.get(4)){
                             img_3.setClickable(false);
                             img_3.setImageBitmap(giusto);
                             as = true;
                             i++;}  else{
                             img_3.setImageBitmap(sbagliato);
-                            mp = MediaPlayer.create(this,R.raw.errore);}
+                            errore();}
                         break;
                     case R.id.img4:
-                        if (gioco.get(3)!= galleria.get(5)||gioco.get(3)!= galleria.get(4)){
+                        if (gioco.get(3)!= galleria.get(5)&&gioco.get(3)!= galleria.get(4)){
                             img_4.setClickable(false);
                             img_4.setImageBitmap(giusto);
                             as = true;
                             i++;}  else{
                             img_4.setImageBitmap(sbagliato);
-                            mp = MediaPlayer.create(this,R.raw.errore);}
+                            errore();}
                         break;
                     case R.id.img5:
-                        if (gioco.get(4)!= galleria.get(5)||gioco.get(4) != galleria.get(4)){
+                        if (gioco.get(4)!= galleria.get(5)&&gioco.get(4) != galleria.get(4)){
                             img_5.setClickable(false);
                             img_5.setImageBitmap(giusto);
                             as = true;
                             i++;}  else{
                             img_5.setImageBitmap(sbagliato);
-                            mp = MediaPlayer.create(this,R.raw.errore);}
+                            errore();}
                         break;
                     case R.id.img6:
-                        if (gioco.get(5) != galleria.get(5)||gioco.get(5) != galleria.get(4)){
+                        if (gioco.get(5) != galleria.get(5)&&gioco.get(5) != galleria.get(4)){
                             img_6.setClickable(false);
                             img_6.setImageBitmap(giusto);
                             as = true;
                             i++;}  else{
                             img_6.setImageBitmap(sbagliato);
-                            mp = MediaPlayer.create(this,R.raw.errore);}
+                            errore();}
                         break;
                 }
                 if (i==4){
@@ -377,13 +368,23 @@ public class Memory extends AppCompatActivity{
                 }
                 break;
         }
-if (j==5){
-    //Intent intent= new Intent();
-}
-      /*  else {
+        /*  else {
             immagine2.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.sbaglio));}
  */
     }
+
+    public void errore(){
+        mp = MediaPlayer.create(this,R.raw.errore);
+        immagine2.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.sbaglio));
+        if(volume){ mp.start();}
+        animaImmagineEsito();
+        x++;
+        if(d!=Difficoltà.AVANZATO||x==2){
+        restart();
+        x=0;
+        }
+    }
+
 
     public void restart(){
        i=0;
