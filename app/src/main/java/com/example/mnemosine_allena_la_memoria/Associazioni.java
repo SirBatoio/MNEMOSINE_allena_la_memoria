@@ -191,7 +191,8 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
                 container.addView(v); //Add the dragged view
                 v.setVisibility(View.VISIBLE);//finally set Visibility to VISIBLE
 
-                Log.d("AAAA", String.valueOf(view.getId()));
+                TextView tv = findViewById(v.getId());
+                Log.d("testo",String.valueOf(tv.getText()));
 
                 // Returns true. DragEvent.getResult() will return true.
                 return true;
