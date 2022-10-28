@@ -63,7 +63,8 @@
             style="@style/Testo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/nome_1"
@@ -79,7 +80,8 @@
             style="@style/Testo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:gravity="center" />
 
         <Space
             android:layout_width="wrap_content"
@@ -91,7 +93,8 @@
             style="@style/Testo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/nome_2"
@@ -107,7 +110,8 @@
             style="@style/Testo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:gravity="center" />
 
         <Space
             android:layout_width="wrap_content"
@@ -119,7 +123,8 @@
             style="@style/Testo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/nome_3"
@@ -135,7 +140,8 @@
             style="@style/Testo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:gravity="center" />
 
         <Space
             android:layout_width="wrap_content"

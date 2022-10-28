@@ -26,7 +26,7 @@ import java.util.Collections;
 
 public class Associazioni extends AppCompatActivity implements View.OnLongClickListener, View.OnDragListener {
 
-    private TextView parola_1,parola_2,parola_3;
+    private TextView parola_1,parola_2,parola_3,parola_4,parola_5,parola_6,parola_7,parola_8,parola_9;
     private ImageView immagine_1,immagine_2,immagine_3;
     private boolean volume=true;
     private Immagine primavera,estate,inverno,autunno,melagrana,patata,pantera,anguria,orologio,carota,bussola,camion,lupo,volpe;
@@ -46,6 +46,12 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
         parola_1 = findViewById(R.id.nome_1);
         parola_2 = findViewById(R.id.nome_2);
         parola_3 = findViewById(R.id.nome_3);
+        parola_4 = findViewById(R.id.nome_4);
+        parola_5 = findViewById(R.id.nome_5);
+        parola_6 = findViewById(R.id.nome_6);
+        parola_7 = findViewById(R.id.nome_7);
+        parola_8 = findViewById(R.id.nome_8);
+        parola_9 = findViewById(R.id.nome_9);
 
         immagine_1=findViewById(R.id.fig_1);
         immagine_2=findViewById(R.id.fig_2);
@@ -192,13 +198,13 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
                 v.setVisibility(View.VISIBLE);//finally set Visibility to VISIBLE
 
                 TextView tv = findViewById(v.getId());
-                Log.d("testo",String.valueOf(tv.getText()));
                 switch(container.getId())
                 {
                     case R.id.top_left_layout:
                         if(tv.getText()==galleria.get(0).getDescrizione())
                         {
                             Log.d("GIUSTO","pepperepe");
+                            tv.setVisibility(View.GONE);
                         }
                         else
                         {
@@ -209,6 +215,7 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
                         if(tv.getText()==galleria.get(1).getDescrizione())
                         {
                             Log.d("GIUSTO","pepperepe");
+                            tv.setVisibility(View.GONE);
                         }
                         else
                         {
@@ -219,6 +226,7 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
                         if(tv.getText()==galleria.get(2).getDescrizione())
                         {
                             Log.d("GIUSTO","pepperepe");
+                            tv.setVisibility(View.GONE);
                         }
                         else
                         {
