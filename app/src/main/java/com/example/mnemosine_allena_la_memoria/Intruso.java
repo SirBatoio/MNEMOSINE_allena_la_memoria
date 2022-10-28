@@ -90,8 +90,9 @@ public class Intruso extends AppCompatActivity {
         Categoria monopattino = new Categoria(BitmapFactory.decodeResource(getResources(), R.drawable.monopattino),scelte.mezzitras,sceltemed.ruote,sceltadff.biruote);
         Categoria quad = new Categoria(BitmapFactory.decodeResource(getResources(), R.drawable.quad),scelte.mezzitras,sceltemed.ruote,sceltadff.quaruote);
         Categoria camper = new Categoria(BitmapFactory.decodeResource(getResources(), R.drawable.camper),scelte.mezzitras,sceltemed.ruote,sceltadff.quaruote);
+        Categoria melagrana=new Categoria(BitmapFactory.decodeResource(getResources(),R.drawable.melagrana),scelte.frutta,sceltemed.altro,sceltadff.altro);
 
-        fruit.add(mela); fruit.add(pera); fruit.add(banana);
+        fruit.add(mela); fruit.add(pera); fruit.add(banana);fruit.add(melagrana);
         vestiti.add(vestest); vestiti.add(vestaut); vestiti.add(vestinv);vestiti.add(vestprim);
         transp.add(bici); transp.add(auto); transp.add(barca);transp.add(moto);transp.add(camion);transp.add(elicottero);transp.add(carro);transp.add(monopattino);transp.add(quad);transp.add(camper);
         animal.add(cane); animal.add(gatto); animal.add(elefante);animal.add(struzzo);animal.add(airone);animal.add(serpente);animal.add(gallina);animal.add(leone);animal.add(pantera);animal.add(tigre);animal.add(lupo);animal.add(volpe);
