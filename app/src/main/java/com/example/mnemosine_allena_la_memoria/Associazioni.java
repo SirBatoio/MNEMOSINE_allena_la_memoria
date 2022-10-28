@@ -73,6 +73,7 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
         lupo= new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.lupo),"Lupo");
         volpe= new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.volpe),"Volpe");
 
+        galleria=new ArrayList<>();
         galleria.add(primavera); galleria.add(estate); galleria.add(inverno); galleria.add(autunno);
         galleria.add(melagrana); galleria.add(patata); galleria.add(pantera); galleria.add(anguria);
         galleria.add(orologio); galleria.add(carota); galleria.add(bussola); galleria.add(camion);
