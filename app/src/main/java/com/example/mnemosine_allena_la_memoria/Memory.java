@@ -26,6 +26,7 @@ import java.util.TimerTask;
 public class Memory extends AppCompatActivity{
 
     private boolean volume=true;
+    private static final long TIME = 15;
     private Button b;
     private Difficoltà d;
     private ImageView img_1, img_2, img_3, img_4, img_5, img_6,immagine2;
@@ -39,7 +40,7 @@ public class Memory extends AppCompatActivity{
     private int i,l=1,j;
     private TextView text, tempoRimanente;
     TimerTask timerTask;
-    double time=15.0;
+    double time=TIME;
     Timer timer;
 
     @Override
@@ -388,6 +389,7 @@ if (j==5){
        i=0;
         gioco.clear();
         l++;
+        time = TIME;
         Collections.shuffle(galleria);
         img_1.setImageBitmap(galleria.get(0));
         img_2.setImageBitmap(galleria.get(1));
@@ -402,6 +404,8 @@ if (j==5){
                 img_4.setVisibility(View.INVISIBLE);
                 img_5.setVisibility(View.INVISIBLE);
                 img_6.setVisibility(View.INVISIBLE);
+                b.setVisibility(View.VISIBLE);
+                b.setClickable(true);
                 break;
             case INTERMEDIO:
                 img_1.setVisibility(View.VISIBLE);
@@ -412,8 +416,6 @@ if (j==5){
                 gioco.add(galleria.get(4));
                 img_5.setVisibility(View.INVISIBLE);
                 img_6.setVisibility(View.INVISIBLE);
-                b.setVisibility(View.INVISIBLE);
-                b.setClickable(false);
                 timer=new Timer();
                 startTimer();
                 break;
@@ -428,16 +430,13 @@ if (j==5){
                 gioco.add(galleria.get(5));
                 img_5.setVisibility(View.INVISIBLE);
                 img_6.setVisibility(View.INVISIBLE);
-                b.setVisibility(View.INVISIBLE);
-                b.setClickable(false);
                 timer=new Timer();
                 startTimer();
                 break;
         }
         gioco.add(galleria.get(0)); gioco.add(galleria.get(1));
         gioco.add(galleria.get(2)); gioco.add(galleria.get(3));
-        b.setVisibility(View.VISIBLE);
-        b.setClickable(true);
+
         Collections.shuffle(gioco);
         text.setText("MEMORIZZA LE SEGUENTI IMMAGINI");
         if(l==5){
