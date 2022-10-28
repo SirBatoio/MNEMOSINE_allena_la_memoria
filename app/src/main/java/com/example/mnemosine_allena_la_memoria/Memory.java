@@ -139,7 +139,7 @@ public class Memory extends AppCompatActivity{
                 img_6.setVisibility(View.INVISIBLE);
                 b.setVisibility(View.INVISIBLE);
                 b.setClickable(false);
-                time=time*2/3;
+                time=TIME*2/3;
                 timer=new Timer();
                 startTimer();
                 break;
@@ -430,6 +430,7 @@ if (j==5){
                 gioco.add(galleria.get(5));
                 img_5.setVisibility(View.INVISIBLE);
                 img_6.setVisibility(View.INVISIBLE);
+                time=TIME*2/3;
                 timer=new Timer();
                 startTimer();
                 break;
