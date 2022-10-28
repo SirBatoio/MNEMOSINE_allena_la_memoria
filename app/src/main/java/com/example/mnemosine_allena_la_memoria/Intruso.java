@@ -15,22 +15,22 @@ import java.util.Collections;
 
 public class Intruso extends AppCompatActivity {
     private Difficoltà diff;
-    private ArrayList<Immagini> galleria = new ArrayList<>();
-    private ArrayList<Immagini> tut = new ArrayList<>();
-    private ArrayList<Immagini> animal = new ArrayList<>();
-    private ArrayList<Immagini> transp = new ArrayList<>();
-    private ArrayList<Immagini> fruit = new ArrayList<>();
-    private ArrayList<Immagini> vestiti = new ArrayList<>();
-    private ArrayList<Immagini> temp = new ArrayList<>();
-    private ArrayList<Immagini> ruote=new ArrayList<>();
-    private ArrayList<Immagini> noruote=new ArrayList<>();
-    private ArrayList<Immagini> veggie=new ArrayList<>();
-    private ArrayList<Immagini> mammiferi=new ArrayList<>();
-    private ArrayList<Immagini> ovipari=new ArrayList<>();
-    private ArrayList<Immagini> felini=new ArrayList<>();
-    private ArrayList<Immagini> canidi=new ArrayList<>();
-    private ArrayList<Immagini> biruote=new ArrayList<>();
-    private ArrayList<Immagini> quarute=new ArrayList<>();
+    private ArrayList<Categoria> galleria = new ArrayList<>();
+    private ArrayList<Categoria> tut = new ArrayList<>();
+    private ArrayList<Categoria> animal = new ArrayList<>();
+    private ArrayList<Categoria> transp = new ArrayList<>();
+    private ArrayList<Categoria> fruit = new ArrayList<>();
+    private ArrayList<Categoria> vestiti = new ArrayList<>();
+    private ArrayList<Categoria> temp = new ArrayList<>();
+    private ArrayList<Categoria> ruote=new ArrayList<>();
+    private ArrayList<Categoria> noruote=new ArrayList<>();
+    private ArrayList<Categoria> veggie=new ArrayList<>();
+    private ArrayList<Categoria> mammiferi=new ArrayList<>();
+    private ArrayList<Categoria> ovipari=new ArrayList<>();
+    private ArrayList<Categoria> felini=new ArrayList<>();
+    private ArrayList<Categoria> canidi=new ArrayList<>();
+    private ArrayList<Categoria> biruote=new ArrayList<>();
+    private ArrayList<Categoria> quarute=new ArrayList<>();
     private boolean volume=true;
     private ImageView Scelta_1;
     private ImageView Scelta_2;
@@ -58,38 +58,38 @@ public class Intruso extends AppCompatActivity {
         immagine2.animate().rotationY(90);
         galleria= new ArrayList<>();
 
-        Immagini mela = new Immagini(BitmapFactory.decodeResource(getResources(), R.drawable.mela),scelte.frutta,sceltemed.altro, sceltadff.altro);
-        Immagini pera = new Immagini(BitmapFactory.decodeResource(getResources(), R.drawable.pera),scelte.frutta,sceltemed.altro, sceltadff.altro);
-        Immagini banana = new Immagini(BitmapFactory.decodeResource(getResources(), R.drawable.banana),scelte.frutta,sceltemed.altro, sceltadff.altro);
-        Immagini patata = new Immagini(BitmapFactory.decodeResource(getResources(), R.drawable.patata),scelte.altro,sceltemed.ortaggi,sceltadff.altro);
-        Immagini rapa = new Immagini(BitmapFactory.decodeResource(getResources(), R.drawable.turnip),scelte.altro,sceltemed.ortaggi, sceltadff.altro);
-        Immagini carota = new Immagini(BitmapFactory.decodeResource(getResources(), R.drawable.carota),scelte.altro,sceltemed.ortaggi, sceltadff.altro);
-        Immagini bici = new Immagini(BitmapFactory.decodeResource(getResources(), R.drawable.bici),scelte.mezzitras,sceltemed.ruote,sceltadff.biruote);
-        Immagini auto = new Immagini(BitmapFactory.decodeResource(getResources(), R.drawable.auto),scelte.mezzitras,sceltemed.ruote,sceltadff.quaruote);
-        Immagini barca = new Immagini(BitmapFactory.decodeResource(getResources(), R.drawable.barca),scelte.mezzitras,sceltemed.noruote,sceltadff.altro);
-        Immagini cane = new Immagini(BitmapFactory.decodeResource(getResources(), R.drawable.cane),scelte.animali,sceltemed.mammiferi,sceltadff.canidi);
-        Immagini gatto = new Immagini(BitmapFactory.decodeResource(getResources(), R.drawable.gatto),scelte.animali,sceltemed.mammiferi,sceltadff.felini);
-        Immagini elefante = new Immagini(BitmapFactory.decodeResource(getResources(), R.drawable.elefante),scelte.animali,sceltemed.mammiferi,sceltadff.altro);
-        Immagini vestaut = new Immagini(BitmapFactory.decodeResource(getResources(),R.drawable.vestito_autunnale),scelte.vestiti,sceltemed.altro,sceltadff.altro);
-        Immagini vestinv = new Immagini(BitmapFactory.decodeResource(getResources(),R.drawable.vestito_invernale),scelte.vestiti,sceltemed.altro,sceltadff.altro);
-        Immagini vestest = new Immagini(BitmapFactory.decodeResource(getResources(),R.drawable.vestito_estivo),scelte.vestiti,sceltemed.altro,sceltadff.altro);
-        Immagini vestprim = new Immagini(BitmapFactory.decodeResource(getResources(),R.drawable.vestito_primaverile),scelte.vestiti,sceltemed.altro,sceltadff.altro);
-        Immagini moto = new Immagini(BitmapFactory.decodeResource(getResources(), R.drawable.moto),scelte.mezzitras,sceltemed.ruote,sceltadff.biruote);
-        Immagini camion = new Immagini(BitmapFactory.decodeResource(getResources(), R.drawable.camion),scelte.mezzitras,sceltemed.ruote,sceltadff.altro);
-        Immagini carro = new Immagini(BitmapFactory.decodeResource(getResources(), R.drawable.carro),scelte.mezzitras,sceltemed.noruote,sceltadff.altro);
-        Immagini elicottero = new Immagini(BitmapFactory.decodeResource(getResources(), R.drawable.elicottero),scelte.mezzitras,sceltemed.noruote,sceltadff.altro);
-        Immagini struzzo = new Immagini(BitmapFactory.decodeResource(getResources(), R.drawable.struzzo),scelte.animali,sceltemed.ovipari,sceltadff.altro);
-        Immagini airone = new Immagini(BitmapFactory.decodeResource(getResources(), R.drawable.airone),scelte.animali,sceltemed.ovipari,sceltadff.altro);
-        Immagini serpente = new Immagini(BitmapFactory.decodeResource(getResources(), R.drawable.serpente),scelte.animali,sceltemed.ovipari,sceltadff.altro);
-        Immagini gallina = new Immagini(BitmapFactory.decodeResource(getResources(), R.drawable.gallina),scelte.animali,sceltemed.ovipari,sceltadff.altro);
-        Immagini leone = new Immagini(BitmapFactory.decodeResource(getResources(), R.drawable.leone),scelte.animali,sceltemed.mammiferi,sceltadff.felini);
-        Immagini pantera = new Immagini(BitmapFactory.decodeResource(getResources(), R.drawable.pantera),scelte.animali,sceltemed.mammiferi,sceltadff.felini);
-        Immagini tigre = new Immagini(BitmapFactory.decodeResource(getResources(), R.drawable.tigre),scelte.animali,sceltemed.mammiferi,sceltadff.felini);
-        Immagini lupo = new Immagini(BitmapFactory.decodeResource(getResources(), R.drawable.lupo),scelte.animali,sceltemed.mammiferi,sceltadff.canidi);
-        Immagini volpe = new Immagini(BitmapFactory.decodeResource(getResources(), R.drawable.volpe),scelte.animali,sceltemed.mammiferi,sceltadff.canidi);
-        Immagini monopattino = new Immagini(BitmapFactory.decodeResource(getResources(), R.drawable.monopattino),scelte.mezzitras,sceltemed.ruote,sceltadff.biruote);
-        Immagini quad = new Immagini(BitmapFactory.decodeResource(getResources(), R.drawable.quad),scelte.mezzitras,sceltemed.ruote,sceltadff.quaruote);
-        Immagini camper = new Immagini(BitmapFactory.decodeResource(getResources(), R.drawable.camper),scelte.mezzitras,sceltemed.ruote,sceltadff.quaruote);
+        Categoria mela = new Categoria(BitmapFactory.decodeResource(getResources(), R.drawable.mela),scelte.frutta,sceltemed.altro, sceltadff.altro);
+        Categoria pera = new Categoria(BitmapFactory.decodeResource(getResources(), R.drawable.pera),scelte.frutta,sceltemed.altro, sceltadff.altro);
+        Categoria banana = new Categoria(BitmapFactory.decodeResource(getResources(), R.drawable.banana),scelte.frutta,sceltemed.altro, sceltadff.altro);
+        Categoria patata = new Categoria(BitmapFactory.decodeResource(getResources(), R.drawable.patata),scelte.altro,sceltemed.ortaggi,sceltadff.altro);
+        Categoria rapa = new Categoria(BitmapFactory.decodeResource(getResources(), R.drawable.turnip),scelte.altro,sceltemed.ortaggi, sceltadff.altro);
+        Categoria carota = new Categoria(BitmapFactory.decodeResource(getResources(), R.drawable.carota),scelte.altro,sceltemed.ortaggi, sceltadff.altro);
+        Categoria bici = new Categoria(BitmapFactory.decodeResource(getResources(), R.drawable.bici),scelte.mezzitras,sceltemed.ruote,sceltadff.biruote);
+        Categoria auto = new Categoria(BitmapFactory.decodeResource(getResources(), R.drawable.auto),scelte.mezzitras,sceltemed.ruote,sceltadff.quaruote);
+        Categoria barca = new Categoria(BitmapFactory.decodeResource(getResources(), R.drawable.barca),scelte.mezzitras,sceltemed.noruote,sceltadff.altro);
+        Categoria cane = new Categoria(BitmapFactory.decodeResource(getResources(), R.drawable.cane),scelte.animali,sceltemed.mammiferi,sceltadff.canidi);
+        Categoria gatto = new Categoria(BitmapFactory.decodeResource(getResources(), R.drawable.gatto),scelte.animali,sceltemed.mammiferi,sceltadff.felini);
+        Categoria elefante = new Categoria(BitmapFactory.decodeResource(getResources(), R.drawable.elefante),scelte.animali,sceltemed.mammiferi,sceltadff.altro);
+        Categoria vestaut = new Categoria(BitmapFactory.decodeResource(getResources(),R.drawable.vestito_autunnale),scelte.vestiti,sceltemed.altro,sceltadff.altro);
+        Categoria vestinv = new Categoria(BitmapFactory.decodeResource(getResources(),R.drawable.vestito_invernale),scelte.vestiti,sceltemed.altro,sceltadff.altro);
+        Categoria vestest = new Categoria(BitmapFactory.decodeResource(getResources(),R.drawable.vestito_estivo),scelte.vestiti,sceltemed.altro,sceltadff.altro);
+        Categoria vestprim = new Categoria(BitmapFactory.decodeResource(getResources(),R.drawable.vestito_primaverile),scelte.vestiti,sceltemed.altro,sceltadff.altro);
+        Categoria moto = new Categoria(BitmapFactory.decodeResource(getResources(), R.drawable.moto),scelte.mezzitras,sceltemed.ruote,sceltadff.biruote);
+        Categoria camion = new Categoria(BitmapFactory.decodeResource(getResources(), R.drawable.camion),scelte.mezzitras,sceltemed.ruote,sceltadff.altro);
+        Categoria carro = new Categoria(BitmapFactory.decodeResource(getResources(), R.drawable.carro),scelte.mezzitras,sceltemed.noruote,sceltadff.altro);
+        Categoria elicottero = new Categoria(BitmapFactory.decodeResource(getResources(), R.drawable.elicottero),scelte.mezzitras,sceltemed.noruote,sceltadff.altro);
+        Categoria struzzo = new Categoria(BitmapFactory.decodeResource(getResources(), R.drawable.struzzo),scelte.animali,sceltemed.ovipari,sceltadff.altro);
+        Categoria airone = new Categoria(BitmapFactory.decodeResource(getResources(), R.drawable.airone),scelte.animali,sceltemed.ovipari,sceltadff.altro);
+        Categoria serpente = new Categoria(BitmapFactory.decodeResource(getResources(), R.drawable.serpente),scelte.animali,sceltemed.ovipari,sceltadff.altro);
+        Categoria gallina = new Categoria(BitmapFactory.decodeResource(getResources(), R.drawable.gallina),scelte.animali,sceltemed.ovipari,sceltadff.altro);
+        Categoria leone = new Categoria(BitmapFactory.decodeResource(getResources(), R.drawable.leone),scelte.animali,sceltemed.mammiferi,sceltadff.felini);
+        Categoria pantera = new Categoria(BitmapFactory.decodeResource(getResources(), R.drawable.pantera),scelte.animali,sceltemed.mammiferi,sceltadff.felini);
+        Categoria tigre = new Categoria(BitmapFactory.decodeResource(getResources(), R.drawable.tigre),scelte.animali,sceltemed.mammiferi,sceltadff.felini);
+        Categoria lupo = new Categoria(BitmapFactory.decodeResource(getResources(), R.drawable.lupo),scelte.animali,sceltemed.mammiferi,sceltadff.canidi);
+        Categoria volpe = new Categoria(BitmapFactory.decodeResource(getResources(), R.drawable.volpe),scelte.animali,sceltemed.mammiferi,sceltadff.canidi);
+        Categoria monopattino = new Categoria(BitmapFactory.decodeResource(getResources(), R.drawable.monopattino),scelte.mezzitras,sceltemed.ruote,sceltadff.biruote);
+        Categoria quad = new Categoria(BitmapFactory.decodeResource(getResources(), R.drawable.quad),scelte.mezzitras,sceltemed.ruote,sceltadff.quaruote);
+        Categoria camper = new Categoria(BitmapFactory.decodeResource(getResources(), R.drawable.camper),scelte.mezzitras,sceltemed.ruote,sceltadff.quaruote);
 
         fruit.add(mela); fruit.add(pera); fruit.add(banana);
         vestiti.add(vestest); vestiti.add(vestaut); vestiti.add(vestinv);vestiti.add(vestprim);
@@ -105,9 +105,6 @@ public class Intruso extends AppCompatActivity {
         biruote.add(bici);biruote.add(moto);biruote.add(monopattino);
         quarute.add(quad);quarute.add(auto);quarute.add(camper);
         galleryredo(s);
-
-
-
 
     }
 

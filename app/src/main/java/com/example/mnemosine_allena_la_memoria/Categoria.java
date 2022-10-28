@@ -2,7 +2,7 @@ package com.example.mnemosine_allena_la_memoria;
 
 import android.graphics.Bitmap;
 
-public class Immagini {
+public class Categoria {
     private Bitmap img;
     private scelte possibilita;
     private sceltemed probabilita;
@@ -25,7 +25,7 @@ public class Immagini {
         this.possibilita = possibilita;
     }
 
-    public Immagini(Bitmap img, scelte possibilita, sceltemed probabilita, sceltadff fato) {
+    public Categoria(Bitmap img, scelte possibilita, sceltemed probabilita, sceltadff fato) {
         this.img = img;
         this.possibilita = possibilita;
         this.probabilita=probabilita;
