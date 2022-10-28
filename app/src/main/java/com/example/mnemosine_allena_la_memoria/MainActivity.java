@@ -17,18 +17,18 @@ import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
 
-    TimerTask timerTask;
+    /*TimerTask timerTask;
     double time=0.0;
-    Timer timer;
+    Timer timer;*/
 
     private ArrayList<Button> pulsanti = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+/*
     timer=new Timer();
-startTimer();
+startTimer();*/
     }
 
     public void gioca(View v)
@@ -37,7 +37,7 @@ startTimer();
         startActivity(intent);
         finish();
     }
-
+/*Codice timer, messo qui perché si
     public void startTimer(){
         timerTask=new TimerTask() {
             @Override
@@ -68,6 +68,6 @@ startTimer();
 
     public String formatTime(int seconds){
         return String.format("%02d",seconds);
-    }
+    }*/
 
 }
