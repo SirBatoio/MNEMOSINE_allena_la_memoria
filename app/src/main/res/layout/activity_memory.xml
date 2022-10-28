@@ -147,7 +147,7 @@
         android:id="@+id/button"
         android:layout_width="250dp"
         android:layout_height="100dp"
-        android:layout_marginEnd="52dp"
+        android:layout_marginEnd="32dp"
         android:backgroundTint="@color/green"
         android:onClick="avanti"
         android:text="avanti >"
