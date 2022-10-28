@@ -20,10 +20,13 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class Memory extends AppCompatActivity{
 
     private boolean volume=true;
+    private Button b;
     private Difficoltà d;
     private ImageView img_1, img_2, img_3, img_4, img_5, img_6,immagine2;
     private ArrayList<Bitmap> galleria = new ArrayList<>();
@@ -35,6 +38,11 @@ public class Memory extends AppCompatActivity{
     private static final long TEMPO = 2000;
     private int i,l=1,j;
     private TextView text;
+
+    private double tempo=15.0;
+    TimerTask timerTask;
+    double time=0.0;
+    Timer timer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +91,7 @@ public class Memory extends AppCompatActivity{
         immagine2=findViewById(R.id.immagine2);
 
         text=findViewById(R.id.textView);
+        b = findViewById(R.id.button);
 
         img_1.setImageBitmap(galleria.get(0));
         img_2.setImageBitmap(galleria.get(1));
@@ -112,7 +121,10 @@ public class Memory extends AppCompatActivity{
                 gioco.add(galleria.get(4));
                 img_5.setVisibility(View.INVISIBLE);
                 img_6.setVisibility(View.INVISIBLE);
-                break;
+                b.setVisibility(View.INVISIBLE);
+                b.setClickable(false);
+                startTimer();
+            break;
             case AVANZATO:
                 img_1.setVisibility(View.VISIBLE);
                 img_2.setVisibility(View.VISIBLE);
@@ -124,6 +136,10 @@ public class Memory extends AppCompatActivity{
                 gioco.add(galleria.get(5));
                 img_5.setVisibility(View.INVISIBLE);
                 img_6.setVisibility(View.INVISIBLE);
+                b.setVisibility(View.INVISIBLE);
+                b.setClickable(false);
+                tempo=tempo*2/3;
+                startTimer();
                 break;
         }
         Collections.shuffle(gioco);
@@ -131,7 +147,6 @@ public class Memory extends AppCompatActivity{
 
     public void avanti(View v)
     {
-        Button b = findViewById(R.id.button);
         b.setVisibility(View.INVISIBLE);
         b.setClickable(false);
         img_1.setClickable(true);
@@ -412,7 +427,6 @@ if (j==5){
         }
         gioco.add(galleria.get(0)); gioco.add(galleria.get(1));
         gioco.add(galleria.get(2)); gioco.add(galleria.get(3));
-        Button b = findViewById(R.id.button);
         b.setVisibility(View.VISIBLE);
         b.setClickable(true);
         Collections.shuffle(gioco);
@@ -422,6 +436,43 @@ if (j==5){
             startActivity(intent);
             finish();
         }
+    }
+
+    public void startTimer(){
+        timerTask=new TimerTask() {
+            @Override
+            public void run() {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        time++;
+                        Log.d("sss",gettimertext());
+                        if(time==tempo)
+                        {
+                            avanti(b);
+                            stopTimer();
+                        }
+                    }
+                });
+
+            }
+        };
+        timer.scheduleAtFixedRate(timerTask,0,1000);
+    }
+
+    public void stopTimer(){
+        timer.cancel();
+
+    }
+
+    public String gettimertext(){
+        int raunded=(int) Math.round(time);
+        int seconds=((raunded%86400)%3600)%60;
+        return formatTime (seconds);
+    }
+
+    public String formatTime(int seconds){
+        return String.format("%02d",seconds);
     }
 
     public void cambiaVolume(@NonNull View v)
@@ -450,25 +501,6 @@ if (j==5){
         {
             immagine2.animate().rotationY(270).setDuration(TEMPO);
         }
-       /* new Thread()
-        {
-            int sus = 0;
-            @Override
-            public void run()
-            {
-                if(sus==0) {
-                    immagine2.animate().rotationY(-270).setDuration(TEMPO);
-                }
-                sus++;
-                Log.d("hihihiha", "grr"+sus);
-            }
-        }.start();
-        try {
-            sleep(TEMPO);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        immagine2.setRotationY(90);*/
     }
 
     public void indietro(View v)

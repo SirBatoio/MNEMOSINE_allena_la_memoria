@@ -38,7 +38,6 @@ startTimer();
         finish();
     }
 
-
     public void startTimer(){
         timerTask=new TimerTask() {
             @Override
