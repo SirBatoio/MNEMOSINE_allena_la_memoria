@@ -38,7 +38,7 @@ public class Memory extends AppCompatActivity{
     private boolean   as;
     private MediaPlayer mp;
     private static final long TEMPO = 2000;
-    private int i,l=1,j,x=0, pt_totalizzati=0, pt_max;
+    private int i,l=1,x=0, pt_totalizzati=0, pt_max;
     private TextView text, tempoRimanente;
     TimerTask timerTask;
     double time=TIME;
@@ -236,7 +236,7 @@ public class Memory extends AppCompatActivity{
 
             }
                 if (i==3){
-                    j++;
+
                     mp = MediaPlayer.create(this,R.raw.giusto);
                     immagine2.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.giusto));
                     if(volume){ mp.start();}
@@ -295,7 +295,7 @@ public class Memory extends AppCompatActivity{
                         break;
                 }
                 if (i==4){
-                    j++;
+
                     mp = MediaPlayer.create(this,R.raw.giusto);
                     immagine2.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.giusto));
                     if(volume){ mp.start();}
@@ -364,7 +364,7 @@ public class Memory extends AppCompatActivity{
                         break;
                 }
                 if (i==4){
-                    j++;
+                
                     mp = MediaPlayer.create(this,R.raw.giusto);
                     immagine2.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.giusto));
                     if(volume){ mp.start();}
@@ -387,7 +387,6 @@ public class Memory extends AppCompatActivity{
         pt_max++;
         if(d!=Difficoltà.AVANZATO||x==2){
         restart();
-        x=0;
         }
     }
 
@@ -395,6 +394,7 @@ public class Memory extends AppCompatActivity{
     public void restart(){
         pt_totalizzati+=i;
        i=0;
+        x=0;
         gioco.clear();
         l++;
         time = TIME;
