@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
     double time=0.0;
     Timer timer;*/
 
-    private ArrayList<Button> pulsanti = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
