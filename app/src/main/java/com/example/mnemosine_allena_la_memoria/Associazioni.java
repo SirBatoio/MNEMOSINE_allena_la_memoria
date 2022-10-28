@@ -31,7 +31,7 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
     private boolean volume=true;
     private Immagine primavera,estate,inverno,autunno,melagrana,patata,pantera,anguria,orologio,carota,bussola,camion,lupo,volpe;
     private ArrayList<Immagine> galleria;
-
+    private ArrayList<String> gioco;
 
 
     // Create a string for the TextView and Button label
@@ -74,19 +74,23 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
         volpe= new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.volpe),"Volpe");
 
         galleria=new ArrayList<>();
+        gioco= new ArrayList<>();
         galleria.add(primavera); galleria.add(estate); galleria.add(inverno); galleria.add(autunno);
         galleria.add(melagrana); galleria.add(patata); galleria.add(pantera); galleria.add(anguria);
         galleria.add(orologio); galleria.add(carota); galleria.add(bussola); galleria.add(camion);
         galleria.add(lupo); galleria.add(volpe);
 
         Collections.shuffle(galleria);
+        gioco.add(galleria.get(0).getDescrizione());
+        gioco.add(galleria.get(1).getDescrizione());
+        gioco.add(galleria.get(2).getDescrizione());
 
         immagine_1.setImageBitmap(galleria.get(0).getImmagine());
         immagine_2.setImageBitmap(galleria.get(1).getImmagine());
         immagine_3.setImageBitmap(galleria.get(2).getImmagine());
-        parola_1.setText(galleria.get(0).getDescrizione());
-        parola_2.setText(galleria.get(1).getDescrizione());
-        parola_3.setText(galleria.get(2).getDescrizione());
+        parola_1.setText(gioco.get(0));
+        parola_2.setText(gioco.get(1));
+        parola_3.setText(gioco.get(2));
     }
 
     //Implement long click and drag listener
