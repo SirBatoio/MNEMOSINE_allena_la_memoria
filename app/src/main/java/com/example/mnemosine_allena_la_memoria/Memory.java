@@ -413,6 +413,8 @@ if (j==5){
                 gioco.add(galleria.get(4));
                 img_5.setVisibility(View.INVISIBLE);
                 img_6.setVisibility(View.INVISIBLE);
+                timer=new Timer();
+                startTimer();
                 break;
             case AVANZATO:
                 img_1.setVisibility(View.VISIBLE);
@@ -425,6 +427,8 @@ if (j==5){
                 gioco.add(galleria.get(5));
                 img_5.setVisibility(View.INVISIBLE);
                 img_6.setVisibility(View.INVISIBLE);
+                timer=new Timer();
+                startTimer();
                 break;
         }
         gioco.add(galleria.get(0)); gioco.add(galleria.get(1));
