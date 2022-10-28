@@ -84,6 +84,7 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
         gioco.add(galleria.get(0).getDescrizione());
         gioco.add(galleria.get(1).getDescrizione());
         gioco.add(galleria.get(2).getDescrizione());
+        Collections.shuffle(gioco);
 
         immagine_1.setImageBitmap(galleria.get(0).getImmagine());
         immagine_2.setImageBitmap(galleria.get(1).getImmagine());
