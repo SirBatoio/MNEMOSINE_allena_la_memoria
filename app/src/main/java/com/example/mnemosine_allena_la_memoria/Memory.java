@@ -37,11 +37,9 @@ public class Memory extends AppCompatActivity{
     private MediaPlayer mp;
     private static final long TEMPO = 2000;
     private int i,l=1,j;
-    private TextView text;
-
-    private double tempo=15.0;
+    private TextView text, tempoRimanente;
     TimerTask timerTask;
-    double time=0.0;
+    double time=15.0;
     Timer timer;
 
     @Override
@@ -91,6 +89,7 @@ public class Memory extends AppCompatActivity{
         immagine2=findViewById(R.id.immagine2);
 
         text=findViewById(R.id.textView);
+        tempoRimanente=findViewById(R.id.tempo);
         b = findViewById(R.id.button);
 
         img_1.setImageBitmap(galleria.get(0));
@@ -139,7 +138,7 @@ public class Memory extends AppCompatActivity{
                 img_6.setVisibility(View.INVISIBLE);
                 b.setVisibility(View.INVISIBLE);
                 b.setClickable(false);
-                tempo=tempo*2/3;
+                time=time*2/3;
                 timer=new Timer();
                 startTimer();
                 break;
@@ -413,6 +412,8 @@ if (j==5){
                 gioco.add(galleria.get(4));
                 img_5.setVisibility(View.INVISIBLE);
                 img_6.setVisibility(View.INVISIBLE);
+                b.setVisibility(View.INVISIBLE);
+                b.setClickable(false);
                 timer=new Timer();
                 startTimer();
                 break;
@@ -427,6 +428,8 @@ if (j==5){
                 gioco.add(galleria.get(5));
                 img_5.setVisibility(View.INVISIBLE);
                 img_6.setVisibility(View.INVISIBLE);
+                b.setVisibility(View.INVISIBLE);
+                b.setClickable(false);
                 timer=new Timer();
                 startTimer();
                 break;
@@ -451,12 +454,13 @@ if (j==5){
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        time++;
-                        Log.d("sss",gettimertext());
-                        if(time==tempo)
+                        time--;
+                        tempoRimanente.setText(gettimertext());
+                        if(time==0.0)
                         {
                             avanti(b);
                             stopTimer();
+                            tempoRimanente.setText("");
                         }
                     }
                 });
