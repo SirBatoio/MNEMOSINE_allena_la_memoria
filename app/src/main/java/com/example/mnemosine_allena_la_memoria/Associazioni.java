@@ -205,10 +205,12 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
                         {
                             Log.d("GIUSTO","pepperepe");
                             tv.setVisibility(View.GONE);
+                            immagine_1.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.giusto));
                         }
                         else
                         {
                             Log.d("GIUSTO","non è vero");
+                            immagine_1.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.sbaglio));
                         }
                         break;
                     case R.id.top_center_layout:
@@ -216,10 +218,12 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
                         {
                             Log.d("GIUSTO","pepperepe");
                             tv.setVisibility(View.GONE);
+                            immagine_2.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.giusto));
                         }
                         else
                         {
                             Log.d("GIUSTO","non è vero");
+                            immagine_2.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.sbaglio));
                         }
                         break;
                     case R.id.top_right_layout:
@@ -227,10 +231,12 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
                         {
                             Log.d("GIUSTO","pepperepe");
                             tv.setVisibility(View.GONE);
+                            immagine_3.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.giusto));
                         }
                         else
                         {
                             Log.d("GIUSTO","non è vero");
+                            immagine_3.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.sbaglio));
                         }
                         break;
                 }
