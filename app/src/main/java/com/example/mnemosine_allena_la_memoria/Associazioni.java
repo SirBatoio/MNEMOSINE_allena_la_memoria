@@ -32,7 +32,8 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
     private Immagine primavera,estate,inverno,autunno,melagrana,patata,pantera,anguria,orologio,carota,bussola,camion,lupo,volpe;
     private ArrayList<Immagine> galleria;
     private ArrayList<String> gioco;
-
+    public int i=2,y=0;
+    private boolean t=true;
 
     // Create a string for the TextView and Button label
     private static final String TEXTVIEW_TAG = "DRAG TEXT";
@@ -61,7 +62,12 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
         parola_1.setTag(TEXTVIEW_TAG);
         parola_2.setTag(TEXTVIEW_TAG);
         parola_3.setTag(TEXTVIEW_TAG);
-
+        parola_4.setTag(TEXTVIEW_TAG);
+        parola_5.setTag(TEXTVIEW_TAG);
+        parola_6.setTag(TEXTVIEW_TAG);
+        parola_7.setTag(TEXTVIEW_TAG);
+        parola_8.setTag(TEXTVIEW_TAG);
+        parola_9.setTag(TEXTVIEW_TAG);
         implementEvents();
 
         primavera=  new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.primavera),"Primavera");
@@ -206,7 +212,6 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
                             Log.d("GIUSTO","pepperepe");
                             tv.setVisibility(View.GONE);
                             immagine_1.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.giusto));
-                            container.setOnDragListener(null);
                         }
                         else
                         {
@@ -220,7 +225,6 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
                             Log.d("GIUSTO","pepperepe");
                             tv.setVisibility(View.GONE);
                             immagine_2.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.giusto));
-                            container.setOnDragListener(null);
                         }
                         else
                         {
@@ -234,16 +238,23 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
                             Log.d("GIUSTO","pepperepe");
                             tv.setVisibility(View.GONE);
                             immagine_3.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.giusto));
-                            container.setOnDragListener(null);
                         }
                         else
                         {
                             Log.d("GIUSTO","non è vero");
                             immagine_3.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.sbaglio));
+
                         }
                         break;
                 }
+                y++;
+                container.setOnDragListener(null);
+if (y==3){
 
+    restart();
+    y=0;
+
+}
                 // Returns true. DragEvent.getResult() will return true.
                 return true;
 
@@ -332,6 +343,68 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
         Intent intent = new Intent(Associazioni.this,Home.class);
         startActivity(intent);
         finish();
+    }
+
+    public void restart(){
+gioco.clear();
+
+
+        findViewById(R.id.top_left_layout).setOnDragListener(this);
+        findViewById(R.id.top_center_layout).setOnDragListener(this);
+        findViewById(R.id.top_right_layout).setOnDragListener(this);
+        if(t=true){
+            parola_1.setVisibility(View.GONE);
+            parola_2.setVisibility(View.GONE);
+            parola_3.setVisibility(View.GONE);
+            parola_4.setOnLongClickListener(this);
+            parola_5.setOnLongClickListener(this);
+            parola_6.setOnLongClickListener(this);
+            i++;
+            gioco.add(galleria.get(i).getDescrizione());
+            immagine_1.setImageBitmap(galleria.get(i).getImmagine());
+
+            i++;
+            gioco.add(galleria.get(i).getDescrizione());
+            immagine_2.setImageBitmap(galleria.get(i).getImmagine());
+
+            i++;
+            gioco.add(galleria.get(i).getDescrizione());
+            immagine_3.setImageBitmap(galleria.get(i).getImmagine());
+
+            Collections.shuffle(gioco);
+
+            parola_4.setText(gioco.get(0));
+            parola_5.setText(gioco.get(1));
+            parola_6.setText(gioco.get(2));
+            t=false;
+        }
+
+        else {
+            parola_4.       setVisibility(View.GONE);
+            parola_5.       setVisibility(View.GONE);
+            parola_6.       setVisibility(View.GONE);
+            parola_7.setOnLongClickListener(this);
+            parola_8.setOnLongClickListener(this);
+            parola_9.setOnLongClickListener(this);
+            i++;
+            gioco.add(galleria.get(i).getDescrizione());
+            immagine_1.setImageBitmap(galleria.get(i).getImmagine());
+
+            i++;
+            gioco.add(galleria.get(i).getDescrizione());
+            immagine_2.setImageBitmap(galleria.get(i).getImmagine());
+
+            i++;
+            gioco.add(galleria.get(i).getDescrizione());
+            immagine_3.setImageBitmap(galleria.get(i).getImmagine());
+
+            Collections.shuffle(gioco);
+
+            parola_7.setText(gioco.get(0));
+            parola_8.setText(gioco.get(1));
+            parola_9.setText(gioco.get(2));
+        }
+
     }
 
 }
