@@ -123,6 +123,7 @@ public class Memory extends AppCompatActivity{
                 img_6.setVisibility(View.INVISIBLE);
                 b.setVisibility(View.INVISIBLE);
                 b.setClickable(false);
+                timer=new Timer();
                 startTimer();
             break;
             case AVANZATO:
@@ -139,6 +140,7 @@ public class Memory extends AppCompatActivity{
                 b.setVisibility(View.INVISIBLE);
                 b.setClickable(false);
                 tempo=tempo*2/3;
+                timer=new Timer();
                 startTimer();
                 break;
         }
