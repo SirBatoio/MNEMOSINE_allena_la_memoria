@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Sequenze">
+
+    <ImageView
+        android:id="@+id/scelta_6"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:onClick="Controllo"
+        tools:ignore="SpeakableTextPresentCheck"
+        tools:layout_editor_absoluteX="942dp"
+        tools:layout_editor_absoluteY="116dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/scelta_7"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:onClick="Controllo"
+        tools:ignore="SpeakableTextPresentCheck"
+        tools:layout_editor_absoluteX="942dp"
+        tools:layout_editor_absoluteY="326dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/scelta_8"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:onClick="Controllo"
+        tools:ignore="SpeakableTextPresentCheck"
+        tools:layout_editor_absoluteX="942dp"
+        tools:layout_editor_absoluteY="558dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/scelta_"
+        android:layout_width="250dp"
+        android:layout_height="200dp"
+        android:onClick="Controllo"
+        tools:ignore="SpeakableTextPresentCheck"
+        tools:layout_editor_absoluteX="151dp"
+        tools:layout_editor_absoluteY="201dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/scelta_3"
+        android:layout_width="250dp"
+        android:layout_height="200dp"
+        android:onClick="Controllo"
+        tools:ignore="SpeakableTextPresentCheck"
+        tools:layout_editor_absoluteX="572dp"
+        tools:layout_editor_absoluteY="201dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/scelta_5"
+        android:layout_width="250dp"
+        android:layout_height="200dp"
+        android:onClick="Controllo"
+        tools:ignore="SpeakableTextPresentCheck"
+        tools:layout_editor_absoluteX="572dp"
+        tools:layout_editor_absoluteY="476dp"
+        tools:srcCompat="@drawable/melagrana" />
+
+    <ImageView
+        android:id="@+id/Scelta_3"
+        android:layout_width="250dp"
+        android:layout_height="200dp"
+        android:onClick="Controllo"
+        tools:ignore="SpeakableTextPresentCheck"
+        tools:layout_editor_absoluteX="151dp"
+        tools:layout_editor_absoluteY="476dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="225dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:onClick="cambiaVolume"
+        android:text="volume ON"
+        android:textSize="25sp"
+        app:cornerRadius="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/titolo"
+        style="@style/Testo"
+        android:layout_width="782dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="16dp"
+        android:text="COMPLETA LA SEQUENZA"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="36dp"
+        android:onClick="home"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/home" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="24dp"
+        android:onClick="indietro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:srcCompat="@drawable/indietro" />
+</androidx.constraintlayout.widget.ConstraintLayout>
