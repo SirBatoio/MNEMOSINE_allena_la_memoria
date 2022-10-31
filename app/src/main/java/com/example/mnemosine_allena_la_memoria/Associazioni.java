@@ -3,7 +3,6 @@ package com.example.mnemosine_allena_la_memoria;
 import android.content.ClipData;
 import android.content.ClipDescription;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
@@ -26,17 +25,15 @@ import java.util.Collections;
 
 public class Associazioni extends AppCompatActivity implements View.OnLongClickListener, View.OnDragListener {
 
-    private TextView parola_1,parola_2,parola_3,parola_4,parola_5,parola_6,parola_7,parola_8,parola_9;
-    private ImageView immagine_1,immagine_2,immagine_3;
-    private boolean volume=true;
-    private Immagine primavera,estate,inverno,autunno,melagrana,patata,pantera,anguria,orologio,carota,bussola,camion,lupo,volpe;
-    private ArrayList<Immagine> galleria;
-    private ArrayList<String> gioco;
-    private int i=2,y=0,t=0,pt_totalizzati,pt_max;
-
-
     // Create a string for the TextView and Button label
     private static final String TEXTVIEW_TAG = "DRAG TEXT";
+    private TextView parola_1, parola_2, parola_3, parola_4, parola_5, parola_6, parola_7, parola_8, parola_9;
+    private ImageView immagine_1, immagine_2, immagine_3;
+    private boolean volume = true;
+    private Immagine primavera, estate, inverno, autunno, melagrana, patata, pantera, anguria, orologio, carota, bussola, camion, lupo, volpe;
+    private ArrayList<Immagine> galleria;
+    private ArrayList<String> gioco;
+    private int i = 2, y = 0, t = 0, pt_totalizzati, pt_max;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,9 +51,9 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
         parola_8 = findViewById(R.id.nome_8);
         parola_9 = findViewById(R.id.nome_9);
 
-        immagine_1=findViewById(R.id.fig_1);
-        immagine_2=findViewById(R.id.fig_2);
-        immagine_3=findViewById(R.id.fig_3);
+        immagine_1 = findViewById(R.id.fig_1);
+        immagine_2 = findViewById(R.id.fig_2);
+        immagine_3 = findViewById(R.id.fig_3);
 
         // Sets the tag
         parola_1.setTag(TEXTVIEW_TAG);
@@ -70,27 +67,37 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
         parola_9.setTag(TEXTVIEW_TAG);
         implementEvents();
 
-        primavera=  new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.primavera),"Primavera");
-        estate=  new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.estate), "Estate");
-        inverno=  new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.inverno), "Inverno");
-        autunno= new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.autunno), "Autunno");
-        melagrana= new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.melagrana), "Melagrana");
-        patata= new Immagine (BitmapFactory.decodeResource(getResources(), R.drawable.patata), "Patata");
-        pantera= new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.pantera), "Pantera");
-        anguria= new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.anguria), "Anguria");
-        orologio= new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.sette15), "Orologio");
-        carota= new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.carota), "Carota");
-        bussola= new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.bussola), "Bussola");
-        camion=new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.camion), "Camion");
-        lupo= new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.lupo),"Lupo");
-        volpe= new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.volpe),"Volpe");
+        primavera = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.primavera), "Primavera");
+        estate = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.estate), "Estate");
+        inverno = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.inverno), "Inverno");
+        autunno = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.autunno), "Autunno");
+        melagrana = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.melagrana), "Melagrana");
+        patata = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.patata), "Patata");
+        pantera = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.pantera), "Pantera");
+        anguria = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.anguria), "Anguria");
+        orologio = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.sette15), "Orologio");
+        carota = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.carota), "Carota");
+        bussola = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.bussola), "Bussola");
+        camion = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.camion), "Camion");
+        lupo = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.lupo), "Lupo");
+        volpe = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.volpe), "Volpe");
 
-        galleria=new ArrayList<>();
-        gioco= new ArrayList<>();
-        galleria.add(primavera); galleria.add(estate); galleria.add(inverno); galleria.add(autunno);
-        galleria.add(melagrana); galleria.add(patata); galleria.add(pantera); galleria.add(anguria);
-        galleria.add(orologio); galleria.add(carota); galleria.add(bussola); galleria.add(camion);
-        galleria.add(lupo); galleria.add(volpe);
+        galleria = new ArrayList<>();
+        gioco = new ArrayList<>();
+        galleria.add(primavera);
+        galleria.add(estate);
+        galleria.add(inverno);
+        galleria.add(autunno);
+        galleria.add(melagrana);
+        galleria.add(patata);
+        galleria.add(pantera);
+        galleria.add(anguria);
+        galleria.add(orologio);
+        galleria.add(carota);
+        galleria.add(bussola);
+        galleria.add(camion);
+        galleria.add(lupo);
+        galleria.add(volpe);
 
         Collections.shuffle(galleria);
         gioco.add(galleria.get(0).getDescrizione());
@@ -130,22 +137,17 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
             case DragEvent.ACTION_DRAG_STARTED:
 
                 // Determines if this View can accept the dragged data
-                if (dragEvent.getClipDescription().hasMimeType(ClipDescription.MIMETYPE_TEXT_PLAIN)) {
-                    // if you want to apply color when drag started to your view you can uncomment below lines
-                    // to give any color tint to the View to indicate that it can accept
-                    // data.
-                    //view.getBackground().setColorFilter(Color.BLUE, PorterDuff.Mode.SRC_IN);
-
-                    // Invalidate the view to force a redraw in the new tint
-                    // view.invalidate();
-
-                    // returns true to indicate that the View can accept the dragged data.
-                    return true;
-                }
+                // if you want to apply color when drag started to your view you can uncomment below lines
+                // to give any color tint to the View to indicate that it can accept
+                // data.
+                //view.getBackground().setColorFilter(Color.BLUE, PorterDuff.Mode.SRC_IN);
+                // Invalidate the view to force a redraw in the new tint
+                // view.invalidate();
+                // returns true to indicate that the View can accept the dragged data.
+                return dragEvent.getClipDescription().hasMimeType(ClipDescription.MIMETYPE_TEXT_PLAIN);
 
                 // Returns false. During the current drag and drop operation, this View will
                 // not receive events again until ACTION_DRAG_ENDED is sent.
-                return false;
 
             case DragEvent.ACTION_DRAG_ENTERED:
 
@@ -204,57 +206,47 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
                 v.setVisibility(View.VISIBLE);//finally set Visibility to VISIBLE
 
                 TextView tv = findViewById(v.getId());
-                switch(container.getId())
-                {
+                switch (container.getId()) {
                     case R.id.top_left_layout:
-                        if(tv.getText()==galleria.get(i-2).getDescrizione())
-                        {
-                            Log.d("GIUSTO","pepperepe");
+                        if (tv.getText() == galleria.get(i - 2).getDescrizione()) {
+                            Log.d("GIUSTO", "pepperepe");
                             tv.setVisibility(View.GONE);
-                            immagine_1.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.giusto));
-                        }
-                        else
-                        {
-                            Log.d("GIUSTO","non è vero");
-                            immagine_1.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.sbaglio));
+                            immagine_1.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.giusto));
+                        } else {
+                            Log.d("GIUSTO", "non è vero");
+                            immagine_1.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.sbaglio));
                         }
                         break;
                     case R.id.top_center_layout:
-                        if(tv.getText()==galleria.get(i-1).getDescrizione())
-                        {
-                            Log.d("GIUSTO","pepperepe");
+                        if (tv.getText() == galleria.get(i - 1).getDescrizione()) {
+                            Log.d("GIUSTO", "pepperepe");
                             tv.setVisibility(View.GONE);
-                            immagine_2.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.giusto));
-                        }
-                        else
-                        {
-                            Log.d("GIUSTO","non è vero");
-                            immagine_2.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.sbaglio));
+                            immagine_2.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.giusto));
+                        } else {
+                            Log.d("GIUSTO", "non è vero");
+                            immagine_2.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.sbaglio));
                         }
                         break;
                     case R.id.top_right_layout:
-                        if(tv.getText()==galleria.get(i).getDescrizione())
-                        {
-                            Log.d("GIUSTO","pepperepe");
+                        if (tv.getText() == galleria.get(i).getDescrizione()) {
+                            Log.d("GIUSTO", "pepperepe");
                             tv.setVisibility(View.GONE);
-                            immagine_3.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.giusto));
-                        }
-                        else
-                        {
-                            Log.d("GIUSTO","non è vero");
-                            immagine_3.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.sbaglio));
+                            immagine_3.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.giusto));
+                        } else {
+                            Log.d("GIUSTO", "non è vero");
+                            immagine_3.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.sbaglio));
 
                         }
                         break;
                 }
                 y++;
                 container.setOnDragListener(null);
-if (y==3){
+                if (y == 3) {
 
-    restart();
-    y=0;
+                    restart();
+                    y = 0;
 
-}
+                }
                 // Returns true. DragEvent.getResult() will return true.
                 return true;
 
@@ -314,46 +306,40 @@ if (y==3){
         return true;
     }
 
-    public void cambiaVolume(@NonNull View v)
-    {
+    public void cambiaVolume(@NonNull View v) {
         Button b = findViewById(v.getId());
-        if(volume)
-        {
-            volume=false;
+        if (volume) {
+            volume = false;
             b.setText("VOLUME OFF");
             b.setBackgroundColor(0xFF9E9E9E);
-        }
-        else
-        {
-            volume=true;
+        } else {
+            volume = true;
             b.setText("VOLUME ON");
             b.setBackgroundColor(0xFFFF9800);
         }
     }
 
-    public void indietro(View v)
-    {
-        Intent intent = new Intent(Associazioni.this,SelectEsercizi.class);
+    public void indietro(View v) {
+        Intent intent = new Intent(Associazioni.this, SelectEsercizi.class);
         startActivity(intent);
         finish();
     }
 
-    public void home(View v)
-    {
-        Intent intent = new Intent(Associazioni.this,Home.class);
+    public void home(View v) {
+        Intent intent = new Intent(Associazioni.this, Home.class);
         startActivity(intent);
         finish();
     }
 
-    public void restart(){
-gioco.clear();
+    public void restart() {
+        gioco.clear();
 
 
         findViewById(R.id.top_left_layout).setOnDragListener(this);
         findViewById(R.id.top_center_layout).setOnDragListener(this);
         findViewById(R.id.top_right_layout).setOnDragListener(this);
-        
-        if(t==0){
+
+        if (t == 0) {
 
             parola_1.setVisibility(View.GONE);
             parola_2.setVisibility(View.GONE);
@@ -381,10 +367,10 @@ gioco.clear();
 
         }
 
-        if(t==1) {
-            parola_4.       setVisibility(View.GONE);
-            parola_5.       setVisibility(View.GONE);
-            parola_6.       setVisibility(View.GONE);
+        if (t == 1) {
+            parola_4.setVisibility(View.GONE);
+            parola_5.setVisibility(View.GONE);
+            parola_6.setVisibility(View.GONE);
             parola_7.setOnLongClickListener(this);
             parola_8.setOnLongClickListener(this);
             parola_9.setOnLongClickListener(this);
@@ -407,8 +393,8 @@ gioco.clear();
             parola_9.setText(gioco.get(2));
 
         }
-        if (t==2){
-            Intent intent=new Intent(Associazioni.this,Risultati.class);
+        if (t == 2) {
+            Intent intent = new Intent(Associazioni.this, Risultati.class);
             startActivity(intent);
             Risultati.setPunti_totalizzati(pt_totalizzati);
             Risultati.setPunti_massimi(pt_max);
