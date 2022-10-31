@@ -215,6 +215,7 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
                         if (tv.getText() == galleria.get(i - 2).getDescrizione()) {
                             tv.setVisibility(View.GONE);
                             immagine_1.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.giusto));
+                            container.setOnDragListener(null);
                             y++;
                             pt_totalizzati++;
                             verdetto=true;
@@ -228,6 +229,7 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
                         if (tv.getText() == galleria.get(i - 1).getDescrizione()) {
                             tv.setVisibility(View.GONE);
                             immagine_2.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.giusto));
+                            container.setOnDragListener(null);
                             y++;
                             pt_totalizzati++;
                             verdetto=true;
@@ -241,6 +243,7 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
                         if (tv.getText() == galleria.get(i).getDescrizione()) {
                             tv.setVisibility(View.GONE);
                             immagine_3.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.giusto));
+                            container.setOnDragListener(null);
                             y++;
                             pt_totalizzati++;
                             verdetto=true;
@@ -262,7 +265,6 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
                 }
                 if(volume){ mp.start();}
                 animaImmagineEsito();
-                container.setOnDragListener(null);
                 if (y == 3 || tentativi==0) {
                     restart();
                     tentativi=2;
@@ -355,7 +357,6 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
 
     public void restart() {
         gioco.clear();
-
 
         findViewById(R.id.top_left_layout).setOnDragListener(this);
         findViewById(R.id.top_center_layout).setOnDragListener(this);
