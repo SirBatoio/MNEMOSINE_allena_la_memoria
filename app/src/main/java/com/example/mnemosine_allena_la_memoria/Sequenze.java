@@ -27,7 +27,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Sequenze extends AppCompatActivity {
     private ImageView seq_1, seq_2, seq_3,risp_1,risp_2,risp_3;
-    private Bitmap melagrana;
+    private Bitmap cerchio_bianco, cerchio_nero, cerchio_mezzo, quadrato_bianco, quadrato_nero, quadrato_mezzo, triangolo_bianco, triangolo_nero, triangolo_mezzo, freccia_bianco, freccia_nero;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,10 +40,18 @@ public class Sequenze extends AppCompatActivity {
         risp_2=findViewById(R.id.risp_2);
         risp_3=findViewById(R.id.risp_3);
 
-        melagrana = (BitmapFactory.decodeResource(getResources(), R.drawable.melagrana));
+        cerchio_bianco=BitmapFactory.decodeResource(getResources(), R.drawable.cerchio_b);
+        cerchio_nero=BitmapFactory.decodeResource(getResources(), R.drawable.cerchio_n);
+        cerchio_mezzo=BitmapFactory.decodeResource(getResources(), R.drawable.cerchio_m);
+        quadrato_bianco=BitmapFactory.decodeResource(getResources(), R.drawable.quadrato_b);
+        quadrato_nero=BitmapFactory.decodeResource(getResources(), R.drawable.quadrato_n);
+        quadrato_mezzo=BitmapFactory.decodeResource(getResources(), R.drawable.quadrato_m);
+        triangolo_bianco=BitmapFactory.decodeResource(getResources(), R.drawable.triangolo_b);
+        triangolo_nero=BitmapFactory.decodeResource(getResources(), R.drawable.triangolo_n);
+        triangolo_mezzo=BitmapFactory.decodeResource(getResources(), R.drawable.triangolo_m);
+        freccia_bianco=BitmapFactory.decodeResource(getResources(), R.drawable.freccia_b);
+        freccia_nero=BitmapFactory.decodeResource(getResources(), R.drawable.freccia_n);
 
-
-        seq_1.setImageBitmap(melagrana);
         seq_1.setRotation(180);
     }
 }
