@@ -525,6 +525,8 @@ public class Memory extends AppCompatActivity{
     {
         Intent intent = new Intent(Memory.this,SelectEsercizi.class);
         startActivity(intent);
+        stopTimer();
+
         finish();
     }
 
