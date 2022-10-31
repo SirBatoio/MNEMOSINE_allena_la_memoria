@@ -8,32 +8,44 @@
 
     <ImageView
         android:id="@+id/scelta_6"
-        android:layout_width="200dp"
-        android:layout_height="150dp"
+        android:layout_width="225dp"
+        android:layout_height="175dp"
         android:onClick="Controllo"
+        app:layout_constraintBottom_toTopOf="@+id/scelta_7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/scelta_3"
+        app:layout_constraintTop_toBottomOf="@+id/titolo"
+        app:layout_constraintVertical_bias="0.5"
         tools:ignore="SpeakableTextPresentCheck"
-        tools:layout_editor_absoluteX="942dp"
-        tools:layout_editor_absoluteY="116dp"
         tools:srcCompat="@tools:sample/avatars" />
 
     <ImageView
         android:id="@+id/scelta_7"
-        android:layout_width="200dp"
-        android:layout_height="150dp"
+        android:layout_width="225dp"
+        android:layout_height="175dp"
         android:onClick="Controllo"
+        app:layout_constraintBottom_toTopOf="@+id/scelta_8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/scelta_3"
+        app:layout_constraintTop_toBottomOf="@+id/scelta_6"
+        app:layout_constraintVertical_bias="0.5"
         tools:ignore="SpeakableTextPresentCheck"
-        tools:layout_editor_absoluteX="942dp"
-        tools:layout_editor_absoluteY="326dp"
         tools:srcCompat="@tools:sample/avatars" />
 
     <ImageView
         android:id="@+id/scelta_8"
-        android:layout_width="200dp"
-        android:layout_height="150dp"
+        android:layout_width="225dp"
+        android:layout_height="175dp"
         android:onClick="Controllo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/scelta_5"
+        app:layout_constraintTop_toBottomOf="@+id/scelta_7"
+        app:layout_constraintVertical_bias="0.5"
         tools:ignore="SpeakableTextPresentCheck"
-        tools:layout_editor_absoluteX="942dp"
-        tools:layout_editor_absoluteY="558dp"
         tools:srcCompat="@tools:sample/avatars" />
 
     <ImageView
@@ -41,9 +53,13 @@
         android:layout_width="250dp"
         android:layout_height="200dp"
         android:onClick="Controllo"
+        app:layout_constraintBottom_toTopOf="@+id/Scelta_3"
+        app:layout_constraintEnd_toStartOf="@+id/scelta_3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/titolo"
+        app:layout_constraintVertical_bias="0.5"
         tools:ignore="SpeakableTextPresentCheck"
-        tools:layout_editor_absoluteX="151dp"
-        tools:layout_editor_absoluteY="201dp"
         tools:srcCompat="@tools:sample/avatars" />
 
     <ImageView
@@ -51,9 +67,13 @@
         android:layout_width="250dp"
         android:layout_height="200dp"
         android:onClick="Controllo"
+        app:layout_constraintBottom_toTopOf="@+id/scelta_5"
+        app:layout_constraintEnd_toStartOf="@+id/scelta_6"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/scelta_"
+        app:layout_constraintTop_toBottomOf="@+id/titolo"
+        app:layout_constraintVertical_bias="0.5"
         tools:ignore="SpeakableTextPresentCheck"
-        tools:layout_editor_absoluteX="572dp"
-        tools:layout_editor_absoluteY="201dp"
         tools:srcCompat="@tools:sample/avatars" />
 
     <ImageView
@@ -61,9 +81,13 @@
         android:layout_width="250dp"
         android:layout_height="200dp"
         android:onClick="Controllo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/scelta_3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/scelta_3"
+        app:layout_constraintTop_toBottomOf="@+id/scelta_3"
+        app:layout_constraintVertical_bias="0.5"
         tools:ignore="SpeakableTextPresentCheck"
-        tools:layout_editor_absoluteX="572dp"
-        tools:layout_editor_absoluteY="476dp"
         tools:srcCompat="@drawable/melagrana" />
 
     <ImageView
@@ -71,9 +95,13 @@
         android:layout_width="250dp"
         android:layout_height="200dp"
         android:onClick="Controllo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/scelta_"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/scelta_"
+        app:layout_constraintTop_toBottomOf="@+id/scelta_"
+        app:layout_constraintVertical_bias="0.5"
         tools:ignore="SpeakableTextPresentCheck"
-        tools:layout_editor_absoluteX="151dp"
-        tools:layout_editor_absoluteY="476dp"
         tools:srcCompat="@tools:sample/avatars" />
 
     <Button
@@ -121,4 +149,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
         app:srcCompat="@drawable/indietro" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
