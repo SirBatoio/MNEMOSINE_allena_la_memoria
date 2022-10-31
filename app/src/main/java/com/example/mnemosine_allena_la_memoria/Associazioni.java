@@ -32,8 +32,8 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
     private Immagine primavera,estate,inverno,autunno,melagrana,patata,pantera,anguria,orologio,carota,bussola,camion,lupo,volpe;
     private ArrayList<Immagine> galleria;
     private ArrayList<String> gioco;
-    public int i=2,y=0;
-    private boolean t=true;
+    public int i=2,y=0,t=0,pt_totalizzati,pt_max;
+
 
     // Create a string for the TextView and Button label
     private static final String TEXTVIEW_TAG = "DRAG TEXT";
@@ -352,7 +352,7 @@ gioco.clear();
         findViewById(R.id.top_left_layout).setOnDragListener(this);
         findViewById(R.id.top_center_layout).setOnDragListener(this);
         findViewById(R.id.top_right_layout).setOnDragListener(this);
-        if(t==true){
+        if(t==0){
             parola_1.setVisibility(View.GONE);
             parola_2.setVisibility(View.GONE);
             parola_3.setVisibility(View.GONE);
@@ -376,10 +376,10 @@ gioco.clear();
             parola_4.setText(gioco.get(0));
             parola_5.setText(gioco.get(1));
             parola_6.setText(gioco.get(2));
-            t=false;
+
         }
 
-        else {
+        if(t==1) {
             parola_4.       setVisibility(View.GONE);
             parola_5.       setVisibility(View.GONE);
             parola_6.       setVisibility(View.GONE);
@@ -403,8 +403,19 @@ gioco.clear();
             parola_7.setText(gioco.get(0));
             parola_8.setText(gioco.get(1));
             parola_9.setText(gioco.get(2));
+
+        }
+        if (t==2){
+            Intent intent=new Intent(Associazioni.this,Risultati.class);
+            startActivity(intent);
+            Risultati.setPunti_totalizzati(pt_totalizzati);
+            Risultati.setPunti_massimi(pt_max);
+            Risultati.setCls(Intruso.class);
+            finish();
+
         }
 
+        t++;
     }
 
 }
