@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.DragEvent;
@@ -35,6 +36,8 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
     private ArrayList<String> gioco;
     private int i = 2, y = 0, t = 0, pt_totalizzati, pt_max;
     private static final long TEMPO = 2000;
+    private boolean verdetto;
+    private MediaPlayer mp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -214,9 +217,11 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
                             Log.d("GIUSTO", "pepperepe");
                             tv.setVisibility(View.GONE);
                             immagine_1.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.giusto));
+                            verdetto=true;
                         } else {
                             Log.d("GIUSTO", "non è vero");
                             immagine_1.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.sbaglio));
+                            verdetto=false;
                         }
                         break;
                     case R.id.top_center_layout:
@@ -224,9 +229,11 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
                             Log.d("GIUSTO", "pepperepe");
                             tv.setVisibility(View.GONE);
                             immagine_2.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.giusto));
+                            verdetto=true;
                         } else {
                             Log.d("GIUSTO", "non è vero");
                             immagine_2.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.sbaglio));
+                            verdetto=false;
                         }
                         break;
                     case R.id.top_right_layout:
@@ -234,13 +241,25 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
                             Log.d("GIUSTO", "pepperepe");
                             tv.setVisibility(View.GONE);
                             immagine_3.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.giusto));
+                            verdetto=true;
                         } else {
                             Log.d("GIUSTO", "non è vero");
                             immagine_3.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.sbaglio));
+                            verdetto=false;
 
                         }
                         break;
                 }
+                if(verdetto){
+                    mp = MediaPlayer.create(this,R.raw.giusto);
+                    giudizio.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.giusto));
+                }
+                else {
+                    mp = MediaPlayer.create(this,R.raw.errore);
+                    giudizio.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.sbaglio));
+                }
+                if(volume){ mp.start();}
+                animaImmagineEsito();
                 y++;
                 container.setOnDragListener(null);
                 if (y == 3) {
