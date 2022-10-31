@@ -47,7 +47,7 @@ public class SelectEsercizi extends AppCompatActivity {
                 esercizio_3.setBackgroundColor(0xFFBDB6B6);
                 break;
             case MEMORIA:
-                immagine.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.bussola));
+                immagine.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.memoria));
                 esercizio_1.setVisibility(View.VISIBLE);
                 esercizio_1.setClickable(true);
                 esercizio_1.setText("Memory");
@@ -63,7 +63,7 @@ public class SelectEsercizi extends AppCompatActivity {
                 esercizio_3.setBackgroundColor(0xFFBDB6B6);
                 break;
             case LINGUAGGIO:
-                immagine.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.bussola));
+                immagine.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.lingua));
                 esercizio_1.setVisibility(View.VISIBLE);
                 esercizio_1.setClickable(true);
                 esercizio_1.setText("Associazioni");
