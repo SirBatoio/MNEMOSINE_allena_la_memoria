@@ -7,54 +7,54 @@
     tools:context=".Sequenze">
 
     <ImageView
-        android:id="@+id/scelta_6"
+        android:id="@+id/risp_1"
         android:layout_width="225dp"
         android:layout_height="175dp"
         android:onClick="Controllo"
-        app:layout_constraintBottom_toTopOf="@+id/scelta_7"
+        app:layout_constraintBottom_toTopOf="@+id/risp_2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/scelta_3"
+        app:layout_constraintStart_toEndOf="@+id/seq_2"
         app:layout_constraintTop_toBottomOf="@+id/titolo"
         app:layout_constraintVertical_bias="0.5"
         tools:ignore="SpeakableTextPresentCheck"
         tools:srcCompat="@tools:sample/avatars" />
 
     <ImageView
-        android:id="@+id/scelta_7"
+        android:id="@+id/risp_2"
         android:layout_width="225dp"
         android:layout_height="175dp"
         android:onClick="Controllo"
-        app:layout_constraintBottom_toTopOf="@+id/scelta_8"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/risp_3"
+        app:layout_constraintEnd_toEndOf="@+id/risp_1"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/scelta_3"
-        app:layout_constraintTop_toBottomOf="@+id/scelta_6"
+        app:layout_constraintStart_toStartOf="@+id/risp_1"
+        app:layout_constraintTop_toBottomOf="@+id/risp_1"
         app:layout_constraintVertical_bias="0.5"
         tools:ignore="SpeakableTextPresentCheck"
         tools:srcCompat="@tools:sample/avatars" />
 
     <ImageView
-        android:id="@+id/scelta_8"
+        android:id="@+id/risp_3"
         android:layout_width="225dp"
         android:layout_height="175dp"
         android:onClick="Controllo"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/risp_2"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/scelta_5"
-        app:layout_constraintTop_toBottomOf="@+id/scelta_7"
+        app:layout_constraintStart_toStartOf="@+id/risp_2"
+        app:layout_constraintTop_toBottomOf="@+id/risp_2"
         app:layout_constraintVertical_bias="0.5"
         tools:ignore="SpeakableTextPresentCheck"
         tools:srcCompat="@tools:sample/avatars" />
 
     <ImageView
-        android:id="@+id/scelta_"
+        android:id="@+id/seq_1"
         android:layout_width="250dp"
         android:layout_height="200dp"
         android:onClick="Controllo"
-        app:layout_constraintBottom_toTopOf="@+id/Scelta_3"
-        app:layout_constraintEnd_toStartOf="@+id/scelta_3"
+        app:layout_constraintBottom_toTopOf="@+id/seq_3"
+        app:layout_constraintEnd_toStartOf="@+id/seq_2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/imageView3"
         app:layout_constraintTop_toBottomOf="@+id/titolo"
@@ -63,46 +63,46 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <ImageView
-        android:id="@+id/scelta_3"
+        android:id="@+id/seq_2"
         android:layout_width="250dp"
         android:layout_height="200dp"
         android:onClick="Controllo"
-        app:layout_constraintBottom_toTopOf="@+id/scelta_5"
-        app:layout_constraintEnd_toStartOf="@+id/scelta_6"
+        app:layout_constraintBottom_toTopOf="@+id/seq_4"
+        app:layout_constraintEnd_toStartOf="@+id/risp_1"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/scelta_"
+        app:layout_constraintStart_toEndOf="@+id/seq_1"
         app:layout_constraintTop_toBottomOf="@+id/titolo"
         app:layout_constraintVertical_bias="0.5"
         tools:ignore="SpeakableTextPresentCheck"
         tools:srcCompat="@tools:sample/avatars" />
 
     <ImageView
-        android:id="@+id/scelta_5"
+        android:id="@+id/seq_4"
         android:layout_width="250dp"
         android:layout_height="200dp"
         android:onClick="Controllo"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/scelta_3"
+        app:layout_constraintEnd_toEndOf="@+id/seq_2"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/scelta_3"
-        app:layout_constraintTop_toBottomOf="@+id/scelta_3"
+        app:layout_constraintStart_toStartOf="@+id/seq_2"
+        app:layout_constraintTop_toBottomOf="@+id/seq_2"
         app:layout_constraintVertical_bias="0.5"
         tools:ignore="SpeakableTextPresentCheck"
         tools:srcCompat="@drawable/melagrana" />
 
     <ImageView
-        android:id="@+id/Scelta_3"
+        android:id="@+id/seq_3"
         android:layout_width="250dp"
         android:layout_height="200dp"
         android:onClick="Controllo"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/scelta_"
+        app:layout_constraintEnd_toEndOf="@+id/seq_1"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/scelta_"
-        app:layout_constraintTop_toBottomOf="@+id/scelta_"
+        app:layout_constraintStart_toStartOf="@+id/seq_1"
+        app:layout_constraintTop_toBottomOf="@+id/seq_1"
         app:layout_constraintVertical_bias="0.5"
         tools:ignore="SpeakableTextPresentCheck"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@tools:sample/avatars[5]" />
 
     <Button
         android:id="@+id/button3"
