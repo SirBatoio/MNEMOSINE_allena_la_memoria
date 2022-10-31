@@ -468,7 +468,6 @@ public class Memory extends AppCompatActivity{
                         {
                             avanti(b);
                             stopTimer();
-                            Log.d("Timer", "Sono morto");
                             tempoRimanente.setText("");
                         }
                     }
@@ -481,7 +480,7 @@ public class Memory extends AppCompatActivity{
 
     public void stopTimer(){
         timer.cancel();
-
+        Log.d("Timer", "Sono morto");
     }
 
     public String gettimertext(){
