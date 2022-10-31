@@ -216,9 +216,11 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
                             tv.setVisibility(View.GONE);
                             immagine_1.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.giusto));
                             y++;
+                            pt_totalizzati++;
                             verdetto=true;
                         } else {
                             tentativi--;
+                            pt_max++;
                             verdetto=false;
                         }
                         break;
@@ -227,9 +229,11 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
                             tv.setVisibility(View.GONE);
                             immagine_2.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.giusto));
                             y++;
+                            pt_totalizzati++;
                             verdetto=true;
                         } else {
                             tentativi--;
+                            pt_max++;
                             verdetto=false;
                         }
                         break;
@@ -238,13 +242,16 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
                             tv.setVisibility(View.GONE);
                             immagine_3.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.giusto));
                             y++;
+                            pt_totalizzati++;
                             verdetto=true;
                         } else {
                             tentativi--;
+                            pt_max++;
                             verdetto=false;
                         }
                         break;
                 }
+                pt_max++;
                 if(verdetto){
                     mp = MediaPlayer.create(this,R.raw.giusto);
                     giudizio.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.giusto));
