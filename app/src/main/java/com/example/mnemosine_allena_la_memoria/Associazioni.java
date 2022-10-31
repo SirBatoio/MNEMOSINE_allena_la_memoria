@@ -34,7 +34,7 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
     private Immagine primavera, estate, inverno, autunno, melagrana, patata, pantera, anguria, orologio, carota, bussola, camion, lupo, volpe;
     private ArrayList<Immagine> galleria;
     private ArrayList<String> gioco;
-    private int i = 2, y = 0, t = 0, pt_totalizzati, pt_max;
+    private int i = 2, y = 0, t = 0,tentativi=2, pt_totalizzati, pt_max;
     private static final long TEMPO = 2000;
     private boolean verdetto;
     private MediaPlayer mp;
@@ -216,8 +216,10 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
                         if (tv.getText() == galleria.get(i - 2).getDescrizione()) {
                             tv.setVisibility(View.GONE);
                             immagine_1.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.giusto));
+                            y++;
                             verdetto=true;
                         } else {
+                            tentativi--;
                             verdetto=false;
                         }
                         break;
@@ -225,8 +227,10 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
                         if (tv.getText() == galleria.get(i - 1).getDescrizione()) {
                             tv.setVisibility(View.GONE);
                             immagine_2.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.giusto));
+                            y++;
                             verdetto=true;
                         } else {
+                            tentativi--;
                             verdetto=false;
                         }
                         break;
@@ -234,10 +238,11 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
                         if (tv.getText() == galleria.get(i).getDescrizione()) {
                             tv.setVisibility(View.GONE);
                             immagine_3.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.giusto));
+                            y++;
                             verdetto=true;
                         } else {
+                            tentativi--;
                             verdetto=false;
-
                         }
                         break;
                 }
@@ -251,11 +256,10 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
                 }
                 if(volume){ mp.start();}
                 animaImmagineEsito();
-                y++;
                 container.setOnDragListener(null);
-                if (y == 3) {
-
+                if (y == 3 || tentativi==0) {
                     restart();
+                    tentativi=2;
                     y = 0;
 
                 }
