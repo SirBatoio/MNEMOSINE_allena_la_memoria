@@ -28,12 +28,13 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
     // Create a string for the TextView and Button label
     private static final String TEXTVIEW_TAG = "DRAG TEXT";
     private TextView parola_1, parola_2, parola_3, parola_4, parola_5, parola_6, parola_7, parola_8, parola_9;
-    private ImageView immagine_1, immagine_2, immagine_3;
+    private ImageView immagine_1, immagine_2, immagine_3,giudizio;
     private boolean volume = true;
     private Immagine primavera, estate, inverno, autunno, melagrana, patata, pantera, anguria, orologio, carota, bussola, camion, lupo, volpe;
     private ArrayList<Immagine> galleria;
     private ArrayList<String> gioco;
     private int i = 2, y = 0, t = 0, pt_totalizzati, pt_max;
+    private static final long TEMPO = 2000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +51,7 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
         parola_7 = findViewById(R.id.nome_7);
         parola_8 = findViewById(R.id.nome_8);
         parola_9 = findViewById(R.id.nome_9);
-
+        giudizio=findViewById(R.id.imageView4);
         immagine_1 = findViewById(R.id.fig_1);
         immagine_2 = findViewById(R.id.fig_2);
         immagine_3 = findViewById(R.id.fig_3);
@@ -406,4 +407,15 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
         t++;
     }
 
+
+    public void animaImmagineEsito() {
+        if(giudizio.getRotationY()>=180&&giudizio.getRotationY()<360)
+        {
+            giudizio.animate().rotationY(90).setDuration(TEMPO);
+        }
+        else
+        {
+            giudizio.animate().rotationY(270).setDuration(TEMPO);
+        }
+    }
 }
