@@ -42,7 +42,6 @@ public class SelectEsercizi extends AppCompatActivity {
                 immagine.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.bussola));
                 esercizio_1.setVisibility(View.VISIBLE);
                 esercizio_1.setClickable(true);
-                esercizio_1.setBackgroundColor(0xFFBDB6B6);
                 esercizio_2.setBackgroundColor(0xFFBDB6B6);
                 esercizio_3.setBackgroundColor(0xFFBDB6B6);
                 break;
@@ -102,6 +101,8 @@ public class SelectEsercizi extends AppCompatActivity {
                         startActivity(intent);
                         break;
                     case LOGICA:
+                        intent = new Intent(SelectEsercizi.this, Sequenze.class);
+                        startActivity(intent);
                         break;
                 }
                 break;
