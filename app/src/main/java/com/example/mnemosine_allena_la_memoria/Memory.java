@@ -463,10 +463,12 @@ public class Memory extends AppCompatActivity{
                     public void run() {
                         time--;
                         tempoRimanente.setText(gettimertext());
+                        Log.d("Timer", String.valueOf(time));
                         if(time==0.0)
                         {
                             avanti(b);
                             stopTimer();
+                            Log.d("Timer", "Sono morto");
                             tempoRimanente.setText("");
                         }
                     }

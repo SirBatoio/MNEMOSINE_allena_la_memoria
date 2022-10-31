@@ -207,7 +207,7 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
                 switch(container.getId())
                 {
                     case R.id.top_left_layout:
-                        if(tv.getText()==galleria.get(0).getDescrizione())
+                        if(tv.getText()==galleria.get(i-2).getDescrizione())
                         {
                             Log.d("GIUSTO","pepperepe");
                             tv.setVisibility(View.GONE);
@@ -220,7 +220,7 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
                         }
                         break;
                     case R.id.top_center_layout:
-                        if(tv.getText()==galleria.get(1).getDescrizione())
+                        if(tv.getText()==galleria.get(i-1).getDescrizione())
                         {
                             Log.d("GIUSTO","pepperepe");
                             tv.setVisibility(View.GONE);
@@ -233,7 +233,7 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
                         }
                         break;
                     case R.id.top_right_layout:
-                        if(tv.getText()==galleria.get(2).getDescrizione())
+                        if(tv.getText()==galleria.get(i).getDescrizione())
                         {
                             Log.d("GIUSTO","pepperepe");
                             tv.setVisibility(View.GONE);
