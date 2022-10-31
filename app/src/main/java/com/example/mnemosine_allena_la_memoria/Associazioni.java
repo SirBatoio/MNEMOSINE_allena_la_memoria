@@ -352,7 +352,9 @@ gioco.clear();
         findViewById(R.id.top_left_layout).setOnDragListener(this);
         findViewById(R.id.top_center_layout).setOnDragListener(this);
         findViewById(R.id.top_right_layout).setOnDragListener(this);
+        
         if(t==0){
+
             parola_1.setVisibility(View.GONE);
             parola_2.setVisibility(View.GONE);
             parola_3.setVisibility(View.GONE);
