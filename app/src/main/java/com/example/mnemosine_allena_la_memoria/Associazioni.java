@@ -205,6 +205,7 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
                 container.addView(v); //Add the dragged view
                 v.setVisibility(View.VISIBLE);//finally set Visibility to VISIBLE
 
+                //controllo risposte
                 TextView tv = findViewById(v.getId());
                 switch (container.getId()) {
                     case R.id.top_left_layout:
