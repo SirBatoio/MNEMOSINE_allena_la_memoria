@@ -214,37 +214,28 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
                 switch (container.getId()) {
                     case R.id.top_left_layout:
                         if (tv.getText() == galleria.get(i - 2).getDescrizione()) {
-                            Log.d("GIUSTO", "pepperepe");
                             tv.setVisibility(View.GONE);
                             immagine_1.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.giusto));
                             verdetto=true;
                         } else {
-                            Log.d("GIUSTO", "non è vero");
-                            immagine_1.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.sbaglio));
                             verdetto=false;
                         }
                         break;
                     case R.id.top_center_layout:
                         if (tv.getText() == galleria.get(i - 1).getDescrizione()) {
-                            Log.d("GIUSTO", "pepperepe");
                             tv.setVisibility(View.GONE);
                             immagine_2.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.giusto));
                             verdetto=true;
                         } else {
-                            Log.d("GIUSTO", "non è vero");
-                            immagine_2.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.sbaglio));
                             verdetto=false;
                         }
                         break;
                     case R.id.top_right_layout:
                         if (tv.getText() == galleria.get(i).getDescrizione()) {
-                            Log.d("GIUSTO", "pepperepe");
                             tv.setVisibility(View.GONE);
                             immagine_3.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.giusto));
                             verdetto=true;
                         } else {
-                            Log.d("GIUSTO", "non è vero");
-                            immagine_3.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.sbaglio));
                             verdetto=false;
 
                         }
