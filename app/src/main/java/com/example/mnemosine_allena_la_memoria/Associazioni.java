@@ -32,7 +32,7 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
     private Immagine primavera,estate,inverno,autunno,melagrana,patata,pantera,anguria,orologio,carota,bussola,camion,lupo,volpe;
     private ArrayList<Immagine> galleria;
     private ArrayList<String> gioco;
-    public int i=2,y=0,t=0,pt_totalizzati,pt_max;
+    private int i=2,y=0,t=0,pt_totalizzati,pt_max;
 
 
     // Create a string for the TextView and Button label
@@ -412,7 +412,7 @@ gioco.clear();
             startActivity(intent);
             Risultati.setPunti_totalizzati(pt_totalizzati);
             Risultati.setPunti_massimi(pt_max);
-            Risultati.setCls(Intruso.class);
+            Risultati.setCls(Associazioni.class);
             finish();
 
         }
