@@ -12,7 +12,7 @@ import android.widget.TextView;
 public class Risultati extends AppCompatActivity {
 
     private TextView testo, punteggio;
-    private static int punti_totalizzati, punti_massimi;
+    private static int punti_totalizzati, punti_massimi=1;
     private static Class cls;
 
     @Override
