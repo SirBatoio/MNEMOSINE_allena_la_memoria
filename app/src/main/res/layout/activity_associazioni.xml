@@ -47,9 +47,9 @@
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/immagini"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/menu_laterale"
+        app:layout_constraintStart_toStartOf="@+id/immagini"
         app:layout_constraintTop_toBottomOf="@+id/immagini"
         app:layout_constraintVertical_bias="0.4">
 
