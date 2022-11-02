@@ -54,7 +54,7 @@ public class Sequenze extends AppCompatActivity {
 
         generaDomande();
 
-       restart();
+        restart();
 
     }
 
