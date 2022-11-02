@@ -35,6 +35,7 @@ public class Immagine {
     public Immagine(Bitmap immagine, float rotazione) {
         this.immagine = immagine;
         this.rotazione = rotazione;
+        this.descrizione = "";
     }
 
     public Immagine(Bitmap immagine, String descrizione) {
