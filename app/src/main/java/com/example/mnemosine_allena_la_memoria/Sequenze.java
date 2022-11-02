@@ -26,24 +26,23 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.Collections;
 
-
 public class Sequenze extends AppCompatActivity {
     private ImageView seq_1, seq_2, seq_3,risp_1,risp_2,risp_3;
     private Bitmap cerchio_bianco, cerchio_nero, cerchio_mezzo, quadrato_bianco, quadrato_nero, quadrato_mezzo, triangolo_bianco, triangolo_nero, triangolo_mezzo, freccia_bianco, freccia_nero;
-    private ArrayList<ImageView> sequenza, risposte;
-    private ArrayList<Immagine> immagini_seq, immagini_risp;
-    private ArrayList<ArrayList<Immagine>> domande;
+    private ArrayList<ImageView> sequenza = new ArrayList(), risposte = new ArrayList();
+    private ArrayList<Immagine> immagini_seq = new ArrayList(), immagini_risp = new ArrayList();
+    private ArrayList<ArrayList<Immagine>> domande = new ArrayList();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sequenze);
 
-        seq_1=findViewById(R.id.seq_1);
-        seq_2=findViewById(R.id.seq_2);
-        seq_3=findViewById(R.id.seq_3);
-        risp_1=findViewById(R.id.risp_1);
-        risp_2=findViewById(R.id.risp_2);
-        risp_3=findViewById(R.id.risp_3);
+        sequenza.add(findViewById(R.id.seq_1));
+        sequenza.add(findViewById(R.id.seq_2));
+        sequenza.add(findViewById(R.id.seq_3));
+        risposte.add(findViewById(R.id.risp_1));
+        risposte.add(findViewById(R.id.risp_2));
+        risposte.add(findViewById(R.id.risp_3));
 
         cerchio_bianco=BitmapFactory.decodeResource(getResources(), R.drawable.cerchio_b);
         cerchio_nero=BitmapFactory.decodeResource(getResources(), R.drawable.cerchio_n);
@@ -67,13 +66,6 @@ public class Sequenze extends AppCompatActivity {
         Collections.shuffle(immagini_risp);
         immagini_seq.addAll(immagini_risp);
         domande.add(immagini_seq);
-
-        sequenza.add(seq_1);
-        sequenza.add(seq_2);
-        sequenza.add(seq_3);
-        risposte.add(risp_1);
-        risposte.add(risp_2);
-        risposte.add(risp_3);
 
         int j=0;
         for(int i=0; i<sequenza.size(); i++)
