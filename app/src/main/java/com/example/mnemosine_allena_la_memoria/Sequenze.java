@@ -21,12 +21,15 @@ public class Sequenze extends AppCompatActivity {
     private ImageView immagine2;
     private Bitmap cerchio_bianco, cerchio_nero, cerchio_mezzo, quadrato_bianco, quadrato_nero, quadrato_mezzo, triangolo_bianco, triangolo_nero, triangolo_mezzo, freccia_bianco, freccia_nero;
     private ArrayList<ImageView> sequenza = new ArrayList(), risposte = new ArrayList();
-    private ArrayList<Immagine> immagini_seq1 = new ArrayList(), immagini_seq2 = new ArrayList(), immagini_seq3 = new ArrayList(), immagini_seq4 = new ArrayList(), immagini_seq5 = new ArrayList(), immagini_seq6 = new ArrayList(), immagini_seq7 = new ArrayList(), immagini_seq8 = new ArrayList(), immagini_seq9 = new ArrayList(), immagini_seq10 = new ArrayList(), immagini_seq11 = new ArrayList(), immagini_seq12 = new ArrayList(), immagini_seq13 = new ArrayList(), immagini_seq14 = new ArrayList(), immagini_risp = new ArrayList();
+    private ArrayList<Immagine> immagini_seq1 = new ArrayList(), immagini_seq2 = new ArrayList(), immagini_seq3 = new ArrayList(), immagini_seq4 = new ArrayList(), immagini_seq5 = new ArrayList(), immagini_seq6 = new ArrayList(), immagini_seq7 = new ArrayList(), immagini_seq8 = new ArrayList(), immagini_seq9 = new ArrayList(), immagini_seq10 = new ArrayList(), immagini_risp = new ArrayList();
     private ArrayList<ArrayList<Immagine>> domande = new ArrayList();
     private MediaPlayer mp;
     private static final long TEMPO = 2000;
     private boolean volume=true;
     private int pt_max, livello =0;
+    private Random random = new Random();
+    private int rand;
+    float supp ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +52,6 @@ public class Sequenze extends AppCompatActivity {
         quadrato_mezzo=BitmapFactory.decodeResource(getResources(), R.drawable.quadrato_m);
         triangolo_bianco=BitmapFactory.decodeResource(getResources(), R.drawable.triangolo_b);
         triangolo_nero=BitmapFactory.decodeResource(getResources(), R.drawable.triangolo_n);
-        triangolo_mezzo=BitmapFactory.decodeResource(getResources(), R.drawable.triangolo_m);
         freccia_bianco=BitmapFactory.decodeResource(getResources(), R.drawable.freccia_b);
         freccia_nero=BitmapFactory.decodeResource(getResources(), R.drawable.freccia_n);
 
@@ -61,9 +63,6 @@ public class Sequenze extends AppCompatActivity {
 
     public void generaDomande()
     {
-        Random random = new Random();
-        int rand = random.nextInt(4);
-        float supp = rand*90;
 
         immagini_seq1.add(new Immagine(cerchio_bianco, 0));
         immagini_seq1.add(new Immagine(cerchio_nero, 0));
@@ -73,7 +72,6 @@ public class Sequenze extends AppCompatActivity {
         immagini_risp.add(new Immagine(quadrato_mezzo, 0));
         immagini_risp.add(new Immagine(quadrato_nero, 0));
         aggiungi(immagini_seq1);
-        immagini_risp.clear();
         immagini_seq2.add(new Immagine(freccia_nero, 0+supp));
         immagini_seq2.add(new Immagine(freccia_nero, 180+supp));
         immagini_seq2.add(new Immagine(freccia_nero, 90+supp));
@@ -82,7 +80,6 @@ public class Sequenze extends AppCompatActivity {
         immagini_risp.add(new Immagine(freccia_bianco, 270+supp));
         immagini_risp.add(new Immagine(freccia_nero, 270+supp));
         aggiungi(immagini_seq2);
-        immagini_risp.clear();
         immagini_seq3.add(new Immagine(freccia_nero, 180+supp));
         immagini_seq3.add(new Immagine(freccia_nero, 0+supp));
         immagini_seq3.add(new Immagine(freccia_nero, 180+supp));
@@ -91,6 +88,30 @@ public class Sequenze extends AppCompatActivity {
         immagini_risp.add(new Immagine(freccia_bianco, 180+supp));
         immagini_risp.add(new Immagine(freccia_nero, 0+supp));
         aggiungi(immagini_seq3);
+        immagini_seq4.add(new Immagine(cerchio_mezzo, 90+supp));
+        immagini_seq4.add(new Immagine(cerchio_mezzo, 270+supp));
+        immagini_seq4.add(new Immagine(quadrato_mezzo, 90+supp));
+        immagini_seq4.add(new Immagine(quadrato_mezzo, 270+supp));
+        immagini_risp.add(new Immagine(quadrato_nero, 0+supp));
+        immagini_risp.add(new Immagine(cerchio_mezzo, 90+supp));
+        immagini_risp.add(new Immagine(quadrato_mezzo, 270+supp));
+        aggiungi(immagini_seq4);
+        immagini_seq5.add(new Immagine(cerchio_bianco, 0+supp));
+        immagini_seq5.add(new Immagine(cerchio_mezzo, 90+supp));
+        immagini_seq5.add(new Immagine(cerchio_nero, 0+supp));
+        immagini_seq5.add(new Immagine(cerchio_mezzo, 270+supp));
+        immagini_risp.add(new Immagine(cerchio_nero, 0+supp));
+        immagini_risp.add(new Immagine(cerchio_bianco, 0+supp));
+        immagini_risp.add(new Immagine(cerchio_mezzo, 270+supp));
+        aggiungi(immagini_seq5);
+        immagini_seq6.add(new Immagine(freccia_bianco, 0+supp));
+        immagini_seq6.add(new Immagine(triangolo_nero, 0+supp));
+        immagini_seq6.add(new Immagine(freccia_nero, 0+supp));
+        immagini_seq6.add(new Immagine(triangolo_bianco, 0+supp));
+        immagini_risp.add(new Immagine(triangolo_nero, 90+supp));
+        immagini_risp.add(new Immagine(freccia_bianco, 0+supp));
+        immagini_risp.add(new Immagine(triangolo_bianco, 0+supp));
+        aggiungi(immagini_seq6);
 
     }
 
@@ -99,6 +120,9 @@ public class Sequenze extends AppCompatActivity {
         Collections.shuffle(immagini_risp);
         immagini_seq.addAll(immagini_risp);
         domande.add(immagini_seq);
+        immagini_risp.clear();
+        rand = random.nextInt(4);
+        supp = rand*90;
     }
 
     public void controllo(View v)
