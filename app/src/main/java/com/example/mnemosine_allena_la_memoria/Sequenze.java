@@ -1,24 +1,13 @@
 package com.example.mnemosine_allena_la_memoria;
 
-import android.content.ClipData;
-import android.content.ClipDescription;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
-import android.graphics.PorterDuff;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.DragEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-
-import android.os.Bundle;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
@@ -36,7 +25,7 @@ public class Sequenze extends AppCompatActivity {
     private MediaPlayer mp;
     private static final long TEMPO = 2000;
     private boolean volume=true;
-    private int pt_max,livello_o_l=0;
+    private int pt_max, livello =0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,6 +76,7 @@ public class Sequenze extends AppCompatActivity {
         immagini_risp.add(new Immagine(freccia_bianco, 270));
         immagini_risp.add(new Immagine(freccia_nero, 270));
         aggiungi();
+        Log.d("Dimensioni", String.valueOf(domande.size()));
     }
 
     public void svuota()
@@ -106,13 +96,13 @@ public class Sequenze extends AppCompatActivity {
     public void controllo(View v)
     {
         immagini_risp.clear();
-        immagini_risp.add(domande.get(livello_o_l).get(4));
-        immagini_risp.add(domande.get(livello_o_l).get(5));
-        immagini_risp.add(domande.get(livello_o_l).get(6));
+        immagini_risp.add(domande.get(livello).get(4));
+        immagini_risp.add(domande.get(livello).get(5));
+        immagini_risp.add(domande.get(livello).get(6));
         switch (v.getId())
         {
             case R.id.risp_1:
-                if(domande.get(livello_o_l).get(3).getImmagine()==immagini_risp.get(0).getImmagine()&&domande.get(livello_o_l).get(3).getRotazione()==immagini_risp.get(0).getRotazione())
+                if(domande.get(livello).get(3).getImmagine()==immagini_risp.get(0).getImmagine()&&domande.get(livello).get(3).getRotazione()==immagini_risp.get(0).getRotazione())
                 {
                     Log.d("Giusto", "=Vero");
                     giusto();
@@ -124,7 +114,7 @@ public class Sequenze extends AppCompatActivity {
                 }
                 break;
             case R.id.risp_2:
-                if(domande.get(livello_o_l).get(3).getImmagine()==immagini_risp.get(1).getImmagine()&&domande.get(livello_o_l).get(3).getRotazione()==immagini_risp.get(1).getRotazione())
+                if(domande.get(livello).get(3).getImmagine()==immagini_risp.get(1).getImmagine()&&domande.get(livello).get(3).getRotazione()==immagini_risp.get(1).getRotazione())
                 {
                     Log.d("Giusto", "=Vero");
                     giusto();
@@ -136,7 +126,7 @@ public class Sequenze extends AppCompatActivity {
                 }
                 break;
             case R.id.risp_3:
-                if(domande.get(livello_o_l).get(3).getImmagine()==immagini_risp.get(2).getImmagine()&&domande.get(livello_o_l).get(3).getRotazione()==immagini_risp.get(2).getRotazione())
+                if(domande.get(livello).get(3).getImmagine()==immagini_risp.get(2).getImmagine()&&domande.get(livello).get(3).getRotazione()==immagini_risp.get(2).getRotazione())
                 {
                     Log.d("Giusto", "=Vero");
                     giusto();
@@ -157,7 +147,7 @@ public class Sequenze extends AppCompatActivity {
         if(volume){ mp.start();}
         animaImmagineEsito();
         restart();
-        livello_o_l++;
+        livello++;
     }
 
     public void errore(){
@@ -173,15 +163,15 @@ public class Sequenze extends AppCompatActivity {
         int j=0;
         for(int i=0; i<sequenza.size(); i++)
         {
-            sequenza.get(i).setImageBitmap(domande.get(livello_o_l).get(j).getImmagine());
-            sequenza.get(i).setRotation(domande.get(livello_o_l).get(j).getRotazione());
+            sequenza.get(i).setImageBitmap(domande.get(livello).get(j).getImmagine());
+            sequenza.get(i).setRotation(domande.get(livello).get(j).getRotazione());
             j++;
         }
         j++;
         for(int i=0; i<risposte.size(); i++)
         {
-            risposte.get(i).setImageBitmap(domande.get(livello_o_l).get(j).getImmagine());
-            risposte.get(i).setRotation(domande.get(livello_o_l).get(j).getRotazione());
+            risposte.get(i).setImageBitmap(domande.get(livello).get(j).getImmagine());
+            risposte.get(i).setRotation(domande.get(livello).get(j).getRotazione());
             j++;
         }
 
