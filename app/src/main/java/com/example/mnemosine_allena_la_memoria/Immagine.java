@@ -8,11 +8,6 @@ public class Immagine {
     private String descrizione;
     private float rotazione;
 
-    public void ruotaImageView(ImageView im)
-    {
-        im.setRotation(this.rotazione);
-    }
-
     public float getRotazione() {
         return rotazione;
     }
