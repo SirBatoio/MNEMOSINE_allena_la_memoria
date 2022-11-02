@@ -38,19 +38,12 @@ public class Sequenze extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sequenze);
 
-        seq_1=findViewById(R.id.seq_1);
-        seq_2=findViewById(R.id.seq_2);
-        seq_3=findViewById(R.id.seq_3);
-        risp_1=findViewById(R.id.risp_1);
-        risp_2=findViewById(R.id.risp_2);
-        risp_3=findViewById(R.id.risp_3);
-
-        sequenza.add(seq_1);
-        sequenza.add(seq_2);
-        sequenza.add(seq_3);
-        risposte.add(risp_1);
-        risposte.add(risp_1);
-        risposte.add(risp_1);
+        sequenza.add(findViewById(R.id.seq_1));
+        sequenza.add(findViewById(R.id.seq_2));
+        sequenza.add(findViewById(R.id.seq_3));
+        risposte.add(findViewById(R.id.risp_1));
+        risposte.add(findViewById(R.id.risp_2));
+        risposte.add(findViewById(R.id.risp_3));
 
         cerchio_bianco=BitmapFactory.decodeResource(getResources(), R.drawable.cerchio_b);
         cerchio_nero=BitmapFactory.decodeResource(getResources(), R.drawable.cerchio_n);
