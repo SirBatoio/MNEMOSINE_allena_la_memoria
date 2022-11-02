@@ -82,6 +82,7 @@ public class Sequenze extends AppCompatActivity {
     {
         immagini_risp.clear();
         immagini_seq.clear();
+        Log.d("Aaa",String.valueOf(domande.get(livello).size()));
     }
 
     public void aggiungi()
@@ -160,6 +161,7 @@ public class Sequenze extends AppCompatActivity {
 
     public void restart(){
         int j=0;
+
         for(int i=0; i<sequenza.size(); i++)
         {
             sequenza.get(i).setImageBitmap(domande.get(livello).get(j).getImmagine());
