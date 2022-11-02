@@ -56,16 +56,7 @@ public class Sequenze extends AppCompatActivity {
         freccia_bianco=BitmapFactory.decodeResource(getResources(), R.drawable.freccia_b);
         freccia_nero=BitmapFactory.decodeResource(getResources(), R.drawable.freccia_n);
 
-        immagini_seq.add(new Immagine(cerchio_bianco, 0));
-        immagini_seq.add(new Immagine(cerchio_nero, 0));
-        immagini_seq.add(new Immagine(quadrato_bianco, 0));
-        immagini_seq.add(new Immagine(quadrato_nero, 0));
-        immagini_risp.add(new Immagine(cerchio_nero, 0));
-        immagini_risp.add(new Immagine(quadrato_mezzo, 0));
-        immagini_risp.add(new Immagine(quadrato_nero, 0));
-        Collections.shuffle(immagini_risp);
-        immagini_seq.addAll(immagini_risp);
-        domande.add(immagini_seq);
+        generaDomande();
 
         int j=0;
         for(int i=0; i<sequenza.size(); i++)
@@ -84,8 +75,46 @@ public class Sequenze extends AppCompatActivity {
 
     }
 
+    public void generaDomande()
+    {
+        immagini_seq.add(new Immagine(cerchio_bianco, 0));
+        immagini_seq.add(new Immagine(cerchio_nero, 0));
+        immagini_seq.add(new Immagine(quadrato_bianco, 0));
+        immagini_seq.add(new Immagine(quadrato_nero, 0));
+        immagini_risp.add(new Immagine(cerchio_nero, 0));
+        immagini_risp.add(new Immagine(quadrato_mezzo, 0));
+        immagini_risp.add(new Immagine(quadrato_nero, 0));
+        aggiungi();
+        immagini_seq.add(new Immagine(freccia_nero, 0));
+        immagini_seq.add(new Immagine(freccia_nero, 180));
+        immagini_seq.add(new Immagine(freccia_nero, 90));
+        immagini_seq.add(new Immagine(freccia_nero, 270));
+        immagini_risp.add(new Immagine(freccia_nero, 90));
+        immagini_risp.add(new Immagine(freccia_bianco, 270));
+        immagini_risp.add(new Immagine(freccia_nero, 270));
+        aggiungi();
+    }
+
+    public void svuota()
+    {
+        immagini_risp.clear();
+        immagini_seq.clear();
+    }
+
+    public void aggiungi()
+    {
+        Collections.shuffle(immagini_risp);
+        immagini_seq.addAll(immagini_risp);
+        domande.add(immagini_seq);
+        svuota();
+    }
+
     public void controllo(View v)
     {
+        immagini_risp.clear();
+        immagini_risp.add(domande.get(0).get(4));
+        immagini_risp.add(domande.get(0).get(5));
+        immagini_risp.add(domande.get(0).get(6));
         switch (v.getId())
         {
             case R.id.risp_1:
@@ -96,8 +125,6 @@ public class Sequenze extends AppCompatActivity {
                 else
                 {
                     Log.d("Giusto", "=Falso ");
-                    ImageView iv = findViewById(R.id.seq_4);
-                    iv.setImageBitmap(domande.get(0).get(3).getImmagine());
                 }
                 break;
             case R.id.risp_2:
@@ -108,8 +135,6 @@ public class Sequenze extends AppCompatActivity {
                 else
                 {
                     Log.d("Giusto", "=Falso ");
-                    ImageView iv = findViewById(R.id.seq_4);
-                    iv.setImageBitmap(domande.get(0).get(3).getImmagine());
                 }
                 break;
             case R.id.risp_3:
@@ -120,8 +145,6 @@ public class Sequenze extends AppCompatActivity {
                 else
                 {
                     Log.d("Giusto", "=Falso ");
-                    ImageView iv = findViewById(R.id.seq_4);
-                    iv.setImageBitmap(domande.get(0).get(3).getImmagine());
                 }
                 break;
         }
