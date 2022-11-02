@@ -76,7 +76,6 @@ public class Sequenze extends AppCompatActivity {
         immagini_risp.add(new Immagine(freccia_bianco, 270));
         immagini_risp.add(new Immagine(freccia_nero, 270));
         aggiungi();
-        Log.d("Dimensioni", String.valueOf(domande.size()));
     }
 
     public void svuota()
