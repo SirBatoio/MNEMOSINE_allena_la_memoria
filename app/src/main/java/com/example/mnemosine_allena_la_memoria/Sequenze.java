@@ -89,7 +89,7 @@ public class Sequenze extends AppCompatActivity {
         switch (v.getId())
         {
             case R.id.risp_1:
-                if(domande.get(0).get(4)==immagini_risp.get(0))
+                if(domande.get(0).get(3)==immagini_risp.get(0))
                 {
                     Log.d("Giusto", "=Vero");
                 }
@@ -99,7 +99,7 @@ public class Sequenze extends AppCompatActivity {
                 }
                 break;
             case R.id.risp_2:
-                if(domande.get(0).get(4)==immagini_risp.get(1))
+                if(domande.get(0).get(3)==immagini_risp.get(1))
                 {
                     Log.d("Giusto", "=Vero");
                 }
@@ -109,7 +109,7 @@ public class Sequenze extends AppCompatActivity {
                 }
                 break;
             case R.id.risp_3:
-                if(domande.get(0).get(4)==immagini_risp.get(2))
+                if(domande.get(0).get(3)==immagini_risp.get(2))
                 {
                     Log.d("Giusto", "=Vero");
                 }
