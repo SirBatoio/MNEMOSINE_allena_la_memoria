@@ -139,8 +139,8 @@ public class Sequenze extends AppCompatActivity {
         immagine2.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.giusto));
         if(volume){ mp.start();}
         animaImmagineEsito();
-        restart();
         livello++;
+        restart();
     }
 
     public void errore(){
