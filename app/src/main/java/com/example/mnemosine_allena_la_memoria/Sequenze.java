@@ -68,6 +68,7 @@ public class Sequenze extends AppCompatActivity {
         immagini_risp.add(new Immagine(quadrato_mezzo, 0));
         immagini_risp.add(new Immagine(quadrato_nero, 0));
         aggiungi(immagini_seq1);
+        immagini_risp.clear();
         immagini_seq2.add(new Immagine(freccia_nero, 0));
         immagini_seq2.add(new Immagine(freccia_nero, 180));
         immagini_seq2.add(new Immagine(freccia_nero, 90));
@@ -77,7 +78,6 @@ public class Sequenze extends AppCompatActivity {
         immagini_risp.add(new Immagine(freccia_nero, 270));
         aggiungi(immagini_seq2);
     }
-
 
     public void aggiungi(ArrayList<Immagine> immagini_seq)
     {
