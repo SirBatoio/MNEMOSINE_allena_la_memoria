@@ -104,18 +104,7 @@
         tools:ignore="SpeakableTextPresentCheck"
         tools:srcCompat="@tools:sample/avatars[5]" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="225dp"
-        android:layout_height="62dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="16dp"
-        android:onClick="cambiaVolume"
-        android:text="volume ON"
-        android:textSize="25sp"
-        app:cornerRadius="100dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
 
     <TextView
         android:id="@+id/titolo"
@@ -149,5 +138,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
         app:srcCompat="@drawable/indietro" />
+
+    <ImageView
+        android:id="@+id/immagine2"
+        android:layout_width="350dp"
+        android:layout_height="450dp"
+        app:layout_constraintBottom_toTopOf="@+id/seq_4"
+        app:layout_constraintEnd_toStartOf="@+id/seq_2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/seq_1"
+        app:layout_constraintTop_toBottomOf="@+id/seq_1"
+        app:layout_constraintVertical_bias="0.5"
+        tools:srcCompat="@tools:sample/avatars" />
+
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="225dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:onClick="cambiaVolume"
+        android:text="volume ON"
+        android:textSize="25sp"
+        app:cornerRadius="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
