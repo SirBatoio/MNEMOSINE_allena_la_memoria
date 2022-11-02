@@ -89,7 +89,9 @@ public class Sequenze extends AppCompatActivity {
     {
         Collections.shuffle(immagini_risp);
         immagini_seq.addAll(immagini_risp);
-        domande.add(immagini_seq);
+        ArrayList<Immagine> prova;
+        prova = immagini_risp;
+        domande.add(prova);
         svuota();
     }
 
