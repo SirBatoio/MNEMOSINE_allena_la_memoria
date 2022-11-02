@@ -60,6 +60,7 @@ public class Sequenze extends AppCompatActivity {
 
     public void generaDomande()
     {
+
         immagini_seq.add(new Immagine(cerchio_bianco, 0));
         immagini_seq.add(new Immagine(cerchio_nero, 0));
         immagini_seq.add(new Immagine(quadrato_bianco, 0));
@@ -76,13 +77,17 @@ public class Sequenze extends AppCompatActivity {
         immagini_risp.add(new Immagine(freccia_bianco, 270));
         immagini_risp.add(new Immagine(freccia_nero, 270));
         aggiungi();
-        Log.d("Dimensioni", String.valueOf(domande.size()));
+
     }
 
     public void svuota()
     {
+        Log.d("Aaa",String.valueOf(domande.get(livello).size()));
         immagini_risp.clear();
+        Log.d("Aaa",String.valueOf(domande.get(livello).size()));
+
         immagini_seq.clear();
+        Log.d("Aaa",String.valueOf(domande.get(livello).size()));
     }
 
     public void aggiungi()
@@ -161,6 +166,7 @@ public class Sequenze extends AppCompatActivity {
 
     public void restart(){
         int j=0;
+
         for(int i=0; i<sequenza.size(); i++)
         {
             sequenza.get(i).setImageBitmap(domande.get(livello).get(j).getImmagine());
