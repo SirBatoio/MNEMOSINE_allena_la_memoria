@@ -26,9 +26,9 @@ public class Sequenze extends AppCompatActivity {
     private MediaPlayer mp;
     private static final long TEMPO = 2000;
     private boolean volume=true;
-    private int pt_max, livello =0;
+    private int pt_max=5, livello =0;
     private Random random = new Random();
-    private int rand;
+    private int rand,l=5,pt_totalizzati,LIV_MAX;
     float supp ;
 
     @Override
@@ -200,6 +200,15 @@ public class Sequenze extends AppCompatActivity {
     }
 
     public void restart(){
+
+        if(livello==l){
+            Intent intent= new Intent(Sequenze.this,Risultati.class);
+            startActivity(intent);
+            Risultati.setPunti_massimi(pt_max);
+            Risultati.setPunti_totalizzati(pt_totalizzati);
+            Risultati.setCls(Sequenze.class);
+            finish();
+        }
         int j=0;
 
         for(int i=0; i<sequenza.size(); i++)
@@ -215,6 +224,11 @@ public class Sequenze extends AppCompatActivity {
             risposte.get(i).setRotation(domande.get(livello).get(j).getRotazione());
             j++;
         }
+
+
+
+
+
 
     }
 
