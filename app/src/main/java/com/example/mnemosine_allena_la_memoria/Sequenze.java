@@ -17,10 +17,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class Sequenze extends AppCompatActivity {
-    private ImageView seq_1, seq_2, seq_3,risp_1,risp_2,risp_3,immagine2;
+    private ImageView immagine2;
     private Bitmap cerchio_bianco, cerchio_nero, cerchio_mezzo, quadrato_bianco, quadrato_nero, quadrato_mezzo, triangolo_bianco, triangolo_nero, triangolo_mezzo, freccia_bianco, freccia_nero;
     private ArrayList<ImageView> sequenza = new ArrayList(), risposte = new ArrayList();
-    private ArrayList<Immagine> immagini_seq = new ArrayList(), immagini_risp = new ArrayList();
+    private ArrayList<Immagine> immagini_seq1 = new ArrayList(), immagini_seq2 = new ArrayList(), immagini_seq3 = new ArrayList(), immagini_seq4 = new ArrayList(), immagini_seq5 = new ArrayList(), immagini_seq6 = new ArrayList(), immagini_seq7 = new ArrayList(), immagini_seq8 = new ArrayList(), immagini_seq9 = new ArrayList(), immagini_seq10 = new ArrayList(), immagini_seq11 = new ArrayList(), immagini_seq12 = new ArrayList(), immagini_seq13 = new ArrayList(), immagini_seq14 = new ArrayList(), immagini_risp = new ArrayList();
     private ArrayList<ArrayList<Immagine>> domande = new ArrayList();
     private MediaPlayer mp;
     private static final long TEMPO = 2000;
@@ -54,46 +54,36 @@ public class Sequenze extends AppCompatActivity {
 
         generaDomande();
 
-       restart();
+        restart();
 
     }
 
     public void generaDomande()
     {
-        immagini_seq.add(new Immagine(cerchio_bianco, 0));
-        immagini_seq.add(new Immagine(cerchio_nero, 0));
-        immagini_seq.add(new Immagine(quadrato_bianco, 0));
-        immagini_seq.add(new Immagine(quadrato_nero, 0));
+        immagini_seq1.add(new Immagine(cerchio_bianco, 0));
+        immagini_seq1.add(new Immagine(cerchio_nero, 0));
+        immagini_seq1.add(new Immagine(quadrato_bianco, 0));
+        immagini_seq1.add(new Immagine(quadrato_nero, 0));
         immagini_risp.add(new Immagine(cerchio_nero, 0));
         immagini_risp.add(new Immagine(quadrato_mezzo, 0));
         immagini_risp.add(new Immagine(quadrato_nero, 0));
-        aggiungi();
-        immagini_seq.add(new Immagine(freccia_nero, 0));
-        immagini_seq.add(new Immagine(freccia_nero, 180));
-        immagini_seq.add(new Immagine(freccia_nero, 90));
-        immagini_seq.add(new Immagine(freccia_nero, 270));
+        aggiungi(immagini_seq1);
+        immagini_seq2.add(new Immagine(freccia_nero, 0));
+        immagini_seq2.add(new Immagine(freccia_nero, 180));
+        immagini_seq2.add(new Immagine(freccia_nero, 90));
+        immagini_seq2.add(new Immagine(freccia_nero, 270));
         immagini_risp.add(new Immagine(freccia_nero, 90));
         immagini_risp.add(new Immagine(freccia_bianco, 270));
         immagini_risp.add(new Immagine(freccia_nero, 270));
-        aggiungi();
+        aggiungi(immagini_seq2);
     }
 
-    public void svuota()
-    {
-        immagini_risp.clear();
-        immagini_seq.clear();
-    }
 
-    public void aggiungi()
+    public void aggiungi(ArrayList<Immagine> immagini_seq)
     {
         Collections.shuffle(immagini_risp);
         immagini_seq.addAll(immagini_risp);
-        ArrayList<Immagine> prova;
-        prova = immagini_risp;
-        Log.d("Aaa",String.valueOf(prova.size()));
-
-        domande.add(prova);
-       // svuota();
+        domande.add(immagini_seq);
     }
 
     public void controllo(View v)
@@ -149,8 +139,8 @@ public class Sequenze extends AppCompatActivity {
         immagine2.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.giusto));
         if(volume){ mp.start();}
         animaImmagineEsito();
-        restart();
         livello++;
+        restart();
     }
 
     public void errore(){
