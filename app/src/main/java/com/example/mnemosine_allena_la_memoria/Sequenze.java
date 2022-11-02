@@ -23,11 +23,16 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
+import java.util.Collections;
 
 
 public class Sequenze extends AppCompatActivity {
     private ImageView seq_1, seq_2, seq_3,risp_1,risp_2,risp_3;
     private Bitmap cerchio_bianco, cerchio_nero, cerchio_mezzo, quadrato_bianco, quadrato_nero, quadrato_mezzo, triangolo_bianco, triangolo_nero, triangolo_mezzo, freccia_bianco, freccia_nero;
+    private ArrayList<ImageView> sequenza, risposte;
+    private ArrayList<Immagine> immagini_seq, immagini_risp;
+    private ArrayList<ArrayList<Immagine>> domande;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +44,13 @@ public class Sequenze extends AppCompatActivity {
         risp_1=findViewById(R.id.risp_1);
         risp_2=findViewById(R.id.risp_2);
         risp_3=findViewById(R.id.risp_3);
+
+        sequenza.add(seq_1);
+        sequenza.add(seq_2);
+        sequenza.add(seq_3);
+        risposte.add(risp_1);
+        risposte.add(risp_1);
+        risposte.add(risp_1);
 
         cerchio_bianco=BitmapFactory.decodeResource(getResources(), R.drawable.cerchio_b);
         cerchio_nero=BitmapFactory.decodeResource(getResources(), R.drawable.cerchio_n);
@@ -52,6 +64,29 @@ public class Sequenze extends AppCompatActivity {
         freccia_bianco=BitmapFactory.decodeResource(getResources(), R.drawable.freccia_b);
         freccia_nero=BitmapFactory.decodeResource(getResources(), R.drawable.freccia_n);
 
-        seq_1.setRotation(180);
+        immagini_seq.add(new Immagine(cerchio_bianco, 0));
+        immagini_seq.add(new Immagine(cerchio_nero, 0));
+        immagini_seq.add(new Immagine(quadrato_bianco, 0));
+        immagini_seq.add(new Immagine(quadrato_nero, 0));
+        immagini_risp.add(new Immagine(cerchio_nero, 0));
+        immagini_risp.add(new Immagine(quadrato_mezzo, 0));
+        immagini_risp.add(new Immagine(quadrato_nero, 0));
+        Collections.shuffle(immagini_risp);
+        immagini_seq.addAll(immagini_risp);
+        domande.add(immagini_seq);
+
+        int j=0;
+        for(int i=0; i<sequenza.size(); i++)
+        {
+            sequenza.get(i).setImageBitmap(domande.get(0).get(j).getImmagine());
+            j++;
+        }
+        j++;
+        for(int i=0; i<risposte.size(); i++)
+        {
+            risposte.get(i).setImageBitmap(domande.get(0).get(j).getImmagine());
+            j++;
+        }
+
     }
 }
