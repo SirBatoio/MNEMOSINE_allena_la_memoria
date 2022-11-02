@@ -95,31 +95,31 @@ public class Sequenze extends AppCompatActivity {
                 }
                 else
                 {
-                    Log.d("Giusto", "=Falso "+String.valueOf(immagini_risp.get(0).getImmagine()));
+                    Log.d("Giusto", "=Falso ");
                     ImageView iv = findViewById(R.id.seq_4);
                     iv.setImageBitmap(domande.get(0).get(3).getImmagine());
                 }
                 break;
             case R.id.risp_2:
-                if(domande.get(0).get(3)==immagini_risp.get(1)&&domande.get(0).get(3).getRotazione()==immagini_risp.get(1).getRotazione())
+                if(domande.get(0).get(3).getImmagine()==immagini_risp.get(1).getImmagine()&&domande.get(0).get(3).getRotazione()==immagini_risp.get(1).getRotazione())
                 {
                     Log.d("Giusto", "=Vero");
                 }
                 else
                 {
-                    Log.d("Giusto", "=Falso "+String.valueOf(immagini_risp.get(1).getRotazione()));
+                    Log.d("Giusto", "=Falso ");
                     ImageView iv = findViewById(R.id.seq_4);
                     iv.setImageBitmap(domande.get(0).get(3).getImmagine());
                 }
                 break;
             case R.id.risp_3:
-                if(domande.get(0).get(3)==immagini_risp.get(2)&&domande.get(0).get(3).getRotazione()==immagini_risp.get(2).getRotazione())
+                if(domande.get(0).get(3).getImmagine()==immagini_risp.get(2).getImmagine()&&domande.get(0).get(3).getRotazione()==immagini_risp.get(2).getRotazione())
                 {
                     Log.d("Giusto", "=Vero");
                 }
                 else
                 {
-                    Log.d("Giusto", "=Falso "+String.valueOf(immagini_risp.get(2).getRotazione()));
+                    Log.d("Giusto", "=Falso ");
                     ImageView iv = findViewById(R.id.seq_4);
                     iv.setImageBitmap(domande.get(0).get(3).getImmagine());
                 }
