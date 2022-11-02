@@ -96,6 +96,8 @@ public class Sequenze extends AppCompatActivity {
                 else
                 {
                     Log.d("Giusto", "=Falso");
+                    ImageView iv = findViewById(R.id.seq_4);
+                    iv.setImageBitmap(immagini_risp.get(0).getImmagine());
                 }
                 break;
             case R.id.risp_2:
@@ -106,6 +108,8 @@ public class Sequenze extends AppCompatActivity {
                 else
                 {
                     Log.d("Giusto", "=Falso");
+                    ImageView iv = findViewById(R.id.seq_4);
+                    iv.setImageBitmap(immagini_risp.get(1).getImmagine());
                 }
                 break;
             case R.id.risp_3:
@@ -116,6 +120,8 @@ public class Sequenze extends AppCompatActivity {
                 else
                 {
                     Log.d("Giusto", "=Falso");
+                    ImageView iv = findViewById(R.id.seq_4);
+                    iv.setImageBitmap(immagini_risp.get(2).getImmagine());
                 }
                 break;
         }
