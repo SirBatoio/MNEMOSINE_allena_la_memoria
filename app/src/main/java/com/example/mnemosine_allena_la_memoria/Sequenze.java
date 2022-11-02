@@ -95,7 +95,7 @@ public class Sequenze extends AppCompatActivity {
                 }
                 else
                 {
-                    Log.d("Giusto", "=Falso "+String.valueOf(immagini_risp.get(2).getRotazione()));
+                    Log.d("Giusto", "=Falso "+String.valueOf(immagini_risp.get(0).getImmagine()));
                     ImageView iv = findViewById(R.id.seq_4);
                     iv.setImageBitmap(domande.get(0).get(3).getImmagine());
                 }
