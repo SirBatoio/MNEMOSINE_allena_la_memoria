@@ -109,7 +109,7 @@ public class Sequenze extends AppCompatActivity {
                 {
                     Log.d("Giusto", "=Falso");
                     ImageView iv = findViewById(R.id.seq_4);
-                    iv.setImageBitmap(immagini_risp.get(1).getImmagine());
+                    iv.setImageBitmap(domande.get(0).get(3).getImmagine());
                 }
                 break;
             case R.id.risp_3:
@@ -121,7 +121,7 @@ public class Sequenze extends AppCompatActivity {
                 {
                     Log.d("Giusto", "=Falso");
                     ImageView iv = findViewById(R.id.seq_4);
-                    iv.setImageBitmap(immagini_risp.get(2).getImmagine());
+                    iv.setImageBitmap(domande.get(0).get(3).getImmagine());
                 }
                 break;
         }
