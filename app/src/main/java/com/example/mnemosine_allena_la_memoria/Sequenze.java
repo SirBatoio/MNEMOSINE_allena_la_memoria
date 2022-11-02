@@ -82,7 +82,6 @@ public class Sequenze extends AppCompatActivity {
     {
         immagini_risp.clear();
         immagini_seq.clear();
-        Log.d("Aaa",String.valueOf(domande.get(livello).size()));
     }
 
     public void aggiungi()
@@ -91,8 +90,10 @@ public class Sequenze extends AppCompatActivity {
         immagini_seq.addAll(immagini_risp);
         ArrayList<Immagine> prova;
         prova = immagini_risp;
+        Log.d("Aaa",String.valueOf(prova.size()));
+
         domande.add(prova);
-        svuota();
+       // svuota();
     }
 
     public void controllo(View v)
