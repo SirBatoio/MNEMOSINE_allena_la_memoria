@@ -74,7 +74,6 @@ public class Sequenze extends AppCompatActivity {
             sequenza.get(i).setRotation(domande.get(0).get(j).getRotazione());
             j++;
         }
-        j++;
         for(int i=0; i<risposte.size(); i++)
         {
             risposte.get(i).setImageBitmap(domande.get(0).get(j).getImmagine());
