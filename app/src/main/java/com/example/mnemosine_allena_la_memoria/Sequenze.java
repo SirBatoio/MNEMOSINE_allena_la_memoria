@@ -19,9 +19,9 @@ import java.util.Random;
 
 public class Sequenze extends AppCompatActivity {
     private ImageView immagine2;
-    private Bitmap cerchio_bianco, cerchio_nero, cerchio_mezzo, quadrato_bianco, quadrato_nero, quadrato_mezzo, triangolo_bianco, triangolo_nero, triangolo_mezzo, freccia_bianco, freccia_nero;
+    private Bitmap cerchio_bianco, cerchio_nero, cerchio_mezzo, quadrato_bianco, quadrato_nero, quadrato_mezzo, triangolo_bianco, triangolo_nero, freccia_bianco, freccia_nero;
     private ArrayList<ImageView> sequenza = new ArrayList(), risposte = new ArrayList();
-    private ArrayList<Immagine> immagini_seq1 = new ArrayList(), immagini_seq2 = new ArrayList(), immagini_seq3 = new ArrayList(), immagini_seq4 = new ArrayList(), immagini_seq5 = new ArrayList(), immagini_seq6 = new ArrayList(), immagini_seq7 = new ArrayList(), immagini_seq8 = new ArrayList(), immagini_seq9 = new ArrayList(), immagini_seq10 = new ArrayList(), immagini_risp = new ArrayList();
+    private ArrayList<Immagine> immagini_seq1 = new ArrayList(), immagini_seq2 = new ArrayList(), immagini_seq3 = new ArrayList(), immagini_seq4 = new ArrayList(), immagini_seq5 = new ArrayList(), immagini_seq6 = new ArrayList(), immagini_seq7 = new ArrayList(), immagini_risp = new ArrayList();
     private ArrayList<ArrayList<Immagine>> domande = new ArrayList();
     private MediaPlayer mp;
     private static final long TEMPO = 2000;
@@ -92,16 +92,16 @@ public class Sequenze extends AppCompatActivity {
         immagini_seq4.add(new Immagine(cerchio_mezzo, 270+supp));
         immagini_seq4.add(new Immagine(quadrato_mezzo, 90+supp));
         immagini_seq4.add(new Immagine(quadrato_mezzo, 270+supp));
-        immagini_risp.add(new Immagine(quadrato_nero, 0+supp));
+        immagini_risp.add(new Immagine(quadrato_nero, 0));
         immagini_risp.add(new Immagine(cerchio_mezzo, 90+supp));
         immagini_risp.add(new Immagine(quadrato_mezzo, 270+supp));
         aggiungi(immagini_seq4);
         immagini_seq5.add(new Immagine(cerchio_bianco, 0+supp));
         immagini_seq5.add(new Immagine(cerchio_mezzo, 90+supp));
-        immagini_seq5.add(new Immagine(cerchio_nero, 0+supp));
+        immagini_seq5.add(new Immagine(cerchio_nero, 0));
         immagini_seq5.add(new Immagine(cerchio_mezzo, 270+supp));
-        immagini_risp.add(new Immagine(cerchio_nero, 0+supp));
-        immagini_risp.add(new Immagine(cerchio_bianco, 0+supp));
+        immagini_risp.add(new Immagine(cerchio_nero, 0));
+        immagini_risp.add(new Immagine(cerchio_bianco, 0));
         immagini_risp.add(new Immagine(cerchio_mezzo, 270+supp));
         aggiungi(immagini_seq5);
         immagini_seq6.add(new Immagine(freccia_bianco, 0+supp));
@@ -112,7 +112,15 @@ public class Sequenze extends AppCompatActivity {
         immagini_risp.add(new Immagine(freccia_bianco, 0+supp));
         immagini_risp.add(new Immagine(triangolo_bianco, 0+supp));
         aggiungi(immagini_seq6);
-
+        immagini_seq7.add(new Immagine(cerchio_nero, 0));
+        immagini_seq7.add(new Immagine(freccia_nero, 90+supp));
+        immagini_seq7.add(new Immagine(freccia_bianco, 270+supp));
+        immagini_seq7.add(new Immagine(cerchio_bianco, 0));
+        immagini_risp.add(new Immagine(cerchio_nero, 0));
+        immagini_risp.add(new Immagine(freccia_nero, 90));
+        immagini_risp.add(new Immagine(cerchio_bianco, 0));
+        aggiungi(immagini_seq7);
+        Collections.shuffle(domande);
     }
 
     public void aggiungi(ArrayList<Immagine> immagini_seq)
