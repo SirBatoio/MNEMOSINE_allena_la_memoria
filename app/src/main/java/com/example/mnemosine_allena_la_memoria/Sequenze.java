@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Random;
 
 public class Sequenze extends AppCompatActivity {
     private ImageView immagine2;
@@ -60,6 +61,10 @@ public class Sequenze extends AppCompatActivity {
 
     public void generaDomande()
     {
+        Random random = new Random();
+        int rand = random.nextInt(4);
+        float supp = rand*90;
+
         immagini_seq1.add(new Immagine(cerchio_bianco, 0));
         immagini_seq1.add(new Immagine(cerchio_nero, 0));
         immagini_seq1.add(new Immagine(quadrato_bianco, 0));
@@ -69,14 +74,24 @@ public class Sequenze extends AppCompatActivity {
         immagini_risp.add(new Immagine(quadrato_nero, 0));
         aggiungi(immagini_seq1);
         immagini_risp.clear();
-        immagini_seq2.add(new Immagine(freccia_nero, 0));
-        immagini_seq2.add(new Immagine(freccia_nero, 180));
-        immagini_seq2.add(new Immagine(freccia_nero, 90));
-        immagini_seq2.add(new Immagine(freccia_nero, 270));
-        immagini_risp.add(new Immagine(freccia_nero, 90));
-        immagini_risp.add(new Immagine(freccia_bianco, 270));
-        immagini_risp.add(new Immagine(freccia_nero, 270));
+        immagini_seq2.add(new Immagine(freccia_nero, 0+supp));
+        immagini_seq2.add(new Immagine(freccia_nero, 180+supp));
+        immagini_seq2.add(new Immagine(freccia_nero, 90+supp));
+        immagini_seq2.add(new Immagine(freccia_nero, 270+supp));
+        immagini_risp.add(new Immagine(freccia_nero, 90+supp));
+        immagini_risp.add(new Immagine(freccia_bianco, 270+supp));
+        immagini_risp.add(new Immagine(freccia_nero, 270+supp));
         aggiungi(immagini_seq2);
+        immagini_risp.clear();
+        immagini_seq3.add(new Immagine(freccia_nero, 180+supp));
+        immagini_seq3.add(new Immagine(freccia_nero, 0+supp));
+        immagini_seq3.add(new Immagine(freccia_nero, 180+supp));
+        immagini_seq3.add(new Immagine(freccia_nero, 0+supp));
+        immagini_risp.add(new Immagine(freccia_bianco, 0+supp));
+        immagini_risp.add(new Immagine(freccia_bianco, 180+supp));
+        immagini_risp.add(new Immagine(freccia_nero, 0+supp));
+        aggiungi(immagini_seq3);
+
     }
 
     public void aggiungi(ArrayList<Immagine> immagini_seq)
