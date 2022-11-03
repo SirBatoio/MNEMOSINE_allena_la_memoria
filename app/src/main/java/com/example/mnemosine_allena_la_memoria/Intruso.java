@@ -16,8 +16,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class Intruso extends AppCompatActivity {
-    private static final long TEMPO = 2000;
-    private final ArrayList<Categoria> galleria = new ArrayList<>();
+    private static final long TEMPO = 2000; //la durata dell'animazione
+    private final ArrayList<Categoria> galleria = new ArrayList<>();// una serie di array list per l'esercizio, galleria è per l'esercizio attuale, temp è per mettere le risposte giuste nell'esercizio e tut contiene tutto
     private final ArrayList<Categoria> tut = new ArrayList<>();
     private final ArrayList<Categoria> animal = new ArrayList<>();
     private final ArrayList<Categoria> transp = new ArrayList<>();
@@ -33,10 +33,10 @@ public class Intruso extends AppCompatActivity {
     private final ArrayList<Categoria> canidi = new ArrayList<>();
     private final ArrayList<Categoria> biruote = new ArrayList<>();
     private final ArrayList<Categoria> quarute = new ArrayList<>();
-    private Difficoltà diff;
-    private boolean volume = true;
-    private ImageView Scelta_1, Scelta_2, Scelta_3, Scelta_4, immagine2;
-    private int l, i = 0, pt_totalizzati = 0, pt_max;
+    private Difficoltà diff; // la difficoltà dell'esrcizio
+    private boolean volume = true; // serve per impostare il volume
+    private ImageView Scelta_1, Scelta_2, Scelta_3, Scelta_4, immagine2; //le scelte sono l'esercizio e immagine2 è per l'animazione
+    private int l, i = 0, pt_totalizzati = 0, pt_max;// l
     private scelte s = scelte.animali;
     private sceltemed sm = sceltemed.mammiferi;
     private sceltadff sd = sceltadff.canidi;
@@ -44,7 +44,7 @@ public class Intruso extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_intruso);
+        setContentView(R.layout.activity_intruso);// imposta le varie view e prende la difficoltà dall'activity precedente
         diff = Home.getDiff();
         Scelta_1 = findViewById(R.id.Scelta_1);
         Scelta_2 = findViewById(R.id.scelta_2);
@@ -58,6 +58,7 @@ public class Intruso extends AppCompatActivity {
     }
 
     public void riempiGallerie() {
+        // dicgiarazione delle bitmap
         Categoria mela = new Categoria(BitmapFactory.decodeResource(getResources(), R.drawable.mela), scelte.frutta, sceltemed.altro, sceltadff.altro);
         Categoria pera = new Categoria(BitmapFactory.decodeResource(getResources(), R.drawable.pera), scelte.frutta, sceltemed.altro, sceltadff.altro);
         Categoria banana = new Categoria(BitmapFactory.decodeResource(getResources(), R.drawable.banana), scelte.frutta, sceltemed.altro, sceltadff.altro);
@@ -91,7 +92,7 @@ public class Intruso extends AppCompatActivity {
         Categoria quad = new Categoria(BitmapFactory.decodeResource(getResources(), R.drawable.quad), scelte.mezzitras, sceltemed.ruote, sceltadff.quaruote);
         Categoria camper = new Categoria(BitmapFactory.decodeResource(getResources(), R.drawable.camper), scelte.mezzitras, sceltemed.ruote, sceltadff.quaruote);
         Categoria melagrana = new Categoria(BitmapFactory.decodeResource(getResources(), R.drawable.melagrana), scelte.frutta, sceltemed.altro, sceltadff.altro);
-
+        // inserimanto bitmap nei vari array
         fruit.add(mela);
         fruit.add(pera);
         fruit.add(banana);
@@ -159,23 +160,35 @@ public class Intruso extends AppCompatActivity {
         quarute.add(quad);
         quarute.add(auto);
         quarute.add(camper);
-        galleryredo(s);
+
+        galleryredo(s);// mischia la galleria e prepara l'esercizio in base alla difficoltà
+        switch (diff){// imposta la quantità di punti massimi base in base alla difficoltà
+            case FACILE:
+                pt_max=5;
+                break;
+            case INTERMEDIO:
+                pt_max=7;
+                break;
+            case AVANZATO:
+                pt_max=5;
+                break;
+        }
     }
 
-    public void indietro(View v) {
+    public void indietro(View v) {//fa tornare all'activity precedente
         Intent intent = new Intent(Intruso.this, SelectEsercizi.class);
         startActivity(intent);
         finish();
     }
 
-    public void home(View v) {
+    public void home(View v) {//fa tornare alla home
         Intent intent = new Intent(Intruso.this, Home.class);
         startActivity(intent);
         finish();
     }
 
     private void galleryredo(scelte s) {
-
+        // mischia la galleria e prepara l'esercizio in base alla difficoltà
         tut.clear();
         galleria.clear();
         temp.clear();
@@ -329,7 +342,7 @@ public class Intruso extends AppCompatActivity {
     }
 
     @SuppressLint("NonConstantResourceId")
-    public void Controllo(View v) {
+    public void Controllo(View v) {//controlla se l'immagine selezionata è quella corretta
         boolean as = false;
         switch (diff) {
             case FACILE:
@@ -439,7 +452,7 @@ public class Intruso extends AppCompatActivity {
         animaImmagineEsito();
     }
 
-    public void levelup() {
+    public void levelup() {//passa all'esercizio successivo
         i++;
         switch (diff) {
 
@@ -523,7 +536,7 @@ public class Intruso extends AppCompatActivity {
     }
 
     @SuppressLint("SetTextI18n")
-    public void cambiaVolume(@NonNull View v) {
+    public void cambiaVolume(@NonNull View v) {//toglie o rimette il volume
         Button b = findViewById(v.getId());
         if (volume) {
             volume = false;
@@ -536,7 +549,7 @@ public class Intruso extends AppCompatActivity {
         }
     }
 
-    public void animaImmagineEsito() {
+    public void animaImmagineEsito() {//fa girare un immagine
         if (immagine2.getRotationY() >= 180 && immagine2.getRotationY() < 360) {
             immagine2.animate().rotationY(90).setDuration(TEMPO);
         } else {
