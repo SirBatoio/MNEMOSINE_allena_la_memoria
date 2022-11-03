@@ -1,5 +1,6 @@
 package com.example.mnemosine_allena_la_memoria;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -42,7 +43,7 @@ public class Sequenze extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sequenze);
-
+                   //findViewById
         sequenza.add(findViewById(R.id.seq_1));
         sequenza.add(findViewById(R.id.seq_2));
         sequenza.add(findViewById(R.id.seq_3));
@@ -50,7 +51,7 @@ public class Sequenze extends AppCompatActivity {
         risposte.add(findViewById(R.id.risp_2));
         risposte.add(findViewById(R.id.risp_3));
         immagine2 = findViewById(R.id.immagine2);
-
+        //genera bitmap
         cerchio_bianco = BitmapFactory.decodeResource(getResources(), R.drawable.cerchio_b);
         cerchio_nero = BitmapFactory.decodeResource(getResources(), R.drawable.cerchio_n);
         cerchio_mezzo = BitmapFactory.decodeResource(getResources(), R.drawable.cerchio_m);
@@ -68,6 +69,7 @@ public class Sequenze extends AppCompatActivity {
 
     }
 
+    //genera le domande
     public void generaDomande() {
 
         immagini_seq1.add(new Immagine(cerchio_bianco, 0));
@@ -129,7 +131,8 @@ public class Sequenze extends AppCompatActivity {
         Collections.shuffle(domande);
     }
 
-    public void aggiungi(ArrayList<Immagine> immagini_seq) {
+    //aggiunge la domanda all'esercizio
+    public void aggiungi(@NonNull ArrayList<Immagine> immagini_seq) {
         Collections.shuffle(immagini_risp);
         immagini_seq.addAll(immagini_risp);
         domande.add(immagini_seq);
@@ -138,17 +141,21 @@ public class Sequenze extends AppCompatActivity {
         supp = rand * 90;
     }
 
-    public void controllo(View v) {
+    //controlla se la risposta selezionata è giusta
+    @SuppressLint("NonConstantResourceId")
+    public void controllo(@NonNull View v) {
         immagini_risp.clear();
         immagini_risp.add(domande.get(livello).get(4));
         immagini_risp.add(domande.get(livello).get(5));
         immagini_risp.add(domande.get(livello).get(6));
         switch (v.getId()) {
             case R.id.risp_1:
+                //se è giusto giusto
                 if (domande.get(livello).get(3).getImmagine() == immagini_risp.get(0).getImmagine() && domande.get(livello).get(3).getRotazione() == immagini_risp.get(0).getRotazione()) {
                     Log.d("Giusto", "=Vero");
                     giusto();
                 } else {
+                    // se sbagliato errore
                     Log.d("Giusto", "=Falso ");
                     errore();
                 }
@@ -175,6 +182,7 @@ public class Sequenze extends AppCompatActivity {
 
     }
 
+    //quando va bene
     public void giusto() {
         mp = MediaPlayer.create(this, R.raw.giusto);
         immagine2.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.giusto));
@@ -187,6 +195,7 @@ public class Sequenze extends AppCompatActivity {
         restart();
     }
 
+    //quando sbagli
     public void errore() {
         mp = MediaPlayer.create(this, R.raw.errore);
         immagine2.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.sbaglio));
@@ -198,9 +207,10 @@ public class Sequenze extends AppCompatActivity {
         restart();
     }
 
+    //livello successivo
     public void restart() {
 
-        int l = 5;
+        int l = 5;//livello massimo
         if (livello == l) {
             Intent intent = new Intent(Sequenze.this, Risultati.class);
             startActivity(intent);
@@ -225,6 +235,7 @@ public class Sequenze extends AppCompatActivity {
 
     }
 
+    // Cambia il volume da  "ON" a "OFF" e vice versa
     public void cambiaVolume(@NonNull View v) {
         Button b = findViewById(v.getId());
         if (volume) {
@@ -238,6 +249,7 @@ public class Sequenze extends AppCompatActivity {
         }
     }
 
+    //gira un'immagine
     public void animaImmagineEsito() {
         if (immagine2.getRotationY() >= 180 && immagine2.getRotationY() < 360) {
             immagine2.animate().rotationY(90).setDuration(TEMPO);
@@ -246,12 +258,14 @@ public class Sequenze extends AppCompatActivity {
         }
     }
 
+    // Torna all'Activity precedente
     public void indietro(View v) {
         Intent intent = new Intent(Sequenze.this, SelectEsercizi.class);
         startActivity(intent);
         finish();
     }
 
+    // Torna all'Activity "Home.java"
     public void home(View v) {
         Intent intent = new Intent(Sequenze.this, Home.class);
         startActivity(intent);
