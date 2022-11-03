@@ -225,11 +225,6 @@ public class Sequenze extends AppCompatActivity {
             j++;
         }
 
-
-
-
-
-
     }
 
     public void cambiaVolume(@NonNull View v)
