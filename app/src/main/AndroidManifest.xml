@@ -10,7 +10,9 @@
         android:theme="@style/Theme.MNEMOSINE_allena_la_memoria">
         <activity
             android:name=".Sequenze"
+            android:screenOrientation="landscape"
             android:exported="false">
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
