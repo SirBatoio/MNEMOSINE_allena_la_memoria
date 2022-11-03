@@ -56,8 +56,13 @@ public class Intruso extends AppCompatActivity {
         Scelta_4 = findViewById(R.id.scelta_4);
         immagine2=findViewById(R.id.immagine2);
         immagine2.animate().rotationY(90);
-        galleria= new ArrayList<>();
 
+        riempiGallerie();
+
+    }
+
+    public void riempiGallerie()
+    {
         Categoria mela = new Categoria(BitmapFactory.decodeResource(getResources(), R.drawable.mela),scelte.frutta,sceltemed.altro, sceltadff.altro);
         Categoria pera = new Categoria(BitmapFactory.decodeResource(getResources(), R.drawable.pera),scelte.frutta,sceltemed.altro, sceltadff.altro);
         Categoria banana = new Categoria(BitmapFactory.decodeResource(getResources(), R.drawable.banana),scelte.frutta,sceltemed.altro, sceltadff.altro);
@@ -106,7 +111,6 @@ public class Intruso extends AppCompatActivity {
         biruote.add(bici);biruote.add(moto);biruote.add(monopattino);
         quarute.add(quad);quarute.add(auto);quarute.add(camper);
         galleryredo(s);
-
     }
 
    public void indietro(View v)

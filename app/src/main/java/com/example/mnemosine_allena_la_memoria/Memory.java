@@ -49,50 +49,25 @@ public class Memory extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_memory);
 
-        banana = (BitmapFactory.decodeResource(getResources(), R.drawable.banana));
-        carro=  (BitmapFactory.decodeResource(getResources(), R.drawable.carro));
-        elicottero=  (BitmapFactory.decodeResource(getResources(), R.drawable.elicottero));
-        tigre=  (BitmapFactory.decodeResource(getResources(), R.drawable.tigre));
-        estate=  (BitmapFactory.decodeResource(getResources(), R.drawable.estate));
-        inverno=  (BitmapFactory.decodeResource(getResources(), R.drawable.inverno));
-        volpe=  (BitmapFactory.decodeResource(getResources(), R.drawable.volpe));
-        melograno=  (BitmapFactory.decodeResource(getResources(), R.drawable.melagrana));
-        leone=  (BitmapFactory.decodeResource(getResources(), R.drawable.leone));
-        carota=  (BitmapFactory.decodeResource(getResources(), R.drawable.carota));
-        moto=  (BitmapFactory.decodeResource(getResources(), R.drawable.moto));
-        pantera=  (BitmapFactory.decodeResource(getResources(), R.drawable.pantera));
-        lupo=  (BitmapFactory.decodeResource(getResources(), R.drawable.lupo));
-        gallina=  (BitmapFactory.decodeResource(getResources(), R.drawable.gallina));
-        mela=  (BitmapFactory.decodeResource(getResources(), R.drawable.mela));
-        pera=  (BitmapFactory.decodeResource(getResources(), R.drawable.pera));
-        primavera=  (BitmapFactory.decodeResource(getResources(), R.drawable.primavera));
-        quad=  (BitmapFactory.decodeResource(getResources(), R.drawable.quad));
-        barca=  (BitmapFactory.decodeResource(getResources(), R.drawable.barca));
-        camper=  (BitmapFactory.decodeResource(getResources(), R.drawable.camper));
-        camion=  (BitmapFactory.decodeResource(getResources(), R.drawable.camion));
-        giusto= (BitmapFactory.decodeResource(getResources(),R.drawable.giusto));
-        sbagliato= (BitmapFactory.decodeResource(getResources(),R.drawable.sbaglio));
-
-        galleria.add(banana); galleria.add(carro); galleria.add(elicottero);galleria.add(tigre);galleria.add(estate);galleria.add(inverno);galleria.add(volpe);galleria.add(melograno);galleria.add(leone);galleria.add(carota);galleria.add(moto);galleria.add(pantera);galleria.add(lupo);galleria.add(gallina);galleria.add(mela);galleria.add(pera);galleria.add(primavera);galleria.add(quad);galleria.add(barca);galleria.add(camion);galleria.add(camper);
-        Collections.shuffle(galleria);
-
         img_1=findViewById(R.id.img1);
         img_2=findViewById(R.id.img2);
         img_3=findViewById(R.id.img3);
         img_4=findViewById(R.id.img4);
         img_5=findViewById(R.id.img5);
         img_6=findViewById(R.id.img6);
+        immagine2=findViewById(R.id.immagine2);
+        text=findViewById(R.id.textView);
+        tempoRimanente=findViewById(R.id.tempo);
+        b = findViewById(R.id.button);
+
+        riempiGalleria();
+
         img_1.setClickable(false);
         img_2.setClickable(false);
         img_3.setClickable(false);
         img_4.setClickable(false);
         img_5.setClickable(false);
         img_6.setClickable(false);
-        immagine2=findViewById(R.id.immagine2);
-
-        text=findViewById(R.id.textView);
-        tempoRimanente=findViewById(R.id.tempo);
-        b = findViewById(R.id.button);
 
         img_1.setImageBitmap(galleria.get(0));
         img_2.setImageBitmap(galleria.get(1));
@@ -149,6 +124,36 @@ public class Memory extends AppCompatActivity{
                 break;
         }
         Collections.shuffle(gioco);
+    }
+
+    public void riempiGalleria()
+    {
+        banana = (BitmapFactory.decodeResource(getResources(), R.drawable.banana));
+        carro=  (BitmapFactory.decodeResource(getResources(), R.drawable.carro));
+        elicottero=  (BitmapFactory.decodeResource(getResources(), R.drawable.elicottero));
+        tigre=  (BitmapFactory.decodeResource(getResources(), R.drawable.tigre));
+        estate=  (BitmapFactory.decodeResource(getResources(), R.drawable.estate));
+        inverno=  (BitmapFactory.decodeResource(getResources(), R.drawable.inverno));
+        volpe=  (BitmapFactory.decodeResource(getResources(), R.drawable.volpe));
+        melograno=  (BitmapFactory.decodeResource(getResources(), R.drawable.melagrana));
+        leone=  (BitmapFactory.decodeResource(getResources(), R.drawable.leone));
+        carota=  (BitmapFactory.decodeResource(getResources(), R.drawable.carota));
+        moto=  (BitmapFactory.decodeResource(getResources(), R.drawable.moto));
+        pantera=  (BitmapFactory.decodeResource(getResources(), R.drawable.pantera));
+        lupo=  (BitmapFactory.decodeResource(getResources(), R.drawable.lupo));
+        gallina=  (BitmapFactory.decodeResource(getResources(), R.drawable.gallina));
+        mela=  (BitmapFactory.decodeResource(getResources(), R.drawable.mela));
+        pera=  (BitmapFactory.decodeResource(getResources(), R.drawable.pera));
+        primavera=  (BitmapFactory.decodeResource(getResources(), R.drawable.primavera));
+        quad=  (BitmapFactory.decodeResource(getResources(), R.drawable.quad));
+        barca=  (BitmapFactory.decodeResource(getResources(), R.drawable.barca));
+        camper=  (BitmapFactory.decodeResource(getResources(), R.drawable.camper));
+        camion=  (BitmapFactory.decodeResource(getResources(), R.drawable.camion));
+        giusto= (BitmapFactory.decodeResource(getResources(),R.drawable.giusto));
+        sbagliato= (BitmapFactory.decodeResource(getResources(),R.drawable.sbaglio));
+
+        galleria.add(banana); galleria.add(carro); galleria.add(elicottero);galleria.add(tigre);galleria.add(estate);galleria.add(inverno);galleria.add(volpe);galleria.add(melograno);galleria.add(leone);galleria.add(carota);galleria.add(moto);galleria.add(pantera);galleria.add(lupo);galleria.add(gallina);galleria.add(mela);galleria.add(pera);galleria.add(primavera);galleria.add(quad);galleria.add(barca);galleria.add(camion);galleria.add(camper);
+        Collections.shuffle(galleria);
     }
 
     public void avanti(View v)
@@ -385,7 +390,6 @@ public class Memory extends AppCompatActivity{
         restart();
         }
     }
-
 
     public void restart(){
         pt_totalizzati+=i;

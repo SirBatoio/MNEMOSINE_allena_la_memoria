@@ -31,8 +31,8 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
     private ImageView immagine_1, immagine_2, immagine_3,giudizio;
     private boolean volume = true;
     private Immagine primavera, estate, inverno, autunno, melagrana, patata, pantera, anguria, orologio, carota, bussola, camion, lupo, volpe;
-    private ArrayList<Immagine> galleria;
-    private ArrayList<String> gioco;
+    private ArrayList<Immagine> galleria = new ArrayList<>();
+    private ArrayList<String> gioco = new ArrayList<>();
     private int i = 2, y = 0, t = 0,tentativi=2, pt_totalizzati, pt_max;
     private static final long TEMPO = 2000;
     private boolean verdetto;
@@ -68,39 +68,10 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
         parola_7.setTag(TEXTVIEW_TAG);
         parola_8.setTag(TEXTVIEW_TAG);
         parola_9.setTag(TEXTVIEW_TAG);
+
         implementEvents();
 
-        primavera = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.primavera), "Primavera");
-        estate = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.estate), "Estate");
-        inverno = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.inverno), "Inverno");
-        autunno = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.autunno), "Autunno");
-        melagrana = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.melagrana), "Melagrana");
-        patata = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.patata), "Patata");
-        pantera = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.pantera), "Pantera");
-        anguria = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.anguria), "Anguria");
-        orologio = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.sette15), "Orologio");
-        carota = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.carota), "Carota");
-        bussola = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.bussola), "Bussola");
-        camion = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.camion), "Camion");
-        lupo = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.lupo), "Lupo");
-        volpe = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.volpe), "Volpe");
-
-        galleria = new ArrayList<>();
-        gioco = new ArrayList<>();
-        galleria.add(primavera);
-        galleria.add(estate);
-        galleria.add(inverno);
-        galleria.add(autunno);
-        galleria.add(melagrana);
-        galleria.add(patata);
-        galleria.add(pantera);
-        galleria.add(anguria);
-        galleria.add(orologio);
-        galleria.add(carota);
-        galleria.add(bussola);
-        galleria.add(camion);
-        galleria.add(lupo);
-        galleria.add(volpe);
+        aggiungiImmagini();
 
         Collections.shuffle(galleria);
         gioco.add(galleria.get(0).getDescrizione());
@@ -208,69 +179,8 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
                 container.addView(v); //Add the dragged view
                 v.setVisibility(View.VISIBLE);//finally set Visibility to VISIBLE
 
-                //controllo risposte
-                TextView tv = findViewById(v.getId());
-                switch (container.getId()) {
-                    case R.id.top_left_layout:
-                        if (tv.getText() == galleria.get(i - 2).getDescrizione()) {
-                            tv.setVisibility(View.GONE);
-                            immagine_1.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.giusto));
-                            container.setOnDragListener(null);
-                            y++;
-                            pt_totalizzati++;
-                            verdetto=true;
-                        } else {
-                            tentativi--;
-                            pt_max++;
-                            verdetto=false;
-                        }
-                        break;
-                    case R.id.top_center_layout:
-                        if (tv.getText() == galleria.get(i - 1).getDescrizione()) {
-                            tv.setVisibility(View.GONE);
-                            immagine_2.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.giusto));
-                            container.setOnDragListener(null);
-                            y++;
-                            pt_totalizzati++;
-                            verdetto=true;
-                        } else {
-                            tentativi--;
-                            pt_max++;
-                            verdetto=false;
-                        }
-                        break;
-                    case R.id.top_right_layout:
-                        if (tv.getText() == galleria.get(i).getDescrizione()) {
-                            tv.setVisibility(View.GONE);
-                            immagine_3.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.giusto));
-                            container.setOnDragListener(null);
-                            y++;
-                            pt_totalizzati++;
-                            verdetto=true;
-                        } else {
-                            tentativi--;
-                            pt_max++;
-                            verdetto=false;
-                        }
-                        break;
-                }
-                pt_max++;
-                if(verdetto){
-                    mp = MediaPlayer.create(this,R.raw.giusto);
-                    giudizio.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.giusto));
-                }
-                else {
-                    mp = MediaPlayer.create(this,R.raw.errore);
-                    giudizio.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.sbaglio));
-                }
-                if(volume){ mp.start();}
-                animaImmagineEsito();
-                if (y == 3 || tentativi==0) {
-                    restart();
-                    tentativi=2;
-                    y = 0;
+                controlloRisposte(v, container);
 
-                }
                 // Returns true. DragEvent.getResult() will return true.
                 return true;
 
@@ -300,7 +210,6 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
         return false;
     }
 
-
     @Override
     public boolean onLongClick(View view) {
 
@@ -328,6 +237,104 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
         //view.setVisibility(View.INVISIBLE);
 
         return true;
+    }
+
+    public void aggiungiImmagini()
+    {
+        primavera = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.primavera), "Primavera");
+        estate = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.estate), "Estate");
+        inverno = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.inverno), "Inverno");
+        autunno = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.autunno), "Autunno");
+        melagrana = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.melagrana), "Melagrana");
+        patata = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.patata), "Patata");
+        pantera = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.pantera), "Pantera");
+        anguria = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.anguria), "Anguria");
+        orologio = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.sette15), "Orologio");
+        carota = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.carota), "Carota");
+        bussola = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.bussola), "Bussola");
+        camion = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.camion), "Camion");
+        lupo = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.lupo), "Lupo");
+        volpe = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.volpe), "Volpe");
+
+        galleria.add(primavera);
+        galleria.add(estate);
+        galleria.add(inverno);
+        galleria.add(autunno);
+        galleria.add(melagrana);
+        galleria.add(patata);
+        galleria.add(pantera);
+        galleria.add(anguria);
+        galleria.add(orologio);
+        galleria.add(carota);
+        galleria.add(bussola);
+        galleria.add(camion);
+        galleria.add(lupo);
+        galleria.add(volpe);
+    }
+
+    public void controlloRisposte(View v, LinearLayout container)
+    {
+        TextView tv = findViewById(v.getId());
+        switch (container.getId()) {
+            case R.id.top_left_layout:
+                if (tv.getText() == galleria.get(i - 2).getDescrizione()) {
+                    tv.setVisibility(View.GONE);
+                    immagine_1.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.giusto));
+                    container.setOnDragListener(null);
+                    y++;
+                    pt_totalizzati++;
+                    verdetto=true;
+                } else {
+                    tentativi--;
+                    pt_max++;
+                    verdetto=false;
+                }
+                break;
+            case R.id.top_center_layout:
+                if (tv.getText() == galleria.get(i - 1).getDescrizione()) {
+                    tv.setVisibility(View.GONE);
+                    immagine_2.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.giusto));
+                    container.setOnDragListener(null);
+                    y++;
+                    pt_totalizzati++;
+                    verdetto=true;
+                } else {
+                    tentativi--;
+                    pt_max++;
+                    verdetto=false;
+                }
+                break;
+            case R.id.top_right_layout:
+                if (tv.getText() == galleria.get(i).getDescrizione()) {
+                    tv.setVisibility(View.GONE);
+                    immagine_3.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.giusto));
+                    container.setOnDragListener(null);
+                    y++;
+                    pt_totalizzati++;
+                    verdetto=true;
+                } else {
+                    tentativi--;
+                    pt_max++;
+                    verdetto=false;
+                }
+                break;
+        }
+        pt_max++;
+        if(verdetto){
+            mp = MediaPlayer.create(this,R.raw.giusto);
+            giudizio.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.giusto));
+        }
+        else {
+            mp = MediaPlayer.create(this,R.raw.errore);
+            giudizio.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.sbaglio));
+        }
+        if(volume){ mp.start();}
+        animaImmagineEsito();
+        if (y == 3 || tentativi==0) {
+            restart();
+            tentativi=2;
+            y = 0;
+        }
     }
 
     public void cambiaVolume(@NonNull View v) {
@@ -428,7 +435,6 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
 
         t++;
     }
-
 
     public void animaImmagineEsito() {
         if(giudizio.getRotationY()>=180&&giudizio.getRotationY()<360)
