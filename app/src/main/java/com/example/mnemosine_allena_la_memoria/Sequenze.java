@@ -28,7 +28,7 @@ public class Sequenze extends AppCompatActivity {
     private boolean volume=true;
     private int pt_max=5, livello =0;
     private Random random = new Random();
-    private int rand,l=5,pt_totalizzati,LIV_MAX;
+    private int rand,l=5,pt_totalizzati=0;
     float supp ;
 
     @Override
@@ -187,6 +187,7 @@ public class Sequenze extends AppCompatActivity {
         if(volume){ mp.start();}
         animaImmagineEsito();
         livello++;
+        pt_totalizzati++;
         restart();
     }
 
