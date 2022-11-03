@@ -25,7 +25,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
-/*Codice timer, messo qui perché sì
+
+/* Codice timer, messo qui perché sì
 
     public void startTimer(){
         timerTask=new TimerTask() {

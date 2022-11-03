@@ -100,8 +100,7 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
         findViewById(R.id.top_right_layout).setOnDragListener(this);
     }
 
-    // This is the method that the system calls when it dispatches a drag event to the
-    // listener.
+    // This is the method that the system calls when it dispatches a drag event to the listener.
     @Override
     public boolean onDrag(View view, DragEvent dragEvent) {
         // Defines a variable to store the action type for the incoming event
@@ -447,6 +446,7 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
             parola_9.setText(gioco.get(2));
 
         }
+        // Dopo il terzo round si passa all'Activity "Risultati.java"
         if (t == 2) {
             Intent intent = new Intent(Associazioni.this, Risultati.class);
             startActivity(intent);
@@ -460,6 +460,7 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
         t++;
     }
 
+    // Effettua la rotazione dell'immagine per mostrare l'esito della risposta all'utente
     public void animaImmagineEsito() {
         if (giudizio.getRotationY() >= 180 && giudizio.getRotationY() < 360) {
             giudizio.animate().rotationY(90).setDuration(TEMPO);
