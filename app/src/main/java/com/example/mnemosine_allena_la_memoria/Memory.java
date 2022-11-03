@@ -1,15 +1,9 @@
 package com.example.mnemosine_allena_la_memoria;
 
-import static java.lang.Thread.sleep;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,6 +11,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -31,11 +28,10 @@ public class Memory extends AppCompatActivity{
     private Button b;
     private Difficoltà d;
     private ImageView img_1, img_2, img_3, img_4, img_5, img_6,immagine2;
-    private ArrayList<Bitmap> galleria = new ArrayList<>();
-    private ArrayList<Bitmap> gioco = new ArrayList<>();
-    private Bitmap banana,carro,elicottero,tigre,estate,inverno,volpe,melograno,leone,carota,sbagliato;
-    private Bitmap moto,pantera,lupo,gallina,mela,pera,primavera,quad,barca,camper,camion,giusto;
-    private boolean   as;
+    private final ArrayList<Bitmap> galleria = new ArrayList<>();
+    private final ArrayList<Bitmap> gioco = new ArrayList<>();
+    private Bitmap sbagliato;
+    private Bitmap giusto;
     private MediaPlayer mp;
     private static final long TEMPO = 2000;
     private int i,l=1,x=0, pt_totalizzati=0, pt_max;
@@ -49,6 +45,7 @@ public class Memory extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_memory);
 
+        // findViewById
         img_1=findViewById(R.id.img1);
         img_2=findViewById(R.id.img2);
         img_3=findViewById(R.id.img3);
@@ -62,6 +59,7 @@ public class Memory extends AppCompatActivity{
 
         riempiGalleria();
 
+        // Set pulsanti non cliccabili
         img_1.setClickable(false);
         img_2.setClickable(false);
         img_3.setClickable(false);
@@ -69,6 +67,7 @@ public class Memory extends AppCompatActivity{
         img_5.setClickable(false);
         img_6.setClickable(false);
 
+        // Imposta le immagini nelle View
         img_1.setImageBitmap(galleria.get(0));
         img_2.setImageBitmap(galleria.get(1));
         img_3.setImageBitmap(galleria.get(2));
@@ -80,6 +79,7 @@ public class Memory extends AppCompatActivity{
         d = Home.getDiff();
         switch (d)
         {
+            // Imposta la visibilità delle ImageView, del pulsante e i punti massimi totalizzabili
             case FACILE:
                 img_1.setVisibility(View.VISIBLE);
                 img_2.setVisibility(View.VISIBLE);
@@ -126,29 +126,30 @@ public class Memory extends AppCompatActivity{
         Collections.shuffle(gioco);
     }
 
+    // Riempe l'ArrayList galleria
     public void riempiGalleria()
     {
-        banana = (BitmapFactory.decodeResource(getResources(), R.drawable.banana));
-        carro=  (BitmapFactory.decodeResource(getResources(), R.drawable.carro));
-        elicottero=  (BitmapFactory.decodeResource(getResources(), R.drawable.elicottero));
-        tigre=  (BitmapFactory.decodeResource(getResources(), R.drawable.tigre));
-        estate=  (BitmapFactory.decodeResource(getResources(), R.drawable.estate));
-        inverno=  (BitmapFactory.decodeResource(getResources(), R.drawable.inverno));
-        volpe=  (BitmapFactory.decodeResource(getResources(), R.drawable.volpe));
-        melograno=  (BitmapFactory.decodeResource(getResources(), R.drawable.melagrana));
-        leone=  (BitmapFactory.decodeResource(getResources(), R.drawable.leone));
-        carota=  (BitmapFactory.decodeResource(getResources(), R.drawable.carota));
-        moto=  (BitmapFactory.decodeResource(getResources(), R.drawable.moto));
-        pantera=  (BitmapFactory.decodeResource(getResources(), R.drawable.pantera));
-        lupo=  (BitmapFactory.decodeResource(getResources(), R.drawable.lupo));
-        gallina=  (BitmapFactory.decodeResource(getResources(), R.drawable.gallina));
-        mela=  (BitmapFactory.decodeResource(getResources(), R.drawable.mela));
-        pera=  (BitmapFactory.decodeResource(getResources(), R.drawable.pera));
-        primavera=  (BitmapFactory.decodeResource(getResources(), R.drawable.primavera));
-        quad=  (BitmapFactory.decodeResource(getResources(), R.drawable.quad));
-        barca=  (BitmapFactory.decodeResource(getResources(), R.drawable.barca));
-        camper=  (BitmapFactory.decodeResource(getResources(), R.drawable.camper));
-        camion=  (BitmapFactory.decodeResource(getResources(), R.drawable.camion));
+        Bitmap banana = (BitmapFactory.decodeResource(getResources(), R.drawable.banana));
+        Bitmap carro = (BitmapFactory.decodeResource(getResources(), R.drawable.carro));
+        Bitmap elicottero = (BitmapFactory.decodeResource(getResources(), R.drawable.elicottero));
+        Bitmap tigre = (BitmapFactory.decodeResource(getResources(), R.drawable.tigre));
+        Bitmap estate = (BitmapFactory.decodeResource(getResources(), R.drawable.estate));
+        Bitmap inverno = (BitmapFactory.decodeResource(getResources(), R.drawable.inverno));
+        Bitmap volpe = (BitmapFactory.decodeResource(getResources(), R.drawable.volpe));
+        Bitmap melograno = (BitmapFactory.decodeResource(getResources(), R.drawable.melagrana));
+        Bitmap leone = (BitmapFactory.decodeResource(getResources(), R.drawable.leone));
+        Bitmap carota = (BitmapFactory.decodeResource(getResources(), R.drawable.carota));
+        Bitmap moto = (BitmapFactory.decodeResource(getResources(), R.drawable.moto));
+        Bitmap pantera = (BitmapFactory.decodeResource(getResources(), R.drawable.pantera));
+        Bitmap lupo = (BitmapFactory.decodeResource(getResources(), R.drawable.lupo));
+        Bitmap gallina = (BitmapFactory.decodeResource(getResources(), R.drawable.gallina));
+        Bitmap mela = (BitmapFactory.decodeResource(getResources(), R.drawable.mela));
+        Bitmap pera = (BitmapFactory.decodeResource(getResources(), R.drawable.pera));
+        Bitmap primavera = (BitmapFactory.decodeResource(getResources(), R.drawable.primavera));
+        Bitmap quad = (BitmapFactory.decodeResource(getResources(), R.drawable.quad));
+        Bitmap barca = (BitmapFactory.decodeResource(getResources(), R.drawable.barca));
+        Bitmap camper = (BitmapFactory.decodeResource(getResources(), R.drawable.camper));
+        Bitmap camion = (BitmapFactory.decodeResource(getResources(), R.drawable.camion));
         giusto= (BitmapFactory.decodeResource(getResources(),R.drawable.giusto));
         sbagliato= (BitmapFactory.decodeResource(getResources(),R.drawable.sbaglio));
 
@@ -156,6 +157,8 @@ public class Memory extends AppCompatActivity{
         Collections.shuffle(galleria);
     }
 
+    // Passa dalla modalità di memorizzazione a quella di selezione delle immagini memorizzate
+    @SuppressLint("SetTextI18n")
     public void avanti(View v)
     {
         b.setVisibility(View.INVISIBLE);
@@ -165,15 +168,18 @@ public class Memory extends AppCompatActivity{
         img_3.setClickable(true);
         img_4.setClickable(true);
 
+        // Cambia le immagini
         img_1.setImageBitmap(gioco.get(0));
         img_2.setImageBitmap(gioco.get(1));
         img_3.setImageBitmap(gioco.get(2));
         img_4.setImageBitmap(gioco.get(3));
 
+        // Cambia il testo
         text.setText("SELEZIONA LE IMMAGINI MOSTRATE IN PRECEDENZA");
 
         switch (d)
         {
+            // rende visibili e cliccabili + ImageView
             case FACILE:
                 img_4.setVisibility(View.VISIBLE);
                 break;
@@ -193,17 +199,16 @@ public class Memory extends AppCompatActivity{
         }
     }
 
+    // Controlla la correttezza della risposta data dall'utrente
+    @SuppressLint("NonConstantResourceId")
     public void  click(View v){
-
         switch (d) {
             case FACILE:
             switch (v.getId()) {
-
                 case R.id.img1:
                     if (gioco.get(0)!= galleria.get(3)){
                         img_1.setClickable(false);
-                    img_1.setImageBitmap(giusto);
-                        as = true;
+                        img_1.setImageBitmap(giusto);
                         i++;
                     }
                     else{
@@ -214,8 +219,7 @@ public class Memory extends AppCompatActivity{
                 case R.id.img2:
                     if (gioco.get(1)!= galleria.get(3)){
                         img_2.setClickable(false);
-                    img_2.setImageBitmap(giusto);
-                        as = true;
+                        img_2.setImageBitmap(giusto);
                         i++;}  else{
                         img_2.setImageBitmap(sbagliato);
                         errore();}
@@ -223,8 +227,7 @@ public class Memory extends AppCompatActivity{
                 case R.id.img3:
                     if (gioco.get(2)!= galleria.get(3)){
                         img_3.setClickable(false);
-                    img_3.setImageBitmap(giusto);
-                        as = true;
+                        img_3.setImageBitmap(giusto);
                         i++;}  else{
                         img_3.setImageBitmap(sbagliato);
                         errore();}
@@ -232,8 +235,7 @@ public class Memory extends AppCompatActivity{
                 case R.id.img4:
                     if (gioco.get(3)!= galleria.get(3)){
                         img_4.setClickable(false);
-                    img_4.setImageBitmap(giusto);
-                        as = true;
+                        img_4.setImageBitmap(giusto);
                         i++;}  else{
                         img_4.setImageBitmap(sbagliato);
                         errore();}
@@ -257,7 +259,6 @@ public class Memory extends AppCompatActivity{
                         if (gioco.get(0)!= galleria.get(4)){
                             img_1.setClickable(false);
                         img_1.setImageBitmap(giusto);
-                            as = true;
                             i++;}  else{
                             img_1.setImageBitmap(sbagliato);
                             errore();}
@@ -266,7 +267,6 @@ public class Memory extends AppCompatActivity{
                         if (gioco.get(1)!= galleria.get(4)){
                             img_2.setClickable(false);
                         img_2.setImageBitmap(giusto);
-                            as = true;
                             i++;}  else{
                             img_2.setImageBitmap(sbagliato);
                             errore();}
@@ -275,7 +275,6 @@ public class Memory extends AppCompatActivity{
                         if (gioco.get(2)!= galleria.get(4)){
                             img_3.setClickable(false);
                         img_3.setImageBitmap(giusto);
-                            as = true;
                             i++;}  else{
                             img_3.setImageBitmap(sbagliato);
                             errore();}
@@ -284,7 +283,6 @@ public class Memory extends AppCompatActivity{
                         if (gioco.get(3)!= galleria.get(4)){
                             img_4.setClickable(false);
                         img_4.setImageBitmap(giusto);
-                            as = true;
                             i++;}  else{
                             img_4.setImageBitmap(sbagliato);
                             errore();}
@@ -293,7 +291,6 @@ public class Memory extends AppCompatActivity{
                         if (gioco.get(4)!= galleria.get(4)){
                             img_5.setClickable(false);
                         img_5.setImageBitmap(giusto);
-                            as = true;
                             i++;}  else{
                             img_5.setImageBitmap(sbagliato);
                             errore();}
@@ -316,7 +313,6 @@ public class Memory extends AppCompatActivity{
                         if (gioco.get(0)!= galleria.get(5)&&gioco.get(0)!= galleria.get(4)){
                             img_1.setClickable(false);
                             img_1.setImageBitmap(giusto);
-                            as = true;
                             i++;}  else{
                             img_1.setImageBitmap(sbagliato);
                             errore();}
@@ -325,7 +321,6 @@ public class Memory extends AppCompatActivity{
                         if (gioco.get(1)!= galleria.get(5)&&gioco.get(1)!= galleria.get(4)){
                             img_2.setClickable(false);
                             img_2.setImageBitmap(giusto);
-                            as = true;
                             i++;}  else{
                             img_2.setImageBitmap(sbagliato);
                             errore();}
@@ -334,7 +329,6 @@ public class Memory extends AppCompatActivity{
                         if (gioco.get(2)!= galleria.get(5)&&gioco.get(2)!= galleria.get(4)){
                             img_3.setClickable(false);
                             img_3.setImageBitmap(giusto);
-                            as = true;
                             i++;}  else{
                             img_3.setImageBitmap(sbagliato);
                             errore();}
@@ -343,7 +337,6 @@ public class Memory extends AppCompatActivity{
                         if (gioco.get(3)!= galleria.get(5)&&gioco.get(3)!= galleria.get(4)){
                             img_4.setClickable(false);
                             img_4.setImageBitmap(giusto);
-                            as = true;
                             i++;}  else{
                             img_4.setImageBitmap(sbagliato);
                             errore();}
@@ -352,7 +345,6 @@ public class Memory extends AppCompatActivity{
                         if (gioco.get(4)!= galleria.get(5)&&gioco.get(4) != galleria.get(4)){
                             img_5.setClickable(false);
                             img_5.setImageBitmap(giusto);
-                            as = true;
                             i++;}  else{
                             img_5.setImageBitmap(sbagliato);
                             errore();}
@@ -361,7 +353,6 @@ public class Memory extends AppCompatActivity{
                         if (gioco.get(5) != galleria.get(5)&&gioco.get(5) != galleria.get(4)){
                             img_6.setClickable(false);
                             img_6.setImageBitmap(giusto);
-                            as = true;
                             i++;}  else{
                             img_6.setImageBitmap(sbagliato);
                             errore();}
@@ -379,20 +370,28 @@ public class Memory extends AppCompatActivity{
         }
     }
 
+    // Quando sbagli
     public void errore(){
+        // suono
         mp = MediaPlayer.create(this,R.raw.errore);
+        // immagine
         immagine2.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.sbaglio));
+        // riproduci suono se volume "ON"
         if(volume){ mp.start();}
         animaImmagineEsito();
-        x++;
-        pt_max++;
+        x++; // aumenta errori
+        pt_max++; // aumenta punti massimi
         if(d!=Difficoltà.AVANZATO||x==2){
-        restart();
+            // se difficoltà diversa da AVANZATO o errori uguali a 2 si passa al livello successivo
+            restart();
         }
     }
 
+    // aumenta il livello
+    @SuppressLint("SetTextI18n")
     public void restart(){
 
+        // immagini non cliccabili
         img_1.setClickable(false);
         img_2.setClickable(false);
         img_3.setClickable(false);
@@ -400,19 +399,23 @@ public class Memory extends AppCompatActivity{
         img_5.setClickable(false);
         img_6.setClickable(false);
 
-        pt_totalizzati+=i;
-       i=0;
-        x=0;
+        pt_totalizzati+=i; // aumenta i punti totalizzati
+        i=0; // set risposte giuste a 0
+        x=0; // set errori a 0
         gioco.clear();
-        l++;
+        l++; // aumenta il livello
         time = TIME;
         Collections.shuffle(galleria);
+
+        // qui ci mette le immagini
         img_1.setImageBitmap(galleria.get(0));
         img_2.setImageBitmap(galleria.get(1));
         img_3.setImageBitmap(galleria.get(2));
         img_4.setImageBitmap(galleria.get(3));
+
         switch (d)
         {
+            // Cosa si vede e cosa no nel livello
             case FACILE:
                 img_1.setVisibility(View.VISIBLE);
                 img_2.setVisibility(View.VISIBLE);
@@ -453,12 +456,16 @@ public class Memory extends AppCompatActivity{
         }
         gioco.add(galleria.get(0)); gioco.add(galleria.get(1));
         gioco.add(galleria.get(2)); gioco.add(galleria.get(3));
-
         Collections.shuffle(gioco);
+
+        // cambia il testo
         text.setText("MEMORIZZA LE SEGUENTI IMMAGINI");
+
         if(l==LIV_MAX){
+            // Se la partita è terminata porta all'Activity "Risultati.java"
             Intent intent= new Intent(Memory.this,Risultati.class);
             startActivity(intent);
+            // passa alla nuova Activity i punti totalizzati, i punti massimi e la classe
             Risultati.setPunti_massimi(pt_max);
             Risultati.setPunti_totalizzati(pt_totalizzati);
             Risultati.setCls(Memory.class);
@@ -466,6 +473,7 @@ public class Memory extends AppCompatActivity{
         }
     }
 
+    // Codice timer
     public void startTimer(){
         timerTask=new TimerTask() {
             @Override
@@ -490,6 +498,7 @@ public class Memory extends AppCompatActivity{
         timer.scheduleAtFixedRate(timerTask,0,1000);
     }
 
+    // ferma il timer se c'è
     public void stopTimer(){
         if(d!= Difficoltà.FACILE)
         {
@@ -497,16 +506,19 @@ public class Memory extends AppCompatActivity{
         }
     }
 
+    // restituisce una stringa con i secondi del timer
     public String gettimertext(){
         int raunded=(int) Math.round(time);
         int seconds=((raunded%86400)%3600)%60;
         return formatTime (seconds);
     }
 
+    // restituisce una stringa contenente uno spazio e il numero di secondi
     public String formatTime(int seconds){
         return String.format("%02d",seconds);
     }
 
+    // Cambia il volume da  "ON" a "OFF" e vice versa
     public void cambiaVolume(@NonNull View v)
     {
         Button b = findViewById(v.getId());
@@ -524,6 +536,7 @@ public class Memory extends AppCompatActivity{
         }
     }
 
+    // Effettua la rotazione dell'immagine per mostrare l'esito della risposta all'utente
     public void animaImmagineEsito() {
         if(immagine2.getRotationY()>=180&&immagine2.getRotationY()<360)
         {
@@ -535,6 +548,7 @@ public class Memory extends AppCompatActivity{
         }
     }
 
+    // Torna all'Activity precedente
     public void indietro(View v)
     {
         Intent intent = new Intent(Memory.this,SelectEsercizi.class);
@@ -543,6 +557,7 @@ public class Memory extends AppCompatActivity{
         finish();
     }
 
+    // Torna all'Activity "Home.java"
     public void home(View v)
     {
         Intent intent = new Intent(Memory.this,Home.class);
