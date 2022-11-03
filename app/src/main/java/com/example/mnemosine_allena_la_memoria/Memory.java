@@ -483,8 +483,10 @@ public class Memory extends AppCompatActivity{
     }
 
     public void stopTimer(){
-        timer.cancel();
-        Log.d("Timer", "Sono morto");
+        if(d!= Difficoltà.FACILE)
+        {
+            timer.cancel();
+        }
     }
 
     public String gettimertext(){

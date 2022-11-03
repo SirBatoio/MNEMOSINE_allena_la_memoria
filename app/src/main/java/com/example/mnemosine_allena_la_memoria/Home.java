@@ -1,22 +1,36 @@
 package com.example.mnemosine_allena_la_memoria;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
 public class Home extends AppCompatActivity {
 
-    private static Difficoltà diff= Difficoltà.FACILE;
+    private static Difficoltà diff = Difficoltà.FACILE;
     private static Campo campo;
     private TextView testo;
-    private ArrayList<Button> pulsanti = new ArrayList<>();
+    private final ArrayList<Button> pulsanti = new ArrayList<>();
+
+    public static Difficoltà getDiff() {
+        return diff;
+    }
+
+    public static void setDiff(Difficoltà d) {
+        diff = d;
+    }
+
+    public static Campo getCampo() {
+        return campo;
+    }
+
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,10 +50,9 @@ public class Home extends AppCompatActivity {
 
     }
 
-    public void impostaDifficolta(View v)
-    {
-        switch(v.getId())
-        {
+    @SuppressLint("NonConstantResourceId")
+    public void impostaDifficolta(View v) {
+        switch (v.getId()) {
             case R.id.facile:
                 diff = Difficoltà.FACILE;
                 break;
@@ -53,11 +66,10 @@ public class Home extends AppCompatActivity {
         testo.setText(String.valueOf(diff));
     }
 
-    public void redirect(View v)
-    {
+    @SuppressLint("NonConstantResourceId")
+    public void redirect(View v) {
         Intent intent;
-        switch(v.getId())
-        {
+        switch (v.getId()) {
             case R.id.orientamento:
                 campo = Campo.ORIENTAMENTO;
                 break;
@@ -78,19 +90,5 @@ public class Home extends AppCompatActivity {
         }
         intent = new Intent(Home.this, SelectEsercizi.class);
         startActivity(intent);
-    }
-
-    public static Difficoltà getDiff()
-    {
-        return diff;
-    }
-    public static void setDiff(Difficoltà d)
-    {
-        diff = d;
-    }
-
-    public static Campo getCampo()
-    {
-        return campo;
     }
 }

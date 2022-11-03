@@ -1,7 +1,6 @@
 package com.example.mnemosine_allena_la_memoria;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -10,36 +9,34 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.Locale;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class SelectEsercizi extends AppCompatActivity {
 
-    private TextView campo_selezionato;
-    private TextView difficolta;
-    private ImageView immagine;
-    private Button esercizio_1, esercizio_2, esercizio_3;
-    private Difficoltà d;
     private Campo c;
+    private Difficoltà d;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_esercizi);
-        c = Home.getCampo();
-        campo_selezionato=findViewById(R.id.campo);
-        campo_selezionato.setText(String.valueOf(c).toLowerCase()+" : ");
-        d = Home.getDiff();
-        difficolta=findViewById(R.id.diff);
-        difficolta.setText(String.valueOf(d).toLowerCase());
-        immagine=findViewById(R.id.img_campo);
-        esercizio_1=findViewById(R.id.es1);
-        esercizio_2=findViewById(R.id.es2);
-        esercizio_3=findViewById(R.id.es3);
 
-        switch(c)
-        {
+        c = Home.getCampo();
+        TextView campo_selezionato = findViewById(R.id.campo);
+        campo_selezionato.setText(String.valueOf(c).toLowerCase() + " : ");
+
+        d = Home.getDiff();
+        TextView difficolta = findViewById(R.id.diff);
+        difficolta.setText(String.valueOf(d).toLowerCase());
+        ImageView immagine = findViewById(R.id.img_campo);
+        Button esercizio_1 = findViewById(R.id.es1);
+        Button esercizio_2 = findViewById(R.id.es2);
+        Button esercizio_3 = findViewById(R.id.es3);
+
+        switch (c) {
             case LOGICA:
-                immagine.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.bussola));
+                immagine.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.bussola));
                 esercizio_1.setVisibility(View.VISIBLE);
                 esercizio_1.setClickable(true);
                 esercizio_1.setText("Associazioni");
@@ -47,7 +44,7 @@ public class SelectEsercizi extends AppCompatActivity {
                 esercizio_3.setBackgroundColor(0xFFBDB6B6);
                 break;
             case MEMORIA:
-                immagine.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.memoria));
+                immagine.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.memoria));
                 esercizio_1.setVisibility(View.VISIBLE);
                 esercizio_1.setClickable(true);
                 esercizio_1.setText("Memory");
@@ -55,7 +52,7 @@ public class SelectEsercizi extends AppCompatActivity {
                 esercizio_3.setBackgroundColor(0xFFBDB6B6);
                 break;
             case ATTENZIONE:
-                immagine.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.bussola));
+                immagine.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.bussola));
                 esercizio_1.setVisibility(View.VISIBLE);
                 esercizio_1.setClickable(true);
                 esercizio_1.setText("Trova l'intruso");
@@ -63,7 +60,7 @@ public class SelectEsercizi extends AppCompatActivity {
                 esercizio_3.setBackgroundColor(0xFFBDB6B6);
                 break;
             case LINGUAGGIO:
-                immagine.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.lingua));
+                immagine.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.lingua));
                 esercizio_1.setVisibility(View.VISIBLE);
                 esercizio_1.setClickable(true);
                 esercizio_1.setText("Associazioni");
@@ -71,7 +68,7 @@ public class SelectEsercizi extends AppCompatActivity {
                 esercizio_3.setBackgroundColor(0xFFBDB6B6);
                 break;
             case ORIENTAMENTO:
-                immagine.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.bussola));
+                immagine.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.bussola));
                 esercizio_1.setVisibility(View.INVISIBLE);
                 esercizio_1.setClickable(false);
                 esercizio_2.setText("Spaziale");
@@ -81,14 +78,12 @@ public class SelectEsercizi extends AppCompatActivity {
         }
     }
 
-    public void Esercizi(View v)
-    {
+    @SuppressLint("NonConstantResourceId")
+    public void Esercizi(View v) {
         Intent intent;
-        switch(v.getId())
-        {
+        switch (v.getId()) {
             case R.id.es1:
-                switch(c)
-                {
+                switch (c) {
                     case LINGUAGGIO:
                         intent = new Intent(SelectEsercizi.this, Associazioni.class);
                         startActivity(intent);
@@ -108,8 +103,7 @@ public class SelectEsercizi extends AppCompatActivity {
                 }
                 break;
             case R.id.es2:
-                switch(c)
-                {
+                switch (c) {
                     case ORIENTAMENTO:
                         break;
                     case LINGUAGGIO:
@@ -123,8 +117,7 @@ public class SelectEsercizi extends AppCompatActivity {
                 }
                 break;
             case R.id.es3:
-                switch(c)
-                {
+                switch (c) {
                     case ORIENTAMENTO:
                         intent = new Intent(SelectEsercizi.this, OrientamentoTemporale.class);
                         startActivity(intent);
@@ -143,9 +136,8 @@ public class SelectEsercizi extends AppCompatActivity {
 
     }
 
-    public void indietro(View v)
-    {
-        Intent intent = new Intent(SelectEsercizi.this,Home.class);
+    public void indietro(View v) {
+        Intent intent = new Intent(SelectEsercizi.this, Home.class);
         startActivity(intent);
         finish();
     }

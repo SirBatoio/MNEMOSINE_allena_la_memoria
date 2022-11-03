@@ -27,16 +27,14 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
 
     // Create a string for the TextView and Button label
     private static final String TEXTVIEW_TAG = "DRAG TEXT";
-    private TextView parola_1, parola_2, parola_3, parola_4, parola_5, parola_6, parola_7, parola_8, parola_9;
-    private ImageView immagine_1, immagine_2, immagine_3,giudizio;
-    private boolean volume = true;
-    private Immagine primavera, estate, inverno, autunno, melagrana, patata, pantera, anguria, orologio, carota, bussola, camion, lupo, volpe;
-    private ArrayList<Immagine> galleria = new ArrayList<>();
-    private ArrayList<String> gioco = new ArrayList<>();
-    private int i = 2, y = 0, t = 0,tentativi=2, pt_totalizzati, pt_max;
     private static final long TEMPO = 2000;
+    private TextView parola_1, parola_2, parola_3, parola_4, parola_5, parola_6, parola_7, parola_8, parola_9;
+    private ImageView immagine_1, immagine_2, immagine_3, giudizio;
+    private boolean volume = true;
+    private final ArrayList<Immagine> galleria = new ArrayList<>();
+    private final ArrayList<String> gioco = new ArrayList<>();
+    private int i = 2, y = 0, t = 0, tentativi = 2, pt_totalizzati, pt_max;
     private boolean verdetto;
-    private MediaPlayer mp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +51,7 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
         parola_7 = findViewById(R.id.nome_7);
         parola_8 = findViewById(R.id.nome_8);
         parola_9 = findViewById(R.id.nome_9);
-        giudizio=findViewById(R.id.imageView4);
+        giudizio = findViewById(R.id.imageView4);
         immagine_1 = findViewById(R.id.fig_1);
         immagine_2 = findViewById(R.id.fig_2);
         immagine_3 = findViewById(R.id.fig_3);
@@ -120,8 +118,8 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
                 // returns true to indicate that the View can accept the dragged data.
                 return dragEvent.getClipDescription().hasMimeType(ClipDescription.MIMETYPE_TEXT_PLAIN);
 
-                // Returns false. During the current drag and drop operation, this View will
-                // not receive events again until ACTION_DRAG_ENDED is sent.
+            // Returns false. During the current drag and drop operation, this View will
+            // not receive events again until ACTION_DRAG_ENDED is sent.
 
             case DragEvent.ACTION_DRAG_ENTERED:
 
@@ -239,22 +237,21 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
         return true;
     }
 
-    public void aggiungiImmagini()
-    {
-        primavera = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.primavera), "Primavera");
-        estate = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.estate), "Estate");
-        inverno = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.inverno), "Inverno");
-        autunno = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.autunno), "Autunno");
-        melagrana = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.melagrana), "Melagrana");
-        patata = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.patata), "Patata");
-        pantera = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.pantera), "Pantera");
-        anguria = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.anguria), "Anguria");
-        orologio = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.sette15), "Orologio");
-        carota = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.carota), "Carota");
-        bussola = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.bussola), "Bussola");
-        camion = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.camion), "Camion");
-        lupo = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.lupo), "Lupo");
-        volpe = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.volpe), "Volpe");
+    public void aggiungiImmagini() {
+        Immagine primavera = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.primavera), "Primavera");
+        Immagine estate = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.estate), "Estate");
+        Immagine inverno = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.inverno), "Inverno");
+        Immagine autunno = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.autunno), "Autunno");
+        Immagine melagrana = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.melagrana), "Melagrana");
+        Immagine patata = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.patata), "Patata");
+        Immagine pantera = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.pantera), "Pantera");
+        Immagine anguria = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.anguria), "Anguria");
+        Immagine orologio = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.sette15), "Orologio");
+        Immagine carota = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.carota), "Carota");
+        Immagine bussola = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.bussola), "Bussola");
+        Immagine camion = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.camion), "Camion");
+        Immagine lupo = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.lupo), "Lupo");
+        Immagine volpe = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.volpe), "Volpe");
 
         galleria.add(primavera);
         galleria.add(estate);
@@ -272,8 +269,7 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
         galleria.add(volpe);
     }
 
-    public void controlloRisposte(View v, LinearLayout container)
-    {
+    public void controlloRisposte(View v, LinearLayout container) {
         TextView tv = findViewById(v.getId());
         switch (container.getId()) {
             case R.id.top_left_layout:
@@ -283,11 +279,11 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
                     container.setOnDragListener(null);
                     y++;
                     pt_totalizzati++;
-                    verdetto=true;
+                    verdetto = true;
                 } else {
                     tentativi--;
                     pt_max++;
-                    verdetto=false;
+                    verdetto = false;
                 }
                 break;
             case R.id.top_center_layout:
@@ -297,11 +293,11 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
                     container.setOnDragListener(null);
                     y++;
                     pt_totalizzati++;
-                    verdetto=true;
+                    verdetto = true;
                 } else {
                     tentativi--;
                     pt_max++;
-                    verdetto=false;
+                    verdetto = false;
                 }
                 break;
             case R.id.top_right_layout:
@@ -311,28 +307,30 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
                     container.setOnDragListener(null);
                     y++;
                     pt_totalizzati++;
-                    verdetto=true;
+                    verdetto = true;
                 } else {
                     tentativi--;
                     pt_max++;
-                    verdetto=false;
+                    verdetto = false;
                 }
                 break;
         }
         pt_max++;
-        if(verdetto){
-            mp = MediaPlayer.create(this,R.raw.giusto);
-            giudizio.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.giusto));
+        MediaPlayer mp;
+        if (verdetto) {
+            mp = MediaPlayer.create(this, R.raw.giusto);
+            giudizio.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.giusto));
+        } else {
+            mp = MediaPlayer.create(this, R.raw.errore);
+            giudizio.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.sbaglio));
         }
-        else {
-            mp = MediaPlayer.create(this,R.raw.errore);
-            giudizio.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.sbaglio));
+        if (volume) {
+            mp.start();
         }
-        if(volume){ mp.start();}
         animaImmagineEsito();
-        if (y == 3 || tentativi==0) {
+        if (y == 3 || tentativi == 0) {
             restart();
-            tentativi=2;
+            tentativi = 2;
             y = 0;
         }
     }
@@ -437,12 +435,9 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
     }
 
     public void animaImmagineEsito() {
-        if(giudizio.getRotationY()>=180&&giudizio.getRotationY()<360)
-        {
+        if (giudizio.getRotationY() >= 180 && giudizio.getRotationY() < 360) {
             giudizio.animate().rotationY(90).setDuration(TEMPO);
-        }
-        else
-        {
+        } else {
             giudizio.animate().rotationY(270).setDuration(TEMPO);
         }
     }
