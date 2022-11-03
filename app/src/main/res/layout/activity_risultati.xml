@@ -57,9 +57,9 @@
         android:text="cambia gioco"
         app:cornerRadius="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/riprova"
         app:layout_constraintHorizontal_bias="0.596"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/riprova"
         app:layout_constraintTop_toBottomOf="@+id/riprova"
         app:layout_constraintVertical_bias="0.5" />
 
