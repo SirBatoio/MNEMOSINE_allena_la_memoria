@@ -392,6 +392,14 @@ public class Memory extends AppCompatActivity{
     }
 
     public void restart(){
+
+        img_1.setClickable(false);
+        img_2.setClickable(false);
+        img_3.setClickable(false);
+        img_4.setClickable(false);
+        img_5.setClickable(false);
+        img_6.setClickable(false);
+
         pt_totalizzati+=i;
        i=0;
         x=0;
@@ -422,8 +430,8 @@ public class Memory extends AppCompatActivity{
                 img_4.setVisibility(View.VISIBLE);
                 img_5.setImageBitmap(galleria.get(4));
                 gioco.add(galleria.get(4));
-                img_5.setVisibility(View.INVISIBLE);
-                img_6.setVisibility(View.INVISIBLE);
+                img_5.setVisibility(View.GONE);
+                img_6.setVisibility(View.GONE);
                 timer=new Timer();
                 startTimer();
                 break;
@@ -436,8 +444,8 @@ public class Memory extends AppCompatActivity{
                 img_6.setImageBitmap(galleria.get(5));
                 gioco.add(galleria.get(4));
                 gioco.add(galleria.get(5));
-                img_5.setVisibility(View.INVISIBLE);
-                img_6.setVisibility(View.INVISIBLE);
+                img_5.setVisibility(View.GONE);
+                img_6.setVisibility(View.GONE);
                 time=TIME*2/3;
                 timer=new Timer();
                 startTimer();

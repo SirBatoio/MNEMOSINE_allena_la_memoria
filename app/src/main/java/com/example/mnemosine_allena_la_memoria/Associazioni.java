@@ -1,5 +1,6 @@
 package com.example.mnemosine_allena_la_memoria;
 
+import android.annotation.SuppressLint;
 import android.content.ClipData;
 import android.content.ClipDescription;
 import android.content.Intent;
@@ -71,12 +72,14 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
 
         aggiungiImmagini();
 
+        // Mescola galleria e aggiunge i primi tre elementi a gioco
         Collections.shuffle(galleria);
         gioco.add(galleria.get(0).getDescrizione());
         gioco.add(galleria.get(1).getDescrizione());
         gioco.add(galleria.get(2).getDescrizione());
         Collections.shuffle(gioco);
 
+        // Imposta immagini e testi del primo round
         immagine_1.setImageBitmap(galleria.get(0).getImmagine());
         immagine_2.setImageBitmap(galleria.get(1).getImmagine());
         immagine_3.setImageBitmap(galleria.get(2).getImmagine());
@@ -237,7 +240,9 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
         return true;
     }
 
+    // Dichiara e aggiunge le immagini a galleria
     public void aggiungiImmagini() {
+        // Dichiarazione immagini
         Immagine primavera = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.primavera), "Primavera");
         Immagine estate = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.estate), "Estate");
         Immagine inverno = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.inverno), "Inverno");
@@ -253,6 +258,7 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
         Immagine lupo = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.lupo), "Lupo");
         Immagine volpe = new Immagine(BitmapFactory.decodeResource(getResources(), R.drawable.volpe), "Volpe");
 
+        // Aggiunta a galleria
         galleria.add(primavera);
         galleria.add(estate);
         galleria.add(inverno);
@@ -269,18 +275,26 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
         galleria.add(volpe);
     }
 
+    // Controlla la correttezza della risposta data dall'utrente
+    @SuppressLint("NonConstantResourceId")
     public void controlloRisposte(View v, LinearLayout container) {
         TextView tv = findViewById(v.getId());
         switch (container.getId()) {
             case R.id.top_left_layout:
+                // Confronto del testo della TextView con la descrizione dell'immagine su cui è stato trascinato il testo
                 if (tv.getText() == galleria.get(i - 2).getDescrizione()) {
+                    // Rende la TextView invisibile
                     tv.setVisibility(View.GONE);
+                    // Modifica l'immagine visualizzata con "giusto.png"
                     immagine_1.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.giusto));
+                    // Il layout non accetta ulteriori "drop" da parte dell'utente
                     container.setOnDragListener(null);
+                    // Aumenta le risposte esatte e i punti totalizzati
                     y++;
                     pt_totalizzati++;
                     verdetto = true;
                 } else {
+                    // Diminuisce le risposte esatte e aumenta i punti massimi
                     tentativi--;
                     pt_max++;
                     verdetto = false;
@@ -335,6 +349,7 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
         }
     }
 
+    // Cambia il volume da  "ON" a "OFF" e vice versa
     public void cambiaVolume(@NonNull View v) {
         Button b = findViewById(v.getId());
         if (volume) {
@@ -348,33 +363,42 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
         }
     }
 
+    // Torna all'Activity precedente
     public void indietro(View v) {
         Intent intent = new Intent(Associazioni.this, SelectEsercizi.class);
         startActivity(intent);
         finish();
     }
 
+    // Torna all'Activity "Home.java"
     public void home(View v) {
         Intent intent = new Intent(Associazioni.this, Home.class);
         startActivity(intent);
         finish();
     }
 
+    // Modifica le immagini e i testi per il round successivo
     public void restart() {
+        // Svuota gioco
         gioco.clear();
 
+        // Implementa nuovamente la possibilità dei Layout di accettare "drop" dall'utente
         findViewById(R.id.top_left_layout).setOnDragListener(this);
         findViewById(R.id.top_center_layout).setOnDragListener(this);
         findViewById(R.id.top_right_layout).setOnDragListener(this);
 
+        // Secondo round
         if (t == 0) {
-
+            // Rende invisibili le TextView del round precedente qualora ce ne fossero alcune rimaste visibili
             parola_1.setVisibility(View.GONE);
             parola_2.setVisibility(View.GONE);
             parola_3.setVisibility(View.GONE);
+            // Implementa long click listener alle nuove TextView
             parola_4.setOnLongClickListener(this);
             parola_5.setOnLongClickListener(this);
             parola_6.setOnLongClickListener(this);
+
+            //aggiunge i prossimi membri di galleria a gioco
             i++;
             gioco.add(galleria.get(i).getDescrizione());
             immagine_1.setImageBitmap(galleria.get(i).getImmagine());
@@ -389,12 +413,14 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
 
             Collections.shuffle(gioco);
 
+            // Imposta il testo delle nuove TextView
             parola_4.setText(gioco.get(0));
             parola_5.setText(gioco.get(1));
             parola_6.setText(gioco.get(2));
 
         }
 
+        // Terzo round
         if (t == 1) {
             parola_4.setVisibility(View.GONE);
             parola_5.setVisibility(View.GONE);

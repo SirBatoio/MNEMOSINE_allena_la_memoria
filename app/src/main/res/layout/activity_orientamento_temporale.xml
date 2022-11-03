@@ -123,8 +123,8 @@
 
     <ImageView
         android:id="@+id/immagine"
-        android:layout_width="504dp"
-        android:layout_height="539dp"
+        android:layout_width="450dp"
+        android:layout_height="450dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/R1"
         app:layout_constraintHorizontal_bias="0.5"
