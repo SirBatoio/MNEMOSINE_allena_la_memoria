@@ -160,6 +160,17 @@ public class Intruso extends AppCompatActivity {
         quarute.add(auto);
         quarute.add(camper);
         galleryredo(s);
+        switch (diff){
+            case FACILE:
+                pt_max=5;
+                break;
+            case INTERMEDIO:
+                pt_max=7;
+                break;
+            case AVANZATO:
+                pt_max=5;
+                break;
+        }
     }
 
     public void indietro(View v) {
