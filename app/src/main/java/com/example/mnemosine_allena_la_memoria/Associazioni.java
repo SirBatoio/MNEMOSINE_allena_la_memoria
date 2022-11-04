@@ -68,6 +68,8 @@ public class Associazioni extends AppCompatActivity implements View.OnLongClickL
         parola_8.setTag(TEXTVIEW_TAG);
         parola_9.setTag(TEXTVIEW_TAG);
 
+
+
         implementEvents();
 
         aggiungiImmagini();

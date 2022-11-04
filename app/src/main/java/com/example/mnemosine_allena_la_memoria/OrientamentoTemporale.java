@@ -1,3 +1,7 @@
+/*
+    TO DO:
+    - mostrare la risposta corretta in caso di 2 errori
+ */
 package com.example.mnemosine_allena_la_memoria;
 
 import android.annotation.SuppressLint;
@@ -235,6 +239,7 @@ public class OrientamentoTemporale extends AppCompatActivity {
                     listaRisposte.add(domande.get(i).getRispostaSbagliata2());
                     Collections.shuffle(listaRisposte);
 
+                    domanda.setText("");
                     opzioni.get(3).setVisibility(View.INVISIBLE);
                     opzioni.get(3).setClickable(false);
                     break;

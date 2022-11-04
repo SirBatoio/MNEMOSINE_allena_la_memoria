@@ -145,7 +145,7 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="250dp"
+        android:layout_width="270dp"
         android:layout_height="100dp"
         android:layout_marginEnd="32dp"
         android:backgroundTint="@color/green"
@@ -165,5 +165,18 @@
         app:layout_constraintEnd_toEndOf="@+id/textView"
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/buttonin"
+        android:layout_width="270dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="32dp"
+        android:backgroundTint="@color/green"
+        android:onClick="redo"
+        android:text="indietro"
+        app:cornerRadius="100dp"
+        app:layout_constraintBottom_toTopOf="@+id/img2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

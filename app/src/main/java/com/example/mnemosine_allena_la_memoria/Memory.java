@@ -1,3 +1,8 @@
+/*
+    TO DO:
+    - in caso di errore riprovare con le stesse immagini
+*/
+
 package com.example.mnemosine_allena_la_memoria;
 
 import android.annotation.SuppressLint;
@@ -25,11 +30,12 @@ public class Memory extends AppCompatActivity{
     private static final int LIV_MAX = 5;
     private boolean volume=true;
     private static final long TIME = 15;
-    private Button b;
+    private Button b,b1;
     private Difficoltà d;
     private ImageView img_1, img_2, img_3, img_4, img_5, img_6,immagine2;
     private final ArrayList<Bitmap> galleria = new ArrayList<>();
     private final ArrayList<Bitmap> gioco = new ArrayList<>();
+    private ArrayList<Bitmap> temp = new ArrayList<>();
     private Bitmap sbagliato;
     private Bitmap giusto;
     private MediaPlayer mp;
@@ -56,6 +62,7 @@ public class Memory extends AppCompatActivity{
         text=findViewById(R.id.textView);
         tempoRimanente=findViewById(R.id.tempo);
         b = findViewById(R.id.button);
+        b1=findViewById(R.id.buttonin);
 
         riempiGalleria();
 
@@ -66,7 +73,8 @@ public class Memory extends AppCompatActivity{
         img_4.setClickable(false);
         img_5.setClickable(false);
         img_6.setClickable(false);
-
+        b1.setVisibility(View.INVISIBLE);
+        b1.setClickable(false);
         // Imposta le immagini nelle View
         img_1.setImageBitmap(galleria.get(0));
         img_2.setImageBitmap(galleria.get(1));
@@ -74,7 +82,9 @@ public class Memory extends AppCompatActivity{
         img_4.setImageBitmap(galleria.get(3));
 
         gioco.add(galleria.get(0)); gioco.add(galleria.get(1));
-        gioco.add(galleria.get(2)); gioco.add(galleria.get(3));
+        gioco.add(galleria.get(2));
+        temp.addAll(gioco);
+        gioco.add(galleria.get(3));
 
         d = Home.getDiff();
         switch (d)
@@ -95,6 +105,7 @@ public class Memory extends AppCompatActivity{
                 img_3.setVisibility(View.VISIBLE);
                 img_4.setVisibility(View.VISIBLE);
                 img_5.setImageBitmap(galleria.get(4));
+                temp.add(gioco.get(3));
                 gioco.add(galleria.get(4));
                 img_5.setVisibility(View.INVISIBLE);
                 img_6.setVisibility(View.INVISIBLE);
@@ -112,6 +123,8 @@ public class Memory extends AppCompatActivity{
                 img_5.setImageBitmap(galleria.get(4));
                 img_6.setImageBitmap(galleria.get(5));
                 gioco.add(galleria.get(4));
+                temp.add(gioco.get(3));
+                temp.add(gioco.get(4));
                 gioco.add(galleria.get(5));
                 img_5.setVisibility(View.INVISIBLE);
                 img_6.setVisibility(View.INVISIBLE);
@@ -161,12 +174,16 @@ public class Memory extends AppCompatActivity{
     @SuppressLint("SetTextI18n")
     public void avanti(View v)
     {
+       // b1.setClickable(true);
+       // b1.setVisibility(View.VISIBLE);
         b.setVisibility(View.INVISIBLE);
         b.setClickable(false);
         img_1.setClickable(true);
         img_2.setClickable(true);
         img_3.setClickable(true);
         img_4.setClickable(true);
+
+        Collections.shuffle(gioco);
 
         // Cambia le immagini
         img_1.setImageBitmap(gioco.get(0));
@@ -372,6 +389,9 @@ public class Memory extends AppCompatActivity{
 
     // Quando sbagli
     public void errore(){
+        b1.setVisibility(View.VISIBLE);
+        b1.setClickable(true);
+
         // suono
         mp = MediaPlayer.create(this,R.raw.errore);
         // immagine
@@ -381,16 +401,16 @@ public class Memory extends AppCompatActivity{
         animaImmagineEsito();
         x++; // aumenta errori
         pt_max++; // aumenta punti massimi
-        if(d!=Difficoltà.AVANZATO||x==2){
+       /* if(d!=Difficoltà.AVANZATO||x==2){
             // se difficoltà diversa da AVANZATO o errori uguali a 2 si passa al livello successivo
             restart();
-        }
+        }*/
     }
 
     // aumenta il livello
     @SuppressLint("SetTextI18n")
     public void restart(){
-
+        temp.clear();
         // immagini non cliccabili
         img_1.setClickable(false);
         img_2.setClickable(false);
@@ -398,6 +418,11 @@ public class Memory extends AppCompatActivity{
         img_4.setClickable(false);
         img_5.setClickable(false);
         img_6.setClickable(false);
+
+        b.setVisibility(View.VISIBLE);
+        b1.setVisibility(View.INVISIBLE);
+        b.setClickable(true);
+        b1.setClickable(false);
 
         pt_totalizzati+=i; // aumenta i punti totalizzati
         i=0; // set risposte giuste a 0
@@ -413,9 +438,14 @@ public class Memory extends AppCompatActivity{
         img_3.setImageBitmap(galleria.get(2));
         img_4.setImageBitmap(galleria.get(3));
 
+        gioco.add(galleria.get(0)); gioco.add(galleria.get(1));
+        gioco.add(galleria.get(2));
+        temp.addAll(gioco);
+        gioco.add(galleria.get(3));
+
         switch (d)
         {
-            // Cosa si vede e cosa no nel livello
+            // Imposta la visibilità delle ImageView, del pulsante e i punti massimi totalizzabili
             case FACILE:
                 img_1.setVisibility(View.VISIBLE);
                 img_2.setVisibility(View.VISIBLE);
@@ -423,8 +453,7 @@ public class Memory extends AppCompatActivity{
                 img_4.setVisibility(View.INVISIBLE);
                 img_5.setVisibility(View.INVISIBLE);
                 img_6.setVisibility(View.INVISIBLE);
-                b.setVisibility(View.VISIBLE);
-                b.setClickable(true);
+                pt_max=3*LIV_MAX;
                 break;
             case INTERMEDIO:
                 img_1.setVisibility(View.VISIBLE);
@@ -432,9 +461,13 @@ public class Memory extends AppCompatActivity{
                 img_3.setVisibility(View.VISIBLE);
                 img_4.setVisibility(View.VISIBLE);
                 img_5.setImageBitmap(galleria.get(4));
+                temp.add(gioco.get(3));
                 gioco.add(galleria.get(4));
-                img_5.setVisibility(View.GONE);
-                img_6.setVisibility(View.GONE);
+                img_5.setVisibility(View.INVISIBLE);
+                img_6.setVisibility(View.INVISIBLE);
+                pt_max=4*LIV_MAX;
+                b.setVisibility(View.INVISIBLE);
+                b.setClickable(false);
                 timer=new Timer();
                 startTimer();
                 break;
@@ -446,16 +479,19 @@ public class Memory extends AppCompatActivity{
                 img_5.setImageBitmap(galleria.get(4));
                 img_6.setImageBitmap(galleria.get(5));
                 gioco.add(galleria.get(4));
+                temp.add(gioco.get(3));
+                temp.add(gioco.get(4));
                 gioco.add(galleria.get(5));
-                img_5.setVisibility(View.GONE);
-                img_6.setVisibility(View.GONE);
+                img_5.setVisibility(View.INVISIBLE);
+                img_6.setVisibility(View.INVISIBLE);
+                b.setVisibility(View.INVISIBLE);
+                b.setClickable(false);
+                pt_max=4*LIV_MAX;
                 time=TIME*2/3;
                 timer=new Timer();
                 startTimer();
                 break;
         }
-        gioco.add(galleria.get(0)); gioco.add(galleria.get(1));
-        gioco.add(galleria.get(2)); gioco.add(galleria.get(3));
         Collections.shuffle(gioco);
 
         // cambia il testo
@@ -534,6 +570,37 @@ public class Memory extends AppCompatActivity{
             b.setText("VOLUME ON");
             b.setBackgroundColor(0xFFFF9800);
         }
+    }
+
+    public void redo (View view){
+        b.setVisibility(View.VISIBLE);
+        b1.setVisibility(View.INVISIBLE);
+        b.setClickable(true);
+        b1.setClickable(false);
+        img_1.setImageBitmap(temp.get(0));
+        img_2.setImageBitmap(temp.get(1));
+        img_3.setImageBitmap(temp.get(2));
+        img_1.setClickable(false);
+        img_3.setClickable(false);img_2.setClickable(false);
+        i=0;
+
+        switch (d){
+            case FACILE:
+                img_4.setVisibility(View.INVISIBLE);
+                break;
+            case INTERMEDIO:
+                img_5.setVisibility(View.INVISIBLE);
+                img_4.setImageBitmap(temp.get(3));
+                img_4.setClickable(false);
+                break;
+            case AVANZATO:
+                img_5.setVisibility(View.INVISIBLE);
+                img_6.setVisibility(View.INVISIBLE);
+                img_4.setImageBitmap(temp.get(3));
+                img_4.setClickable(false);
+                break;
+        }
+
     }
 
     // Effettua la rotazione dell'immagine per mostrare l'esito della risposta all'utente
