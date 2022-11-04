@@ -6,6 +6,37 @@
     android:layout_height="match_parent"
     tools:context=".Home">
 
+    <TextView
+        android:id="@+id/titolo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/cinzel"
+        android:text="MNEMOSINE"
+        android:textColor="#0E020A"
+        android:textSize="46dp"
+        android:translationZ="3dp"
+        app:layout_constraintBottom_toTopOf="@+id/orientamento"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/orientamento"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/cinzel"
+        android:text="allena la memoria"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/titolo"
+        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintStart_toStartOf="@+id/titolo"
+        app:layout_constraintTop_toBottomOf="@+id/titolo" />
+
     <Button
         android:id="@+id/orientamento"
         android:layout_width="350dp"
@@ -135,36 +166,5 @@
             android:textSize="34sp" />
 
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/titolo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/cinzel"
-        android:text="MNEMOSINE"
-        android:textColor="#0E020A"
-        android:textSize="46dp"
-        android:translationZ="3dp"
-        app:layout_constraintBottom_toTopOf="@+id/orientamento"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/orientamento"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:fontFamily="@font/cinzel"
-        android:text="allena la memoria"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/titolo"
-        app:layout_constraintHorizontal_bias="0.571"
-        app:layout_constraintStart_toStartOf="@+id/titolo"
-        app:layout_constraintTop_toBottomOf="@+id/titolo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
